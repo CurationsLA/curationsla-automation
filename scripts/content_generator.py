@@ -845,7 +845,7 @@ if (typeof window !== 'undefined') {{
         
         for category in categories:
             print(f"\n🌴 Processing {category.upper()} category...")
-            items = self.process_category(category)
+            items = self.aggregate_category_content(category)
             
             # Enhanced freshness checking
             fresh_items = self.check_content_freshness(items)
@@ -856,10 +856,7 @@ if (typeof window !== 'undefined') {{
         
         # Generate newsletter content
         if any(self.content[cat] for cat in categories):
-            newsletter_content = self.generate_newsletter_content()
-            self.save_newsletter_versions(newsletter_content)
-            self.generate_js_content()
-            self.save_content_stats()
+            self.generate_newsletter()
             
             print(f"\n✅ Newsletter generation complete!")
             print(f"📧 Email version: {self.output_path}/newsletter-email.md")

@@ -115,54 +115,11 @@ jobs:
         echo "### Schema Markup" >> $GITHUB_STEP_SUMMARY
         echo "[View Schema JSON](https://github.com/${{ github.repository }}/blob/main/output/$DATE/schema.json)" >> $GITHUB_STEP_SUMMARY
     
-    - name: Send notification
-      if: success()
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: ✅ CurationsLA ${{ steps.get-day.outputs.day }} Newsletter Ready
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
-        from: CurationsLA Automation
-        body: |
-          Good Vibes Alert! 🌴
-          
-          Your ${{ steps.get-day.outputs.day }} newsletter is ready for review.
-          
-          📅 Date: ${{ steps.get-day.outputs.date }}
-          📧 Email Version: Ready (with anti-clipping CTA)
-          🌐 Web Version: Ready (full content)
-          🔍 Schema Markup: Generated
-          
-          View in GitHub:
-          https://github.com/${{ github.repository }}/tree/main/output/${{ steps.get-day.outputs.date }}
-          
-          Ready to copy-paste to Ghost CMS!
-          
-          ---
-          CurationsLA • Good Vibes Only
-          No rage-bait • No politics • No crime • Just community
-    
-    - name: Error notification
-      if: failure()
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: ❌ CurationsLA Generation Failed - ${{ steps.get-day.outputs.day }}
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
-        from: CurationsLA Automation
-        body: |
-          Content generation failed for ${{ steps.get-day.outputs.day }}.
-          
-          Please check the GitHub Actions logs:
-          https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          
-          Manual intervention may be required.
+    - name: Content generation complete
+      run: |
+        echo "✅ CurationsLA Newsletter content generated successfully!"
+        echo "📄 Text content is ready for copy-paste use"
+        echo "📁 Generated files location: output/${{ steps.get-day.outputs.date }}/"
     
     - name: Update status badge
       if: always()
