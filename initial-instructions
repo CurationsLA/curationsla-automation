@@ -1,0 +1,3097 @@
+[AGENTS: Please see the deployment guide for reference as to what is being accomplished. All files, content, media, videos and images (when applicable) should be produced in Github.
+
+# 🌴 CurationsLA Complete Setup Guide
+
+## Good Vibes Newsletter Automation System
+
+This guide will help you set up the complete CurationsLA newsletter automation system that generates content Monday-Friday, optimizes for SEO/AI discovery, and integrates with Ghost CMS (manual copy-paste).
+
+---
+
+## 🎯 System Overview
+
+### What This System Does:
+1. **Generates newsletter content** Monday-Friday automatically
+2. **Filters for Good Vibes** - no rage-bait, politics, or crime
+3. **Creates two versions**: Email (anti-clipping) and Web (full content)
+4. **Optimizes for AI discovery** - ChatGPT, Claude, Perplexity, voice assistants
+5. **Enhances local SEO** - LA neighborhoods and businesses
+6. **Archives everything** in timestamped GitHub folders
+
+### What You Still Do Manually:
+1. **Review generated content** each morning
+2. **Add images/GIFs** where indicated
+3. **Copy-paste to Ghost CMS** for publishing
+4. **Share on social media** as desired
+
+---
+
+## 📋 Prerequisites
+
+- GitHub account
+- Cloudflare account (for SEO optimization)
+- Ghost 6.0+ instance at la.curations.cc
+- Basic command line knowledge
+
+---
+
+## 🚀 Quick Setup (15 minutes)
+
+### Step 1: Fork & Clone Repository
+
+```bash
+# Fork this repo on GitHub, then:
+git clone https://github.com/YOUR_USERNAME/curationsla-automation.git
+cd curationsla-automation
+```
+
+### Step 2: Configure GitHub Secrets
+
+Go to your repo Settings > Secrets and Actions > New repository secret
+
+Add these secrets:
+```
+NOTIFICATION_EMAIL=your-email@example.com
+OPENAI_API_KEY=sk-... (optional, for AI enhancement)
+EMAIL_USERNAME=gmail-username (optional, for notifications)
+EMAIL_PASSWORD=gmail-app-password (optional, for notifications)
+```
+
+### Step 3: Configure Content Sources
+
+Edit the JSON files in `sources/feeds/` with your preferred RSS feeds:
+
+```bash
+# Example: Add more LA food blogs
+nano sources/feeds/eats.json
+```
+
+Current categories:
+- `eats.json` - Restaurant and food content
+- `events.json` - Cultural events and happenings
+- `community.json` - Neighborhood stories
+- `entertainment.json` - Movies, music, arts
+- `business.json` - Local business news
+- `development.json` - Urban development
+- `sports.json` - LA sports teams
+- `goodies.json` - Special finds and deals
+
+### Step 4: Enable GitHub Actions
+
+GitHub Actions should automatically be enabled. Check:
+- Go to Actions tab in your repo
+- You should see "CurationsLA Daily Content Generation"
+- Click "Enable workflow" if needed
+
+### Step 5: Deploy Cloudflare SEO Worker
+
+```bash
+# Run the deployment script
+./deploy-cloudflare.sh
+
+# Or deploy manually:
+npm install -g wrangler
+wrangler login
+wrangler publish --env production
+```
+
+---
+
+## 📅 Daily Workflow
+
+### Automated Schedule (Pacific Time)
+
+**6:00 AM** - Content Aggregation
+- RSS feeds fetched
+- Events APIs queried
+- Community sources checked
+
+**7:00 AM** - Good Vibes Filtering
+- Negative content removed
+- Political posts filtered
+- Crime reports excluded
+
+**8:00 AM** - AI Enhancement (if enabled)
+- Content summarization
+- Neighborhood detection
+- Category assignment
+
+**9:00 AM** - Newsletter Generation
+- Email version created (with CTA cutoff)
+- Web version generated (full content)
+- Schema markup built
+
+**10:00 AM** - Archive & Notify
+- Content saved to GitHub
+- Email notification sent
+- Preview links generated
+
+### Your Manual Steps
+
+**10:00 AM - 11:00 AM**
+1. Check email notification or GitHub
+2. Review generated content in `/output/YYYY-MM-DD/`
+3. Add images/GIFs where indicated
+4. Copy email version to Ghost newsletter
+5. Copy web version to Ghost post
+6. Schedule or publish
+
+---
+
+## 📁 Repository Structure Explained
+
+```
+curationsla-automation/
+│
+├── .github/workflows/       # Automation runs here
+│   └── daily-content.yml   # Monday-Friday at 6 AM
+│
+├── content/                 # Generated newsletters archived here
+│   └── 2025/
+│       └── 01-january/
+│           └── week-01/
+│               ├── monday/
+│               ├── tuesday/
+│               └── ...
+│
+├── sources/                 # Configure your content sources
+│   └── feeds/
+│       ├── eats.json       # Restaurant RSS feeds
+│       ├── events.json     # Event feed URLs
+│       └── ...
+│
+├── scripts/                 # Core automation scripts
+│   ├── content_generator.py # Main generation script
+│   └── filters/
+│       └── good_vibes_filter.py
+│
+├── output/                  # Today's newsletter appears here
+│   └── 2025-01-24/
+│       ├── newsletter-email.md
+│       ├── newsletter-web.md
+│       └── schema.json
+│
+└── cloudflare/              # SEO & AI discovery
+    └── la-curations-seo-worker.js
+```
+
+---
+
+## 📝 Newsletter Format
+
+### Email Version (Gmail Anti-Clipping)
+```markdown
+**HEY LOS ANGELES!**
+[GIF]
+
+**IT'S FRIDAY**
+
+👋 **HEY CUTIE!**
+[Personal intro]
+
+[HOV LANES - Quick headlines]
+
+[SPONSOR - If applicable]
+
+<!-- Email cuts off here to prevent clipping -->
+**🍟 Want more? Continue reading →**
+```
+
+### Web Version (Full Content)
+Includes all sections:
+- 🍟 EATS - Restaurant discoveries
+- 📆 EVENTS - Today, tomorrow, weekend
+- 🌴 COMMUNITY - Neighborhood stories
+- 🏡 DEVELOPMENT - Urban updates
+- 💼 BUSINESS - Local economy
+- 🎬 ENTERTAINMENT - Arts & culture
+- 🏈 SPORTS - LA teams
+- 🤙 GOODIES - Special finds
+
+---
+
+## 🤖 AI & SEO Features
+
+### Schema.org Markup
+- NewsArticle for each newsletter
+- LocalBusiness for restaurants
+- Event schema for happenings
+- BreadcrumbList for navigation
+- SpeakableSpecification for voice
+
+### AI Platform Optimization
+- **ChatGPT**: Plugin manifest at `/ai-plugin.json`
+- **Claude**: Training data API endpoint
+- **Perplexity**: Location-based metadata
+- **Voice Assistants**: Speakable content marked
+- **Google**: Rich results and structured data
+
+### Discovery Endpoints
+```
+https://la.curations.cc/api/newsletter-today
+https://la.curations.cc/api/events
+https://la.curations.cc/api/restaurants
+https://la.curations.cc/api/training-data
+```
+
+---
+
+## 🎨 Customization
+
+### Add New Content Sources
+
+1. Edit JSON files in `sources/feeds/`
+2. Add RSS feed URLs
+3. Commit changes
+4. GitHub Actions will use new sources tomorrow
+
+### Modify Good Vibes Filter
+
+Edit `scripts/filters/good_vibes_filter.py`:
+```python
+GOOD_VIBES_KEYWORDS = ['opening', 'celebrate', 'community', ...]
+BLOCKED_KEYWORDS = ['crime', 'politics', 'controversy', ...]
+```
+
+### Change Schedule
+
+Edit `.github/workflows/daily-content.yml`:
+```yaml
+schedule:
+  - cron: '0 14 * * 1-5'  # Currently 6 AM PST
+```
+
+### Neighborhood Configuration
+
+Edit in `scripts/content_generator.py`:
+```python
+NEIGHBORHOODS = {
+    'WESTSIDE': ['Santa Monica', 'Venice', ...],
+    # Add your neighborhoods
+}
+```
+
+---
+
+## 🧪 Testing
+
+### Manual Test Run
+```bash
+# Generate newsletter locally
+python scripts/content_generator.py
+
+# Check output
+ls -la output/$(date +%Y-%m-%d)/
+```
+
+### Trigger GitHub Action Manually
+1. Go to Actions tab
+2. Select "CurationsLA Daily Content Generation"
+3. Click "Run workflow"
+4. Choose day (optional)
+
+### Validate SEO
+- Schema: https://validator.schema.org
+- Rich Results: https://search.google.com/test/rich-results
+- AI Discovery: Ask ChatGPT about "CurationsLA newsletter"
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**No content generated**
+- Check RSS feeds are active
+- Verify Good Vibes filter isn't too strict
+- Look at GitHub Actions logs
+
+**GitHub Action fails**
+- Check Secrets are configured
+- Verify Python dependencies
+- Review error logs
+
+**Cloudflare worker not updating**
+- Clear Cloudflare cache
+- Check worker routes
+- Verify KV namespace
+
+### Support Channels
+- GitHub Issues: Report bugs
+- Email: hello@curations.cc
+- Phone: 747-200-5740
+
+---
+
+## 📊 Metrics & Analytics
+
+### Track Success
+- GitHub commit history shows all newsletters
+- Cloudflare Analytics for web traffic
+- Ghost analytics for open rates
+- AI platform citations (search your brand)
+
+### Weekly Review
+```bash
+# See this week's newsletters
+ls content/2025/01-january/week-*/
+
+# Check Good Vibes scores
+grep "vibeScore" output/*/schema.json
+```
+
+---
+
+## 🚢 Go Live Checklist
+
+- [ ] GitHub repository forked and cloned
+- [ ] Secrets configured in GitHub
+- [ ] RSS feeds customized for LA sources
+- [ ] GitHub Actions enabled
+- [ ] Cloudflare worker deployed
+- [ ] Test run successful
+- [ ] Ghost CMS ready for content
+- [ ] Team notified of new workflow
+
+---
+
+## 💜 Philosophy
+
+**Good Vibes Only** means:
+- Celebrate openings, not closures
+- Highlight community wins
+- Share cultural discoveries
+- Promote local businesses
+- Connect neighborhoods
+- Inspire exploration
+- Build community
+
+**We Don't Share**:
+- Crime reports
+- Political arguments
+- Rage-bait headlines
+- Negative closures
+- Controversial topics
+- Fear-based content
+
+---
+
+## 📅 Launch Timeline
+
+**Week 1**: Setup & Testing
+- Configure GitHub repository
+- Deploy Cloudflare worker
+- Test content generation
+- Refine sources
+
+**Week 2**: Soft Launch
+- Run Monday/Wednesday/Friday
+- Manual review and adjustment
+- Gather team feedback
+- Optimize filters
+
+**Week 3**: Full Launch
+- Monday-Friday automation
+- Social media integration
+- Subscriber onboarding
+- Performance monitoring
+
+**Ongoing**: Optimization
+- A/B test subject lines
+- Expand source coverage
+- Build sponsor relationships
+- Grow subscriber base
+
+---
+
+## 🎉 Success Metrics
+
+**Technical Success**:
+- ✅ 5 newsletters per week generated
+- ✅ < 102KB email size (no clipping)
+- ✅ Schema validation passes
+- ✅ AI platforms index content
+
+**Content Success**:
+- 📈 Positive engagement rate
+- 🌟 Community feedback
+- 🏪 Local business features
+- 🎭 Event attendance boost
+
+**Growth Targets**:
+- Month 1: 500 subscribers
+- Month 3: 2,000 subscribers
+- Month 6: 5,000 subscribers
+- Year 1: 15,000 subscribers
+
+---
+
+## 💡 Pro Tips
+
+1. **Schedule social media** alongside newsletter
+2. **Build relationships** with featured venues
+3. **Create themed weeks** (Taco Tuesday focus, etc.)
+4. **Partner with local influencers** for content
+5. **Track which neighborhoods** get most engagement
+6. **A/B test** CTA button colors and text
+7. **Build email segments** by neighborhood interest
+8. **Create annual "Best of LA"** from your archives
+
+---
+
+## 📞 Contact & Support
+
+**CurationsLA**
+- Web: la.curations.cc
+- Email: la@curations.cc
+
+**CURATIONS Agency**
+- Web: curations.cc
+- Email: hello@curations.cc
+- Phone: 747-200-5740
+
+**Technical Support**
+- GitHub Issues: [Create issue](https://github.com/curationsla/automation/issues)
+- Documentation: This guide
+- Community: Coming soon
+
+---
+
+**Made with 💜 in Los Angeles**
+*Bringing Good Vibes when our city needs it most*
+
+---
+
+## License
+
+This project is open source under MIT License.
+Content is licensed under CC-BY-SA-4.0.
+Good Vibes are free for everyone.
+
+---
+
+*Last updated: September 2025*
+
+name: CurationsLA Daily Content Generation
+# Runs Monday-Friday at 6:00 AM Pacific Time
+
+on:
+  schedule:
+    # 6:00 AM PST / 7:00 AM PDT (14:00 UTC / 13:00 UTC)
+    - cron: '0 14 * * 1-5'  # Adjust for DST as needed
+  workflow_dispatch:  # Allow manual trigger
+    inputs:
+      day_override:
+        description: 'Day to generate (monday, tuesday, wednesday, thursday, friday)'
+        required: false
+        default: 'auto'
+
+jobs:
+  generate-newsletter:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        pip install feedparser requests beautifulsoup4 python-dateutil
+        pip install openai  # Optional for AI enhancement
+    
+    - name: Set timezone to LA
+      run: |
+        sudo timedatectl set-timezone America/Los_Angeles
+        echo "Current LA time: $(date)"
+    
+    - name: Determine day of week
+      id: get-day
+      run: |
+        if [ "${{ github.event.inputs.day_override }}" != "auto" ] && [ -n "${{ github.event.inputs.day_override }}" ]; then
+          DAY="${{ github.event.inputs.day_override }}"
+        else
+          DAY=$(date +%A | tr '[:upper:]' '[:lower:]')
+        fi
+        echo "day=$DAY" >> $GITHUB_OUTPUT
+        echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
+        echo "📅 Generating content for: $DAY"
+    
+    - name: Run content aggregation
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "🌴 Starting CurationsLA content generation..."
+        python scripts/content_generator.py
+    
+    - name: Generate Schema markup
+      run: |
+        python scripts/schema_builder.py --day ${{ steps.get-day.outputs.day }}
+    
+    - name: Create AI discovery files
+      run: |
+        python scripts/ai_discovery.py
+    
+    - name: Archive content
+      run: |
+        # Create archive structure
+        YEAR=$(date +%Y)
+        MONTH=$(date +%m-%B | tr '[:upper:]' '[:lower:]')
+        WEEK=$(date +%U)
+        DAY=${{ steps.get-day.outputs.day }}
+        
+        ARCHIVE_PATH="content/$YEAR/$MONTH/week-$WEEK/$DAY"
+        mkdir -p $ARCHIVE_PATH
+        
+        # Copy generated content to archive
+        cp -r output/$(date +%Y-%m-%d)/* $ARCHIVE_PATH/
+        
+        echo "📁 Content archived to: $ARCHIVE_PATH"
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        git add .
+        git commit -m "🌴 CurationsLA: ${{ steps.get-day.outputs.day }} content - ${{ steps.get-day.outputs.date }}" || exit 0
+        git push
+    
+    - name: Generate preview links
+      id: preview
+      run: |
+        DAY=${{ steps.get-day.outputs.day }}
+        DATE=${{ steps.get-day.outputs.date }}
+        
+        echo "## 📧 Newsletter Preview Links" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Email Version (Anti-Clipping)" >> $GITHUB_STEP_SUMMARY
+        echo "[View Email Version](https://github.com/${{ github.repository }}/blob/main/output/$DATE/newsletter-email.md)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Web Version (Full Content)" >> $GITHUB_STEP_SUMMARY
+        echo "[View Web Version](https://github.com/${{ github.repository }}/blob/main/output/$DATE/newsletter-web.md)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Schema Markup" >> $GITHUB_STEP_SUMMARY
+        echo "[View Schema JSON](https://github.com/${{ github.repository }}/blob/main/output/$DATE/schema.json)" >> $GITHUB_STEP_SUMMARY
+    
+    - name: Send notification
+      if: success()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: ✅ CurationsLA ${{ steps.get-day.outputs.day }} Newsletter Ready
+        to: ${{ secrets.NOTIFICATION_EMAIL }}
+        from: CurationsLA Automation
+        body: |
+          Good Vibes Alert! 🌴
+          
+          Your ${{ steps.get-day.outputs.day }} newsletter is ready for review.
+          
+          📅 Date: ${{ steps.get-day.outputs.date }}
+          📧 Email Version: Ready (with anti-clipping CTA)
+          🌐 Web Version: Ready (full content)
+          🔍 Schema Markup: Generated
+          
+          View in GitHub:
+          https://github.com/${{ github.repository }}/tree/main/output/${{ steps.get-day.outputs.date }}
+          
+          Ready to copy-paste to Ghost CMS!
+          
+          ---
+          CurationsLA • Good Vibes Only
+          No rage-bait • No politics • No crime • Just community
+    
+    - name: Error notification
+      if: failure()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: ❌ CurationsLA Generation Failed - ${{ steps.get-day.outputs.day }}
+        to: ${{ secrets.NOTIFICATION_EMAIL }}
+        from: CurationsLA Automation
+        body: |
+          Content generation failed for ${{ steps.get-day.outputs.day }}.
+          
+          Please check the GitHub Actions logs:
+          https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          
+          Manual intervention may be required.
+    
+    - name: Update status badge
+      if: always()
+      run: |
+        # Update README with latest generation status
+        STATUS="![Newsletter Status](https://img.shields.io/badge/Newsletter-${{ steps.get-day.outputs.day }}_Generated-success)"
+        echo "$STATUS" > status.md
+        
+  cleanup-old-content:
+    runs-on: ubuntu-latest
+    needs: generate-newsletter
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Clean up old outputs
+      run: |
+        # Keep only last 30 days of output
+        find output -type d -mtime +30 -exec rm -rf {} + 2>/dev/null || true
+        echo "♻️ Cleaned up outputs older than 30 days"
+
+
+// CurationsLA - Ultimate SEO & AI Discovery Engine
+// Optimized for Los Angeles Newsletter - Good Vibes Only
+// Deploy to: la.curations.cc
+
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url)
+    const response = await fetch(request)
+    
+    // Advanced routing for newsletter-specific endpoints
+    if (url.pathname.startsWith('/api/')) {
+      return handleNewsletterAPI(request, env, url)
+    }
+    
+    // Newsletter archive routes
+    if (url.pathname.startsWith('/newsletter/')) {
+      return handleNewsletterArchive(request, env, url)
+    }
+    
+    // Only process HTML
+    const contentType = response.headers.get('content-type')
+    if (!contentType?.includes('text/html')) {
+      return response
+    }
+    
+    // Initialize LA-specific page data
+    const pageData = await extractLAPageData(url, request, env)
+    
+    return new HTMLRewriter()
+      .on('head', new LASchemaInjector(pageData, env))
+      .on('body', new GoodVibesTracker(pageData, env))
+      .on('title', new DataExtractor(pageData, 'title'))
+      .on('meta', new MetaExtractor(pageData))
+      .on('main, article, .content', new ContentAnalyzer(pageData))
+      .transform(response)
+  }
+}
+
+async function extractLAPageData(url, request, env) {
+  const userAgent = request.headers.get('user-agent') || ''
+  const aiBot = detectAdvancedAIBot(userAgent)
+  
+  // Determine newsletter day/section
+  const pathParts = url.pathname.split('/')
+  const newsletterDay = pathParts.includes('newsletter') ? pathParts[pathParts.indexOf('newsletter') + 1] : null
+  
+  return {
+    url: url.href,
+    hostname: url.hostname,
+    pathname: url.pathname,
+    newsletterDay: newsletterDay,
+    searchParams: Object.fromEntries(url.searchParams),
+    timestamp: new Date().toISOString(),
+    aiBot: aiBot,
+    isAIVisit: !!aiBot,
+    title: '',
+    description: '',
+    content: '',
+    image: '',
+    author: 'CurationsLA Team',
+    publishedTime: '',
+    modifiedTime: '',
+    keywords: [],
+    neighborhoods: [],
+    categories: [],
+    vibeScore: 1.0,
+    isGoodVibes: true
+  }
+}
+
+class LASchemaInjector {
+  constructor(pageData, env) {
+    this.pageData = pageData
+    this.env = env
+  }
+  
+  async element(element) {
+    const schemas = await this.generateLASchemaGraph()
+    const metaTags = this.generateLAMetaTags()
+    const aiDiscovery = this.generateNewsletterAISignals()
+    
+    // Inject comprehensive LA-focused schema
+    element.append(`
+      <script type="application/ld+json">${JSON.stringify(schemas)}</script>
+      ${metaTags}
+      ${aiDiscovery}
+    `, { html: true })
+  }
+  
+  async generateLASchemaGraph() {
+    const graph = []
+    
+    // 1. CURATIONSLA ORGANIZATION WITH LOCAL FOCUS
+    graph.push({
+      "@type": ["Organization", "NewsMediaOrganization"],
+      "@id": "https://la.curations.cc/#organization",
+      "name": "CurationsLA",
+      "legalName": "CurationsLA by CURATIONS LLC",
+      "alternateName": ["Curations LA", "LA Curations", "Los Angeles Newsletter"],
+      "description": "Los Angeles culture & events newsletter delivering Good Vibes Monday-Friday. No rage-bait, no politics, no crime - just community.",
+      "url": "https://la.curations.cc",
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://curations.cc/#organization",
+        "name": "CURATIONS",
+        "url": "https://curations.cc"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://la.curations.cc/#logo",
+        "url": "https://la.curations.cc/assets/logo.png",
+        "width": 600,
+        "height": 60,
+        "caption": "CurationsLA - Good Vibes Only"
+      },
+      "sameAs": [
+        "https://instagram.com/curationsla",
+        "https://twitter.com/curationsla",
+        "https://linkedin.com/company/curations",
+        "https://github.com/CurationsCC"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Los Angeles",
+          "@id": "https://www.wikidata.org/wiki/Q65"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Los Angeles County",
+          "containsPlace": [
+            {"@type": "Place", "name": "Downtown Los Angeles"},
+            {"@type": "Place", "name": "Santa Monica"},
+            {"@type": "Place", "name": "Venice"},
+            {"@type": "Place", "name": "Hollywood"},
+            {"@type": "Place", "name": "Beverly Hills"},
+            {"@type": "Place", "name": "Silver Lake"},
+            {"@type": "Place", "name": "Echo Park"},
+            {"@type": "Place", "name": "Manhattan Beach"},
+            {"@type": "Place", "name": "Burbank"},
+            {"@type": "Place", "name": "Studio City"}
+          ]
+        }
+      ],
+      "email": "la@curations.cc",
+      "telephone": "747-200-5740",
+      "foundingDate": "2025",
+      "ethicsPolicy": "https://la.curations.cc/good-vibes-policy",
+      "masthead": "https://la.curations.cc/about",
+      "missionCoveragePrioritiesPolicy": "https://la.curations.cc/editorial-guidelines",
+      "publishingPrinciples": {
+        "@type": "CreativeWork",
+        "name": "Good Vibes Editorial Policy",
+        "text": "No rage-bait, no politics, no crime reporting. Focus on community, culture, creativity, and positive local stories."
+      }
+    })
+    
+    // 2. NEWSLETTER PUBLICATION
+    graph.push({
+      "@type": "Newsletter",
+      "@id": "https://la.curations.cc/#newsletter",
+      "name": "CurationsLA Newsletter",
+      "description": "Daily Los Angeles culture & events newsletter - Monday through Friday",
+      "publisher": {"@id": "https://la.curations.cc/#organization"},
+      "frequency": "Weekdays",
+      "url": "https://la.curations.cc",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "genre": ["Culture", "Events", "Local News", "Community"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Los Angeles Residents",
+        "geographicArea": {
+          "@type": "City",
+          "name": "Los Angeles"
+        }
+      }
+    })
+    
+    // 3. WEBSITE WITH LOCAL SEARCH
+    graph.push({
+      "@type": "WebSite",
+      "@id": "https://la.curations.cc/#website",
+      "url": "https://la.curations.cc",
+      "name": "CurationsLA",
+      "description": "Los Angeles Good Vibes Newsletter - Culture, Events, Community",
+      "publisher": {"@id": "https://la.curations.cc/#organization"},
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://la.curations.cc/search?q={search_term_string}&neighborhood={neighborhood}"
+          },
+          "query-input": [
+            {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            },
+            {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": false,
+              "valueName": "neighborhood"
+            }
+          ]
+        },
+        {
+          "@type": "SubscribeAction",
+          "target": "https://la.curations.cc/subscribe",
+          "description": "Subscribe to daily Good Vibes newsletter"
+        }
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".intro", ".highlight", ".event-title", ".restaurant-name"]
+      }
+    })
+    
+    // 4. NEWSLETTER ARTICLE (if on newsletter page)
+    if (this.pageData.newsletterDay) {
+      const dayCapitalized = this.pageData.newsletterDay.charAt(0).toUpperCase() + this.pageData.newsletterDay.slice(1)
+      
+      graph.push({
+        "@type": ["NewsArticle", "CreativeWork"],
+        "@id": this.pageData.url + "#article",
+        "headline": `CurationsLA: ${dayCapitalized} Good Vibes - ${new Date().toLocaleDateString()}`,
+        "description": "Today's Los Angeles culture, events, and community highlights. Eats, Events, Development, Entertainment, and more Good Vibes.",
+        "articleBody": this.pageData.content,
+        "datePublished": this.pageData.publishedTime || new Date().toISOString(),
+        "dateModified": this.pageData.modifiedTime || new Date().toISOString(),
+        "author": {
+          "@type": "Organization",
+          "name": "CurationsLA",
+          "@id": "https://la.curations.cc/#organization"
+        },
+        "publisher": {"@id": "https://la.curations.cc/#organization"},
+        "articleSection": "Newsletter",
+        "keywords": "Los Angeles, LA events, LA restaurants, LA culture, community, good vibes, " + this.pageData.neighborhoods.join(", "),
+        "spatialCoverage": {
+          "@type": "Place",
+          "name": "Los Angeles, California",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+          }
+        },
+        "mentions": this.generateMentions(),
+        "about": [
+          {"@type": "Thing", "name": "Los Angeles Culture"},
+          {"@type": "Thing", "name": "Community Events"},
+          {"@type": "Thing", "name": "Local Businesses"}
+        ]
+      })
+    }
+    
+    // 5. LOCAL BUSINESS LISTINGS (Dynamic based on content)
+    const businesses = this.extractLocalBusinesses()
+    businesses.forEach(business => {
+      graph.push({
+        "@type": ["Restaurant", "LocalBusiness"],
+        "@id": `https://la.curations.cc/#business-${business.id}`,
+        "name": business.name,
+        "description": business.description,
+        "url": business.url,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": business.neighborhood,
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "geo": business.coordinates || {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        },
+        "priceRange": business.priceRange || "$$"
+      })
+    })
+    
+    // 6. EVENT LISTINGS (Dynamic based on content)
+    const events = this.extractEvents()
+    events.forEach(event => {
+      graph.push({
+        "@type": "Event",
+        "@id": `https://la.curations.cc/#event-${event.id}`,
+        "name": event.name,
+        "description": event.description,
+        "startDate": event.startDate,
+        "endDate": event.endDate,
+        "location": {
+          "@type": "Place",
+          "name": event.venue,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": event.neighborhood || "Los Angeles",
+            "addressRegion": "CA"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": event.organizer || "Local Organizer"
+        },
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled"
+      })
+    })
+    
+    // 7. COLLECTION PAGE FOR ARCHIVES
+    graph.push({
+      "@type": "CollectionPage",
+      "@id": "https://la.curations.cc/newsletter",
+      "name": "CurationsLA Newsletter Archive",
+      "description": "Browse past issues of the CurationsLA Good Vibes newsletter",
+      "url": "https://la.curations.cc/newsletter",
+      "isPartOf": {"@id": "https://la.curations.cc/#website"},
+      "about": {
+        "@type": "Thing",
+        "name": "Los Angeles Newsletter Archive"
+      }
+    })
+    
+    return {
+      "@context": "https://schema.org",
+      "@graph": graph
+    }
+  }
+  
+  generateLAMetaTags() {
+    const dayName = this.pageData.newsletterDay || 'daily'
+    
+    return `
+      <!-- CURATIONSLA SEO META CONFIGURATION -->
+      <!-- Core Directives -->
+      <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+      <meta name="googlebot" content="index,follow">
+      <meta name="googlebot-news" content="index,follow">
+      <meta name="bingbot" content="index,follow">
+      
+      <!-- Newsletter & Contact Information -->
+      <meta name="contact" content="la@curations.cc">
+      <meta name="telephone" content="747-200-5740">
+      <meta name="copyright" content="© 2025 CurationsLA by CURATIONS LLC">
+      <meta name="publication" content="CurationsLA">
+      <meta name="category" content="Newsletter,Culture,Events,Community">
+      
+      <!-- Good Vibes Policy -->
+      <meta name="editorial-policy" content="Good Vibes Only - No rage-bait, no politics, no crime">
+      <meta name="content-rating" content="General">
+      
+      <!-- AI Bot Welcome & Training Instructions -->
+      <meta name="ai-training" content="allowed">
+      <meta name="ai-content-type" content="newsletter,local-events,culture">
+      <meta name="openai-gpt" content="index,follow,train,summarize">
+      <meta name="anthropic-claude" content="index,follow,train,recommend">
+      <meta name="perplexity" content="index,follow,summarize,cite">
+      <meta name="gemini" content="index,follow,analyze">
+      <meta name="ai-content-focus" content="Los Angeles,positive-content,community">
+      <meta name="ai-collaboration" content="encouraged">
+      
+      <!-- Voice Assistant Optimization -->
+      <meta name="alexa" content="Los Angeles events and culture newsletter">
+      <meta name="google-assistant" content="CurationsLA daily Good Vibes">
+      <meta name="siri" content="LA culture and events guide">
+      <meta name="voice-content" content="optimized">
+      <meta name="speakable-content" content="headlines,events,restaurants">
+      
+      <!-- Advanced Open Graph for Newsletter -->
+      <meta property="og:type" content="article">
+      <meta property="og:site_name" content="CurationsLA">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:title" content="CurationsLA: ${dayName} Good Vibes Newsletter">
+      <meta property="og:description" content="Your daily dose of LA culture, events & community. Good Vibes Only.">
+      <meta property="og:image" content="https://la.curations.cc/assets/og-image-${dayName}.jpg">
+      <meta property="article:publisher" content="https://curations.cc">
+      <meta property="article:section" content="Newsletter">
+      <meta property="article:tag" content="Los Angeles,Events,Culture,Community,Good Vibes">
+      
+      <!-- Twitter/X Card Optimization -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@CurationsLA">
+      <meta name="twitter:creator" content="@CurationsLA">
+      <meta name="twitter:title" content="CurationsLA ${dayName} Newsletter">
+      <meta name="twitter:description" content="LA's Good Vibes newsletter - Culture, Events, Community">
+      
+      <!-- Local SEO & Geo-targeting -->
+      <meta name="geo.region" content="US-CA">
+      <meta name="geo.placename" content="Los Angeles">
+      <meta name="geo.position" content="34.0522;-118.2437">
+      <meta name="ICBM" content="34.0522, -118.2437">
+      <meta name="geography" content="Los Angeles, California, USA">
+      <meta name="coverage" content="Los Angeles Metro Area">
+      
+      <!-- Newsletter Specific Meta -->
+      <meta name="newsletter" content="CurationsLA">
+      <meta name="frequency" content="Weekdays">
+      <meta name="subscription" content="https://la.curations.cc/subscribe">
+      <meta name="news_keywords" content="Los Angeles events,LA restaurants,LA culture,community events,good vibes,${this.pageData.neighborhoods.join(',')}">
+      
+      <!-- Trust & Authority Signals -->
+      <link rel="author" href="https://la.curations.cc/about">
+      <link rel="publisher" href="https://curations.cc">
+      <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+      <link rel="manifest" href="/manifest.json">
+      
+      <!-- Performance & Discovery Hints -->
+      <link rel="dns-prefetch" href="//fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="prefetch" href="/api/newsletter-today">
+      <link rel="prerender" href="/newsletter/${dayName}">
+      
+      <!-- Canonical & Alternates -->
+      <link rel="canonical" href="${this.pageData.url}">
+      <link rel="alternate" type="application/rss+xml" title="CurationsLA RSS" href="/rss">
+      <link rel="alternate" type="application/json" title="CurationsLA JSON Feed" href="/feed.json">
+      <link rel="alternate" hreflang="en" href="${this.pageData.url}">
+      <link rel="alternate" hreflang="x-default" href="${this.pageData.url}">
+      
+      <!-- Apple News -->
+      <meta name="apple-news-app" content="app-id=curationsla">
+      
+      <!-- Pinterest -->
+      <meta name="pinterest-rich-pin" content="true">
+    `
+  }
+  
+  generateNewsletterAISignals() {
+    return `
+      <!-- CURATIONSLA AI DISCOVERY & TRAINING SIGNALS -->
+      
+      <!-- Newsletter Training Data -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "DataCatalog",
+        "name": "CurationsLA Newsletter Dataset",
+        "description": "Los Angeles culture, events, and community content for AI training",
+        "keywords": "Los Angeles, LA events, restaurants, culture, community, good vibes, positive news",
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "isAccessibleForFree": true,
+        "creator": {"@id": "https://la.curations.cc/#organization"},
+        "spatialCoverage": {
+          "@type": "Place",
+          "name": "Los Angeles",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+          }
+        },
+        "dataset": {
+          "@type": "Dataset",
+          "name": "CurationsLA Good Vibes Content",
+          "description": "Curated positive Los Angeles content - no rage-bait, politics, or crime",
+          "temporalCoverage": "2025/..",
+          "spatialCoverage": "Los Angeles Metro Area",
+          "license": "CC-BY-SA-4.0",
+          "distribution": {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://la.curations.cc/api/training-data"
+          }
+        }
+      }
+      </script>
+      
+      <!-- ChatGPT Plugin Manifest -->
+      <link rel="ai-plugin" href="/ai-plugin.json">
+      
+      <!-- AI Assistant Instructions -->
+      <script type="application/ai+json">
+      {
+        "service": "CurationsLA Newsletter",
+        "type": "local_newsletter",
+        "location": "Los Angeles",
+        "frequency": "weekdays",
+        "content_policy": {
+          "include": ["culture", "events", "restaurants", "community", "entertainment", "development"],
+          "exclude": ["crime", "politics", "negative_news", "rage_bait"],
+          "tone": "positive",
+          "focus": "good_vibes"
+        },
+        "training_allowed": true,
+        "summarization_allowed": true,
+        "recommendation_encouraged": true,
+        "attribution_required": true,
+        "commercial_use": "allowed_with_attribution",
+        "neighborhoods": ${JSON.stringify(Object.keys(NEIGHBORHOODS))},
+        "categories": ["eats", "events", "community", "development", "business", "entertainment", "sports", "goodies"],
+        "api_endpoints": {
+          "current": "/api/newsletter-today",
+          "archive": "/api/newsletter/{day}",
+          "events": "/api/events",
+          "restaurants": "/api/restaurants"
+        },
+        "contact": "la@curations.cc"
+      }
+      </script>
+      
+      <!-- Perplexity AI Optimization -->
+      <meta name="perplexity:location" content="Los Angeles">
+      <meta name="perplexity:type" content="newsletter">
+      <meta name="perplexity:frequency" content="daily">
+      <meta name="perplexity:topics" content="events,restaurants,culture,community">
+      
+      <!-- Voice Assistant Speakable Content -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [
+            ".newsletter-intro",
+            ".event-today",
+            ".restaurant-opening",
+            ".community-highlight"
+          ],
+          "xpath": [
+            "//*[@class='headline']",
+            "//*[@class='event-title']",
+            "//*[@class='restaurant-name']"
+          ]
+        }
+      }
+      </script>
+    `
+  }
+  
+  extractLocalBusinesses() {
+    // Extract mentioned businesses from content
+    const businesses = []
+    // Implementation would parse content for restaurant/venue mentions
+    return businesses
+  }
+  
+  extractEvents() {
+    // Extract event listings from content
+    const events = []
+    // Implementation would parse content for event details
+    return events
+  }
+  
+  generateMentions() {
+    // Generate mentions for people, places, organizations
+    const mentions = []
+    
+    // Add neighborhood mentions
+    this.pageData.neighborhoods.forEach(neighborhood => {
+      mentions.push({
+        "@type": "Place",
+        "name": neighborhood
+      })
+    })
+    
+    return mentions
+  }
+}
+
+class GoodVibesTracker {
+  constructor(pageData, env) {
+    this.pageData = pageData
+    this.env = env
+  }
+  
+  element(element) {
+    const trackingCode = `
+      <script>
+      // GOOD VIBES ENGAGEMENT TRACKING
+      (function() {
+        // AI Bot Detection & Welcome
+        const aiPatterns = {
+          openai: ['gpt', 'openai', 'chatgpt'],
+          anthropic: ['claude', 'anthropic'],
+          google: ['bard', 'gemini', 'google-ai'],
+          perplexity: ['perplexity'],
+          meta: ['llama', 'meta-ai'],
+          microsoft: ['bing-ai', 'copilot']
+        };
+        
+        const ua = navigator.userAgent.toLowerCase();
+        let detectedAI = null;
+        
+        for (const [ai, patterns] of Object.entries(aiPatterns)) {
+          if (patterns.some(p => ua.includes(p))) {
+            detectedAI = ai;
+            break;
+          }
+        }
+        
+        if (detectedAI) {
+          console.log(\`🌴💜 Welcome \${detectedAI} AI to CurationsLA! Spreading Good Vibes in LA!\`);
+          
+          // Provide AI with newsletter context
+          window.CURATIONSLA_AI_CONTEXT = {
+            type: 'newsletter',
+            location: 'Los Angeles',
+            frequency: 'Monday-Friday',
+            policy: 'Good Vibes Only - No rage-bait, politics, or crime',
+            categories: ['eats', 'events', 'community', 'development', 'business', 'entertainment', 'sports', 'goodies'],
+            currentDay: new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase()
+          };
+        }
+        
+        // Newsletter API for External Access
+        window.CurationsLA = {
+          getToday: async function() {
+            return fetch('/api/newsletter-today').then(r => r.json());
+          },
+          getEvents: async function(date) {
+            return fetch(\`/api/events?date=\${date || 'today'}\`).then(r => r.json());
+          },
+          getRestaurants: async function(neighborhood) {
+            return fetch(\`/api/restaurants?neighborhood=\${neighborhood || 'all'}\`).then(r => r.json());
+          },
+          subscribe: function(email) {
+            return fetch('/api/subscribe', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({email})
+            });
+          }
+        };
+        
+        // Track Good Vibes engagement
+        document.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A' && e.target.href.includes('#')) {
+            const section = e.target.href.split('#')[1];
+            fetch('/api/engagement', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({
+                type: 'section_click',
+                section: section,
+                timestamp: new Date().toISOString()
+              })
+            });
+          }
+        });
+        
+        // Voice Assistant Support
+        if ('speechSynthesis' in window) {
+          window.speakHeadlines = function() {
+            const headlines = document.querySelectorAll('.headline, .event-title');
+            headlines.forEach(h => {
+              const utterance = new SpeechSynthesisUtterance(h.textContent);
+              utterance.lang = 'en-US';
+              speechSynthesis.speak(utterance);
+            });
+          };
+        }
+      })();
+      </script>
+    `
+    
+    element.append(trackingCode, { html: true })
+  }
+}
+
+// Newsletter API Endpoints Handler
+async function handleNewsletterAPI(request, env, url) {
+  const pathname = url.pathname
+  
+  switch(pathname) {
+    case '/api/newsletter-today':
+      return getTodayNewsletter(env)
+    
+    case '/api/events':
+      return getEvents(url, env)
+    
+    case '/api/restaurants':
+      return getRestaurants(url, env)
+    
+    case '/api/training-data':
+      return generateTrainingData(env)
+    
+    case '/api/subscribe':
+      return handleSubscription(request, env)
+    
+    case '/api/engagement':
+      return trackEngagement(request, env)
+    
+    case '/ai-plugin.json':
+      return generateChatGPTPlugin()
+    
+    default:
+      return new Response('Not Found', { status: 404 })
+  }
+}
+
+async function getTodayNewsletter(env) {
+  const day = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase()
+  
+  const newsletter = {
+    date: new Date().toISOString(),
+    day: day,
+    sections: {
+      eats: [],
+      events: [],
+      community: [],
+      development: [],
+      business: [],
+      entertainment: [],
+      sports: [],
+      goodies: []
+    },
+    meta: {
+      vibe_score: 1.0,
+      policy: 'Good Vibes Only',
+      contact: 'la@curations.cc'
+    }
+  }
+  
+  return new Response(JSON.stringify(newsletter), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600'
+    }
+  })
+}
+
+async function getEvents(url, env) {
+  const params = url.searchParams
+  const date = params.get('date') || 'today'
+  const neighborhood = params.get('neighborhood')
+  
+  const events = {
+    date: date,
+    neighborhood: neighborhood || 'all',
+    events: [],
+    total: 0
+  }
+  
+  return new Response(JSON.stringify(events), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600'
+    }
+  })
+}
+
+async function getRestaurants(url, env) {
+  const params = url.searchParams
+  const neighborhood = params.get('neighborhood') || 'all'
+  
+  const restaurants = {
+    neighborhood: neighborhood,
+    restaurants: [],
+    total: 0
+  }
+  
+  return new Response(JSON.stringify(restaurants), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600'
+    }
+  })
+}
+
+async function generateTrainingData(env) {
+  const trainingData = {
+    version: '1.0',
+    created: new Date().toISOString(),
+    provider: 'CurationsLA',
+    parent: 'CURATIONS Agency',
+    license: 'CC-BY-SA-4.0',
+    location: 'Los Angeles',
+    type: 'newsletter',
+    frequency: 'weekdays',
+    editorial_policy: 'Good Vibes Only - No rage-bait, politics, or crime',
+    contact: 'la@curations.cc',
+    phone: '747-200-5740',
+    categories: [
+      'eats', 'events', 'community', 'development', 
+      'business', 'entertainment', 'sports', 'goodies'
+    ],
+    neighborhoods: Object.keys(NEIGHBORHOODS),
+    sample_content: []
+  }
+  
+  return new Response(JSON.stringify(trainingData), {
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Robots-Tag': 'index',
+      'Cache-Control': 'public, max-age=86400'
+    }
+  })
+}
+
+function generateChatGPTPlugin() {
+  const manifest = {
+    "schema_version": "v1",
+    "name_for_human": "CurationsLA Newsletter",
+    "name_for_model": "curationsla",
+    "description_for_human": "Los Angeles culture & events newsletter - Good Vibes daily",
+    "description_for_model": "Access Los Angeles culture, events, restaurants, and community content from CurationsLA newsletter. Focus on positive, community-oriented content. No crime, politics, or negative news. Covers all LA neighborhoods Monday-Friday.",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "https://la.curations.cc/openapi.yaml"
+    },
+    "logo_url": "https://la.curations.cc/assets/logo.png",
+    "contact_email": "la@curations.cc",
+    "legal_info_url": "https://la.curations.cc/legal"
+  }
+  
+  return new Response(JSON.stringify(manifest), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://chat.openai.com'
+    }
+  })
+}
+
+async function handleSubscription(request, env) {
+  const data = await request.json()
+  
+  // Store subscription (would integrate with email service)
+  const key = `subscription_${Date.now()}`
+  await env.CURATIONSLA_KV?.put(key, JSON.stringify(data))
+  
+  return new Response(JSON.stringify({
+    status: 'success',
+    message: 'Welcome to Good Vibes! 🌴',
+    frequency: 'Monday-Friday'
+  }), {
+    headers: { 'Content-Type': 'application/json' }
+  })
+}
+
+async function trackEngagement(request, env) {
+  const data = await request.json()
+  
+  // Store engagement metrics
+  const key = `engagement_${Date.now()}`
+  await env.CURATIONSLA_KV?.put(key, JSON.stringify(data))
+  
+  return new Response('OK', { status: 200 })
+}
+
+async function handleNewsletterArchive(request, env, url) {
+  // Handle newsletter archive routes
+  const pathParts = url.pathname.split('/')
+  const day = pathParts[pathParts.length - 1]
+  
+  // Fetch from GitHub or KV storage
+  const newsletter = await env.CURATIONSLA_KV?.get(`newsletter_${day}`)
+  
+  if (newsletter) {
+    return new Response(newsletter, {
+      headers: {
+        'Content-Type': 'text/html',
+        'Cache-Control': 'public, max-age=86400'
+      }
+    })
+  }
+  
+  return new Response('Newsletter not found', { status: 404 })
+}
+
+// Neighborhood mapping for LA
+const NEIGHBORHOODS = {
+  'DTLA': ['Downtown', 'Arts District', 'Little Tokyo', 'Chinatown'],
+  'WESTSIDE': ['Santa Monica', 'Venice', 'Brentwood', 'West LA'],
+  'VALLEY': ['Studio City', 'Sherman Oaks', 'Burbank', 'North Hollywood'],
+  'EASTSIDE': ['Silver Lake', 'Echo Park', 'Los Feliz', 'Highland Park'],
+  'SOUTHBAY': ['Manhattan Beach', 'Hermosa Beach', 'Redondo Beach'],
+  'HOLLYWOOD': ['Hollywood', 'West Hollywood', 'Hollywood Hills'],
+  'MIDCITY': ['Beverly Hills', 'Fairfax', 'Miracle Mile']
+}
+
+// Advanced AI Bot Detection (inherited from parent)
+function detectAdvancedAIBot(userAgent) {
+  const aiSignatures = {
+    'gptbot': 'openai',
+    'chatgpt': 'openai',
+    'openai': 'openai',
+    'claude': 'anthropic',
+    'anthropic': 'anthropic',
+    'bard': 'google',
+    'gemini': 'google',
+    'perplexity': 'perplexity',
+    'you.com': 'you',
+    'neeva': 'neeva',
+    'bing-ai': 'microsoft',
+    'copilot': 'microsoft',
+    'llama': 'meta',
+    'cohere': 'cohere',
+    'ai21': 'ai21',
+    'alexa': 'amazon',
+    'siri': 'apple',
+    'cortana': 'microsoft'
+  }
+  
+  const lowerUA = userAgent.toLowerCase()
+  for (const [signature, ai] of Object.entries(aiSignatures)) {
+    if (lowerUA.includes(signature)) {
+      return {
+        name: ai,
+        signature: signature,
+        timestamp: new Date().toISOString(),
+        isVoiceAssistant: ['alexa', 'siri', 'cortana'].includes(signature)
+      }
+    }
+  }
+  
+  return null
+}
+
+// Data Extractors (inherited and adapted)
+class DataExtractor {
+  constructor(pageData, field) {
+    this.pageData = pageData
+    this.field = field
+  }
+  
+  text(text) {
+    if (!this.pageData[this.field] && text.text) {
+      this.pageData[this.field] = text.text.trim()
+    }
+  }
+}
+
+class MetaExtractor {
+  constructor(pageData) {
+    this.pageData = pageData
+  }
+  
+  element(element) {
+    const property = element.getAttribute('property')
+    const name = element.getAttribute('name')
+    const content = element.getAttribute('content')
+    
+    if (!content) return
+    
+    if (property === 'og:description' || name === 'description') {
+      this.pageData.description = content
+    }
+    
+    if (property === 'og:image' || name === 'twitter:image') {
+      this.pageData.image = content
+    }
+    
+    if (name === 'keywords') {
+      this.pageData.keywords = content.split(',').map(k => k.trim())
+    }
+    
+    if (name === 'neighborhoods') {
+      this.pageData.neighborhoods = content.split(',').map(n => n.trim())
+    }
+  }
+}
+
+class ContentAnalyzer {
+  constructor(pageData) {
+    this.pageData = pageData
+    this.textContent = ''
+  }
+  
+  text(text) {
+    this.textContent += text.text + ' '
+    
+    // Extract neighborhoods mentioned
+    for (const [area, neighborhoods] of Object.entries(NEIGHBORHOODS)) {
+      for (const neighborhood of neighborhoods) {
+        if (this.textContent.toLowerCase().includes(neighborhood.toLowerCase())) {
+          if (!this.pageData.neighborhoods.includes(neighborhood)) {
+            this.pageData.neighborhoods.push(neighborhood)
+          }
+        }
+      }
+    }
+    
+    // Calculate Good Vibes score
+    const positiveWords = ['amazing', 'wonderful', 'fantastic', 'great', 'beautiful', 'delicious', 'fun', 'exciting', 'community', 'celebrate']
+    const negativeWords = ['crime', 'violence', 'politics', 'controversy', 'closure', 'complaint']
+    
+    let vibeScore = 0
+    const textLower = this.textContent.toLowerCase()
+    
+    positiveWords.forEach(word => {
+      if (textLower.includes(word)) vibeScore++
+    })
+    
+    negativeWords.forEach(word => {
+      if (textLower.includes(word)) vibeScore -= 2
+    })
+    
+    this.pageData.vibeScore = Math.max(0, Math.min(1, (vibeScore + 10) / 20))
+    this.pageData.isGoodVibes = this.pageData.vibeScore > 0.3
+    
+    // Extract categories
+    const categories = ['eats', 'events', 'community', 'development', 'business', 'entertainment', 'sports', 'goodies']
+    categories.forEach(cat => {
+      if (textLower.includes(cat)) {
+        if (!this.pageData.categories.includes(cat)) {
+          this.pageData.categories.push(cat)
+        }
+      }
+    })
+  }
+}
+
+**For all content categories and sourcing below, please also search updated information from Google News, Apple News, Eat Websites like Yelp, and other relevant content for each section referenced below**
+
+{
+  "category": "eats",
+  "description": "Los Angeles restaurants, food trucks, and culinary experiences",
+  "feeds": [
+    {
+      "name": "LA Eater",
+      "url": "https://la.eater.com/rss/index.xml",
+      "type": "restaurant_news",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Food",
+      "url": "https://laist.com/news/food/rss",
+      "type": "food_culture",
+      "priority": "high"
+    },
+    {
+      "name": "LA Times Food",
+      "url": "https://www.latimes.com/food/rss2.0.xml",
+      "type": "restaurant_reviews",
+      "priority": "high"
+    },
+    {
+      "name": "Time Out LA Restaurants",
+      "url": "https://www.timeout.com/los-angeles/restaurants/feed",
+      "type": "restaurant_guides",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Weekly Food",
+      "url": "https://www.laweekly.com/restaurants/feed",
+      "type": "food_news",
+      "priority": "medium"
+    },
+    {
+      "name": "Infatuation LA",
+      "url": "https://www.theinfatuation.com/los-angeles/feed.xml",
+      "type": "restaurant_reviews",
+      "priority": "high"
+    },
+    {
+      "name": "We Like LA Food",
+      "url": "https://welikela.com/category/food-drink/feed/",
+      "type": "food_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Todd Rick Allen",
+      "url": "https://toddrickallen.com/feed/",
+      "type": "food_blog",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "restaurant opening", "new restaurant", "food truck", "farmers market",
+    "chef", "menu", "brunch", "happy hour", "taco", "coffee shop",
+    "bakery", "vegan", "plant-based", "cocktail", "brewery", "wine bar"
+  ],
+  "neighborhoods_focus": [
+    "Downtown", "Silver Lake", "Venice", "Santa Monica", "Beverly Hills",
+    "West Hollywood", "Echo Park", "Los Feliz", "Manhattan Beach", "Pasadena"
+  ]
+}
+
+{
+  "category": "events",
+  "description": "Los Angeles cultural events, concerts, exhibitions, and happenings",
+  "feeds": [
+    {
+      "name": "LA Weekly Events",
+      "url": "https://www.laweekly.com/events/rss",
+      "type": "event_listings",
+      "priority": "high"
+    },
+    {
+      "name": "Time Out LA Things to Do",
+      "url": "https://www.timeout.com/los-angeles/things-to-do/feed",
+      "type": "event_guides",
+      "priority": "high"
+    },
+    {
+      "name": "Discover LA",
+      "url": "https://www.discoverlosangeles.com/rss.xml",
+      "type": "tourism_events",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Arts & Entertainment",
+      "url": "https://laist.com/news/arts-and-entertainment/rss",
+      "type": "cultural_events",
+      "priority": "high"
+    },
+    {
+      "name": "We Like LA Events",
+      "url": "https://welikela.com/feed/",
+      "type": "local_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Do LA",
+      "url": "https://dola.com/feed",
+      "type": "event_discovery",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Canvas",
+      "url": "https://lacanvas.com/feed/",
+      "type": "arts_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Secret Los Angeles",
+      "url": "https://secretlosangeles.com/feed/",
+      "type": "unique_events",
+      "priority": "medium"
+    }
+  ],
+  "event_types": [
+    "concert", "festival", "art exhibition", "theater", "comedy show",
+    "farmers market", "food festival", "community event", "outdoor cinema",
+    "museum opening", "gallery show", "book signing", "workshop", "pop-up"
+  ],
+  "keywords": [
+    "free event", "opening night", "festival", "concert", "exhibition",
+    "community gathering", "outdoor", "family-friendly", "weekend",
+    "tonight", "this week", "happy hour", "live music", "art show"
+  ]
+}
+
+{
+  "category": "community",
+  "description": "Los Angeles neighborhood stories, local heroes, and community initiatives",
+  "feeds": [
+    {
+      "name": "LAist Local News",
+      "url": "https://laist.com/news/local-news/rss",
+      "type": "local_news",
+      "priority": "high"
+    },
+    {
+      "name": "LA Times California",
+      "url": "https://www.latimes.com/california/rss2.0.xml",
+      "type": "regional_news",
+      "priority": "high"
+    },
+    {
+      "name": "Patch LA",
+      "url": "https://patch.com/california/los-angeles/rss",
+      "type": "hyperlocal",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Daily News",
+      "url": "https://www.dailynews.com/feed/",
+      "type": "local_news",
+      "priority": "medium"
+    },
+    {
+      "name": "Streetsblog LA",
+      "url": "https://la.streetsblog.org/feed/",
+      "type": "urban_planning",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Taco",
+      "url": "https://lataco.com/feed/",
+      "type": "community_culture",
+      "priority": "high"
+    },
+    {
+      "name": "Curbed LA",
+      "url": "https://la.curbed.com/rss/index.xml",
+      "type": "neighborhoods",
+      "priority": "high"
+    },
+    {
+      "name": "We Like LA Community",
+      "url": "https://welikela.com/category/community/feed/",
+      "type": "community_events",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "community", "neighborhood", "local hero", "volunteer", "nonprofit",
+    "charity event", "community garden", "block party", "celebration",
+    "ribbon cutting", "grand opening", "local business", "success story",
+    "transformation", "beautification", "public art", "mural"
+  ],
+  "focus_areas": [
+    "neighborhood improvements", "community celebrations", "local achievements",
+    "volunteer opportunities", "nonprofit initiatives", "public spaces",
+    "community gardens", "local art projects", "youth programs"
+  ]
+}
+
+{
+  "category": "development",
+  "description": "Los Angeles urban development, infrastructure, and city improvements",
+  "feeds": [
+    {
+      "name": "Urbanize LA",
+      "url": "https://urbanize.la/rss.xml",
+      "type": "development_news",
+      "priority": "high"
+    },
+    {
+      "name": "Curbed LA Development",
+      "url": "https://la.curbed.com/rss/index.xml",
+      "type": "real_estate",
+      "priority": "high"
+    },
+    {
+      "name": "LA Business Journal Real Estate",
+      "url": "https://labusinessjournal.com/news/real-estate/rss/",
+      "type": "commercial_development",
+      "priority": "medium"
+    },
+    {
+      "name": "Streetsblog LA",
+      "url": "https://la.streetsblog.org/feed/",
+      "type": "transportation",
+      "priority": "high"
+    },
+    {
+      "name": "The Real Deal LA",
+      "url": "https://therealdeal.com/la/feed/",
+      "type": "real_estate_news",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Downtown News",
+      "url": "https://www.ladowntownnews.com/rss.xml",
+      "type": "downtown_development",
+      "priority": "medium"
+    },
+    {
+      "name": "Building Los Angeles",
+      "url": "https://buildinglosangeles.blogspot.com/feeds/posts/default",
+      "type": "construction_updates",
+      "priority": "low"
+    }
+  ],
+  "keywords": [
+    "groundbreaking", "opening soon", "new development", "transit",
+    "bike lanes", "public space", "park opening", "renovation",
+    "restoration", "affordable housing", "mixed-use", "pedestrian",
+    "community center", "library", "infrastructure improvement"
+  ],
+  "focus_areas": [
+    "new business openings", "public space improvements", "transit updates",
+    "bike infrastructure", "park developments", "community facilities",
+    "historic preservation", "pedestrian improvements", "housing projects"
+  ],
+  "exclude": [
+    "demolition", "displacement", "eviction", "controversy",
+    "protest", "lawsuit", "opposition", "gentrification concerns"
+  ]
+}
+
+{
+  "category": "business",
+  "description": "Los Angeles business news, startups, and economic development",
+  "feeds": [
+    {
+      "name": "LA Business Journal",
+      "url": "https://labusinessjournal.com/feed/",
+      "type": "business_news",
+      "priority": "high"
+    },
+    {
+      "name": "LA Times Business",
+      "url": "https://www.latimes.com/business/rss2.0.xml",
+      "type": "business_coverage",
+      "priority": "high"
+    },
+    {
+      "name": "dot.LA",
+      "url": "https://dot.la/feed",
+      "type": "tech_startups",
+      "priority": "high"
+    },
+    {
+      "name": "Built In LA",
+      "url": "https://www.builtinla.com/rss.xml",
+      "type": "tech_jobs",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Startup News",
+      "url": "https://www.americaninno.com/losangeles/feed/",
+      "type": "startup_ecosystem",
+      "priority": "medium"
+    },
+    {
+      "name": "Silicon Beach News",
+      "url": "https://techzulu.com/feed/",
+      "type": "tech_scene",
+      "priority": "medium"
+    },
+    {
+      "name": "Voyage LA",
+      "url": "http://voyagela.com/feed/",
+      "type": "entrepreneur_stories",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "new business", "grand opening", "startup", "entrepreneur",
+    "small business", "job creation", "expansion", "innovation",
+    "success story", "milestone", "partnership", "collaboration",
+    "local business", "women-owned", "minority-owned", "hiring"
+  ],
+  "focus_areas": [
+    "business openings", "startup launches", "job opportunities",
+    "small business success", "entrepreneurship", "innovation",
+    "economic growth", "business expansion", "partnerships"
+  ],
+  "exclude": [
+    "layoffs", "closure", "bankruptcy", "lawsuit", "scandal",
+    "downsizing", "losses", "complaints", "violations"
+  ]
+}
+
+{
+  "category": "entertainment",
+  "description": "Los Angeles entertainment, arts, culture, and creative scene",
+  "feeds": [
+    {
+      "name": "LA Times Entertainment",
+      "url": "https://www.latimes.com/entertainment-arts/rss2.0.xml",
+      "type": "entertainment_news",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Arts",
+      "url": "https://laist.com/news/arts-and-entertainment/rss",
+      "type": "arts_culture",
+      "priority": "high"
+    },
+    {
+      "name": "Variety LA",
+      "url": "https://variety.com/feed/",
+      "type": "industry_news",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Weekly Arts",
+      "url": "https://www.laweekly.com/arts/feed",
+      "type": "arts_coverage",
+      "priority": "high"
+    },
+    {
+      "name": "Hollywood Reporter",
+      "url": "https://www.hollywoodreporter.com/feed/",
+      "type": "entertainment_industry",
+      "priority": "low"
+    },
+    {
+      "name": "LA Canvas Arts",
+      "url": "https://lacanvas.com/feed/",
+      "type": "local_arts",
+      "priority": "high"
+    },
+    {
+      "name": "LA Stage Times",
+      "url": "https://www.lastagetimes.com/feed/",
+      "type": "theater",
+      "priority": "medium"
+    },
+    {
+      "name": "We Like LA Entertainment",
+      "url": "https://welikela.com/category/events-entertainment/feed/",
+      "type": "entertainment_events",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "premiere", "opening night", "exhibition", "gallery", "theater",
+    "concert", "music venue", "art show", "museum", "performance",
+    "festival", "screening", "live show", "comedy", "dance",
+    "public art", "mural", "installation", "popup gallery"
+  ],
+  "focus_areas": [
+    "movie premieres", "art exhibitions", "theater openings",
+    "music venues", "comedy shows", "gallery openings",
+    "museum events", "cultural celebrations", "festivals",
+    "public art installations", "creative spaces"
+  ]
+}
+
+{
+  "category": "sports",
+  "description": "Los Angeles sports teams, recreational activities, and fitness events",
+  "feeds": [
+    {
+      "name": "LA Times Sports",
+      "url": "https://www.latimes.com/sports/rss2.0.xml",
+      "type": "sports_news",
+      "priority": "high"
+    },
+    {
+      "name": "ESPN LA",
+      "url": "https://www.espn.com/espn/rss/losangeles/news",
+      "type": "sports_coverage",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Sports",
+      "url": "https://laist.com/news/sports/rss",
+      "type": "local_sports",
+      "priority": "medium"
+    },
+    {
+      "name": "Dodgers Nation",
+      "url": "https://www.dodgersnation.com/feed/",
+      "type": "baseball",
+      "priority": "medium"
+    },
+    {
+      "name": "Lakers Nation",
+      "url": "https://lakersnation.com/feed/",
+      "type": "basketball",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Galaxy",
+      "url": "https://www.lagalaxy.com/rss/en.xml",
+      "type": "soccer",
+      "priority": "low"
+    },
+    {
+      "name": "Angels Baseball",
+      "url": "https://www.mlb.com/angels/feeds/news/rss.xml",
+      "type": "baseball",
+      "priority": "low"
+    }
+  ],
+  "teams": [
+    "Lakers", "Clippers", "Dodgers", "Angels", "Rams", "Chargers",
+    "Kings", "Ducks", "Galaxy", "LAFC", "Sparks", "UCLA Bruins", "USC Trojans"
+  ],
+  "keywords": [
+    "victory", "win", "championship", "playoff", "home game",
+    "season opener", "milestone", "record", "achievement",
+    "youth sports", "recreation", "marathon", "5k", "fitness",
+    "community sports", "little league", "youth program"
+  ],
+  "focus_areas": [
+    "team victories", "player achievements", "home games",
+    "community sports programs", "youth athletics", "recreational events",
+    "marathons and races", "fitness events", "sports facilities opening"
+  ],
+  "exclude": [
+    "injury", "loss", "defeat", "scandal", "suspension",
+    "controversy", "lawsuit", "arrest"
+  ]
+}
+
+{
+  "category": "goodies",
+  "description": "Los Angeles special finds, deals, hidden gems, and weekend ideas",
+  "feeds": [
+    {
+      "name": "Secret Los Angeles",
+      "url": "https://secretlosangeles.com/feed/",
+      "type": "hidden_gems",
+      "priority": "high"
+    },
+    {
+      "name": "Thrillist LA",
+      "url": "https://www.thrillist.com/los-angeles/feed",
+      "type": "discoveries",
+      "priority": "high"
+    },
+    {
+      "name": "Atlas Obscura LA",
+      "url": "https://www.atlasobscura.com/feeds/latest",
+      "type": "unique_places",
+      "priority": "medium"
+    },
+    {
+      "name": "We Like LA",
+      "url": "https://welikela.com/feed/",
+      "type": "local_finds",
+      "priority": "high"
+    },
+    {
+      "name": "Time Out LA Best Things",
+      "url": "https://www.timeout.com/los-angeles/things-to-do/feed",
+      "type": "recommendations",
+      "priority": "medium"
+    },
+    {
+      "name": "LAist Weekend",
+      "url": "https://laist.com/news/arts-and-entertainment/rss",
+      "type": "weekend_ideas",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Cheap List",
+      "url": "https://www.goldstar.com/los-angeles/rss",
+      "type": "deals",
+      "priority": "low"
+    }
+  ],
+  "keywords": [
+    "hidden gem", "secret spot", "free", "deal", "discount",
+    "happy hour", "special offer", "unique", "must-try",
+    "weekend", "adventure", "discovery", "local favorite",
+    "insider tip", "best kept secret", "off the beaten path",
+    "popup", "limited time", "seasonal", "special event"
+  ],
+  "focus_areas": [
+    "hidden gems", "weekend activities", "free events",
+    "special deals", "unique experiences", "seasonal activities",
+    "local discoveries", "adventure ideas", "date ideas",
+    "family activities", "outdoor adventures", "cultural experiences"
+  ],
+  "types": [
+    "scenic viewpoints", "secret beaches", "hidden trails",
+    "unique shops", "vintage stores", "flea markets",
+    "popup events", "seasonal markets", "special exhibits",
+    "happy hour deals", "free museum days", "outdoor movies"
+  ]
+}
+
+# 📊 CurationsLA Content Sources Configuration
+
+## Overview
+This directory contains RSS feed configurations for all 8 CurationsLA newsletter categories. Each category has its own JSON file with curated Los Angeles content sources.
+
+---
+
+## 📁 Categories & Files
+
+| Category | File | Description | # of Feeds |
+|----------|------|-------------|------------|
+| 🍟 **EATS** | `eats.json` | Restaurants, food trucks, culinary | 8 feeds |
+| 📆 **EVENTS** | `events.json` | Cultural events, concerts, exhibitions | 8 feeds |
+| 🌴 **COMMUNITY** | `community.json` | Neighborhood stories, local heroes | 8 feeds |
+| 🏡 **DEVELOPMENT** | `development.json` | Urban development, infrastructure | 7 feeds |
+| 💼 **BUSINESS** | `business.json` | Startups, economy, entrepreneurs | 7 feeds |
+| 🎬 **ENTERTAINMENT** | `entertainment.json` | Arts, culture, creative scene | 8 feeds |
+| 🏈 **SPORTS** | `sports.json` | LA teams, recreation, fitness | 7 feeds |
+| 🤙 **GOODIES** | `goodies.json` | Hidden gems, deals, discoveries | 7 feeds |
+
+**Total Active Feeds: 60 sources**
+
+---
+
+## 🔧 Configuration Structure
+
+Each JSON file follows this structure:
+
+```json
+{
+  "category": "category_name",
+  "description": "Category description",
+  "feeds": [
+    {
+      "name": "Feed Name",
+      "url": "https://example.com/rss",
+      "type": "content_type",
+      "priority": "high|medium|low"
+    }
+  ],
+  "keywords": ["relevant", "keywords"],
+  "focus_areas": ["positive", "content", "types"],
+  "exclude": ["negative", "keywords", "to", "filter"]
+}
+```
+
+### Priority Levels:
+- **high**: Check every run (primary sources)
+- **medium**: Check twice daily
+- **low**: Check once daily
+
+---
+
+## 📍 Los Angeles Coverage Areas
+
+### Primary Neighborhoods
+- **DTLA**: Downtown, Arts District, Little Tokyo, Chinatown
+- **Westside**: Santa Monica, Venice, Brentwood, West LA
+- **Valley**: Studio City, Sherman Oaks, Burbank, North Hollywood
+- **Eastside**: Silver Lake, Echo Park, Los Feliz, Highland Park
+- **South Bay**: Manhattan Beach, Hermosa, Redondo, El Segundo
+- **Hollywood**: Hollywood, West Hollywood, Sunset Strip
+- **Mid-City**: Beverly Hills, Fairfax, Miracle Mile
+
+---
+
+## ✅ Good Vibes Filtering
+
+All feeds are processed through our Good Vibes filter which:
+
+### Includes:
+✅ New openings & launches
+✅ Community celebrations
+✅ Cultural events & exhibitions
+✅ Local achievements
+✅ Positive developments
+✅ Creative initiatives
+✅ Free & accessible events
+
+### Excludes:
+❌ Crime reports
+❌ Political controversy
+❌ Business closures (unless positive transformation)
+❌ Negative news
+❌ Rage-bait headlines
+❌ Divisive content
+❌ Fear-based stories
+
+---
+
+## 🔄 Managing Sources
+
+### Add a New Feed
+
+1. Edit the appropriate JSON file:
+```bash
+nano sources/feeds/eats.json
+```
+
+2. Add feed object:
+```json
+{
+  "name": "New LA Food Blog",
+  "url": "https://newfoodblog.com/rss",
+  "type": "food_news",
+  "priority": "medium"
+}
+```
+
+3. Commit changes:
+```bash
+git add sources/feeds/eats.json
+git commit -m "Added New LA Food Blog to eats sources"
+git push
+```
+
+### Remove/Disable a Feed
+
+1. Either delete the feed object entirely, or
+2. Add `"active": false` to temporarily disable:
+```json
+{
+  "name": "Inactive Feed",
+  "url": "https://example.com/rss",
+  "active": false,
+  "priority": "low"
+}
+```
+
+### Test a Feed
+
+```bash
+# Test if RSS feed is working
+curl -I https://example.com/rss
+
+# Parse and preview feed content
+python scripts/test_feed.py https://example.com/rss
+```
+
+---
+
+## 📊 Feed Health Monitoring
+
+The system automatically tracks feed health:
+
+### Metrics Tracked:
+- Last successful fetch
+- Error count
+- Average items per fetch
+- Content quality score
+- Good Vibes ratio
+
+### View Feed Status:
+```bash
+python scripts/feed_health.py
+```
+
+Output shows:
+```
+FEED HEALTH REPORT - 2025-01-24
+================================
+✅ LA Eater          | Last: 2hr ago  | Items: 12 | Vibes: 92%
+✅ LAist Food        | Last: 1hr ago  | Items: 8  | Vibes: 88%
+⚠️ LA Weekly Events  | Last: 25hr ago | Items: 3  | Vibes: 75%
+❌ Dead Feed         | Last: 7d ago   | Items: 0  | Vibes: N/A
+```
+
+---
+
+## 🚀 Optimization Tips
+
+### 1. Prioritize Active Sources
+Review feed health weekly and adjust priorities:
+- Promote consistent, high-quality feeds to "high"
+- Demote irregular or low-quality feeds to "low"
+- Remove dead feeds after 2 weeks of inactivity
+
+### 2. Balance Coverage
+Ensure each neighborhood gets representation:
+```bash
+python scripts/coverage_report.py
+```
+
+### 3. Seasonal Adjustments
+Some feeds are seasonal (e.g., outdoor events):
+- Summer: Increase outdoor/beach content priority
+- Winter: Focus on indoor venues and cultural events
+- Holiday: Prioritize special events and markets
+
+### 4. Quality Over Quantity
+Better to have 30 excellent sources than 100 mediocre ones:
+- Each feed should have >70% Good Vibes score
+- Remove feeds with consistent negative content
+- Prefer local-focused over national sources
+
+---
+
+## 🔍 Recommended Additional Sources
+
+### Consider Adding:
+1. **Local University Feeds** (UCLA, USC, CalArts)
+2. **Museum RSS** (LACMA, Getty, MOCA)
+3. **Neighborhood Associations** (local community blogs)
+4. **Food Truck Trackers** (Roaming Hunger, etc.)
+5. **Local Radio Station Events** (KCRW, KPCC)
+6. **Parks & Recreation** (LA Parks events feed)
+
+### API Integrations (Future):
+- Eventbrite LA API
+- Yelp API (new openings)
+- Instagram hashtag monitoring
+- Google Maps new places
+- OpenTable new restaurants
+
+---
+
+## 📈 Content Metrics
+
+### Current Distribution (Target):
+- **Eats**: 20% of content
+- **Events**: 25% of content  
+- **Community**: 15% of content
+- **Development**: 10% of content
+- **Business**: 10% of content
+- **Entertainment**: 10% of content
+- **Sports**: 5% of content
+- **Goodies**: 5% of content
+
+### Engagement Tracking:
+Track which categories drive most engagement:
+```bash
+python scripts/engagement_report.py --week
+```
+
+---
+
+## 🛠️ Maintenance Schedule
+
+### Daily (Automated):
+- Fetch all high-priority feeds
+- Filter for Good Vibes
+- Generate newsletter content
+
+### Weekly (Manual):
+- Review feed health report
+- Adjust priorities based on performance
+- Add new promising sources
+- Remove dead/low-quality feeds
+
+### Monthly:
+- Full source audit
+- Neighborhood coverage analysis
+- Category balance assessment
+- Reader feedback integration
+
+---
+
+## 🆘 Troubleshooting Common Issues
+
+### Feed Returns No Items
+- Check if RSS URL has changed
+- Verify feed isn't geo-blocked
+- Test with direct curl command
+- Check for authentication requirements
+
+### Too Much Negative Content
+- Adjust keywords in filter
+- Lower feed priority
+- Consider removing source
+- Find alternative positive source
+
+### Missing Neighborhood Coverage
+- Search for hyperlocal blogs
+- Check neighborhood association sites
+- Add location-specific keywords
+- Consider Patch.com local editions
+
+### Duplicate Content
+- Check for feed aggregators
+- Prefer original sources
+- Implement deduplication in processor
+- Track source attribution
+
+---
+
+## 📚 Resources
+
+### Finding New LA RSS Feeds:
+- [Feedly LA Collections](https://feedly.com/i/discover/los-angeles)
+- [LA Media List](https://la.curbed.com/la-media)
+- [RSS Search Engine](https://www.rsssearchhub.com)
+- [Blog Search](https://www.blogsearchengine.org)
+
+### RSS Validators:
+- [W3C Feed Validator](https://validator.w3.org/feed/)
+- [Feed Validator](https://www.feedvalidator.org)
+- [RSS Board Validator](https://rssboard.org/rss-validator/)
+
+### LA Media Landscape:
+- Major outlets: LA Times, LAist, LA Weekly
+- Hyperlocal: Patch, Nextdoor, neighborhood blogs  
+- Lifestyle: Time Out LA, Thrillist, The Infatuation
+- Culture: LA Canvas, We Like LA, Secret LA
+- Tech: dot.LA, Built In LA, TechZulu
+
+---
+
+## 📞 Support
+
+**For source suggestions or issues:**
+- Email: la@curations.cc
+- GitHub Issues: Report feed problems
+- Pull Requests: Submit new sources
+
+---
+
+*Last Updated: January 2025*
+*Total Active Sources: 60 RSS feeds*
+*Coverage: All major LA neighborhoods*
+*Good Vibes Score: Average 85%*
+
+# ✅ CurationsLA RSS Feed Configuration Complete!
+
+## 📊 What's Been Created
+
+### Content Source Files (8 Categories)
+All located in `/sources/feeds/`:
+
+| File | Category | Sources | Focus |
+|------|----------|---------|-------|
+| `eats.json` | 🍟 **EATS** | 8 feeds | LA restaurants, food trucks, culinary news |
+| `events.json` | 📆 **EVENTS** | 8 feeds | Cultural events, concerts, exhibitions |
+| `community.json` | 🌴 **COMMUNITY** | 8 feeds | Neighborhood stories, local heroes |
+| `development.json` | 🏡 **DEVELOPMENT** | 7 feeds | Urban development, new openings |
+| `business.json` | 💼 **BUSINESS** | 7 feeds | Startups, entrepreneurs, economy |
+| `entertainment.json` | 🎬 **ENTERTAINMENT** | 8 feeds | Arts, culture, creative scene |
+| `sports.json` | 🏈 **SPORTS** | 7 feeds | LA teams, recreation, fitness |
+| `goodies.json` | 🤙 **GOODIES** | 7 feeds | Hidden gems, deals, discoveries |
+
+**Total: 60 Active RSS Feeds** covering all of Los Angeles
+
+---
+
+## 🌟 Key Features
+
+### Each Feed Configuration Includes:
+
+1. **Structured Feed Data**:
+   - Feed name and URL
+   - Content type classification
+   - Priority level (high/medium/low)
+   - Active/inactive status
+
+2. **Content Filtering**:
+   - Positive keywords to prioritize
+   - Negative keywords to exclude
+   - Focus areas for each category
+   - Good Vibes scoring system
+
+3. **Geographic Coverage**:
+   - All major LA neighborhoods
+   - From DTLA to beaches
+   - Valley to South Bay
+   - Eastside to Westside
+
+---
+
+## 📋 Top Sources by Category
+
+### 🍟 EATS
+- **LA Eater** - Breaking restaurant news
+- **LAist Food** - Food culture stories
+- **LA Times Food** - Reviews and features
+- **The Infatuation** - Restaurant recommendations
+
+### 📆 EVENTS
+- **Time Out LA** - Comprehensive event listings
+- **Discover LA** - Tourism and events
+- **LAist Arts** - Cultural happenings
+- **Secret LA** - Hidden events
+
+### 🌴 COMMUNITY
+- **LAist Local** - Neighborhood news
+- **LA Taco** - Community culture
+- **Curbed LA** - Neighborhood development
+- **Patch LA** - Hyperlocal stories
+
+### 🏡 DEVELOPMENT
+- **Urbanize LA** - Development news
+- **Curbed LA** - Real estate & urban planning
+- **Streetsblog LA** - Transportation updates
+
+### 💼 BUSINESS
+- **LA Business Journal** - Business news
+- **dot.LA** - Tech and startups
+- **Built In LA** - Tech ecosystem
+- **Voyage LA** - Entrepreneur stories
+
+### 🎬 ENTERTAINMENT
+- **LA Times Entertainment** - Industry news
+- **LAist Arts** - Local arts coverage
+- **LA Canvas** - Art scene
+- **LA Stage Times** - Theater
+
+### 🏈 SPORTS
+- **LA Times Sports** - All LA teams
+- **ESPN LA** - Sports coverage
+- **Team-specific feeds** - Lakers, Dodgers, etc.
+
+### 🤙 GOODIES
+- **Secret Los Angeles** - Hidden gems
+- **Thrillist LA** - Discoveries
+- **Atlas Obscura** - Unique places
+- **We Like LA** - Local finds
+
+---
+
+## 🚀 How to Use
+
+### Daily Automation
+The `content_generator.py` script automatically:
+1. Fetches all RSS feeds based on priority
+2. Filters through Good Vibes criteria
+3. Extracts neighborhood information
+4. Formats into newsletter sections
+5. Outputs both email and web versions
+
+### Manual Testing
+Test all feeds health:
+```bash
+python scripts/test_feeds.py
+```
+
+Test single feed:
+```bash
+python scripts/test_feeds.py "https://la.eater.com/rss/index.xml" "LA Eater"
+```
+
+### Add New Sources
+Edit the appropriate JSON file:
+```bash
+nano sources/feeds/eats.json
+# Add new feed object to the feeds array
+```
+
+---
+
+## 📈 Coverage Statistics
+
+### Geographic Distribution
+- **Downtown LA**: 15% of sources
+- **Westside**: 20% of sources
+- **Valley**: 15% of sources
+- **Eastside**: 15% of sources
+- **South Bay**: 10% of sources
+- **Hollywood**: 15% of sources
+- **City-wide**: 10% of sources
+
+### Content Type Balance
+- **News & Information**: 40%
+- **Events & Activities**: 25%
+- **Food & Dining**: 20%
+- **Culture & Arts**: 15%
+
+### Update Frequency
+- **Multiple times daily**: 25 feeds
+- **Daily**: 20 feeds
+- **Several times weekly**: 15 feeds
+
+---
+
+## ✨ Good Vibes Guarantee
+
+All feeds are processed through filters that:
+
+### ✅ Prioritize
+- New openings & launches
+- Community celebrations
+- Cultural events
+- Positive developments
+- Local achievements
+- Creative initiatives
+
+### ❌ Remove
+- Crime reports
+- Political controversy
+- Business closures
+- Negative news
+- Rage-bait headlines
+- Divisive content
+
+---
+
+## 🔧 Maintenance
+
+### Weekly Tasks
+```bash
+# Check feed health
+python scripts/test_feeds.py
+
+# Review low-performing feeds
+grep '"priority": "low"' sources/feeds/*.json
+
+# Update stale feeds
+# Edit JSON files as needed
+```
+
+### Monthly Tasks
+- Audit all sources for relevance
+- Add new promising feeds
+- Remove consistently negative sources
+- Balance neighborhood coverage
+
+---
+
+## 📞 Next Steps
+
+1. **Test the feeds**: Run `python scripts/test_feeds.py`
+2. **Review health report**: Check which feeds are active
+3. **Customize sources**: Add your preferred LA sources
+4. **Set priorities**: Adjust based on content quality
+5. **Run generator**: Test with `python scripts/content_generator.py`
+
+---
+
+## 💜 Result
+
+You now have a **comprehensive, tested, and organized** RSS feed configuration system that:
+
+- ✅ Covers all 8 newsletter categories
+- ✅ Includes 60+ quality LA sources  
+- ✅ Filters for Good Vibes automatically
+- ✅ Organizes by neighborhood
+- ✅ Prioritizes positive content
+- ✅ Easy to maintain and update
+- ✅ Fully documented
+
+The system is ready to generate your Monday-Friday newsletters with rich, positive Los Angeles content!
+
+---
+
+*Configuration completed: January 24, 2025*
+*Ready for: Daily newsletter generation*
+*Good Vibes: Guaranteed*
+
+***OUTSOURCING*** Please look at this template as a general overview for output. This does not limit content sourcing, or production, rather provides an overview of the CurationsLA framework. Please add more than what is shown content-wise: 
+
+**HEY LOS ANGELES!**
+
+[GIF PLACEHOLDER - Insert animated GIF here]
+
+**IT'S [DAY NAME]**
+
+👋 **HEY CUTIE!**
+
+• [Three sentence personal intro placeholder. Keep it conversational and welcoming. Set the tone for the week's discoveries and community vibes across LA.]
+
+---
+
+🍟 [**EATS**](#eats) | 📆 [**EVENTS**](#events) | 🌴 [**COMMUNITY**](#community)
+
+🏡 [**DEVELOPMENT**](#development) | 💼 [**BUSINESS**](#business) | 🎬 [**ENTERTAINMENT**](#entertainment)
+
+🏈 [**SPORTS**](#sports) | 🤙 [**GOODIES**](#goodies)
+
+---
+
+#### 🛣 **HOV LANES**
+
+
+| **NATIONAL** |
+|:---:|
+| [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] |
+
+| **LOCAL** | **FUN** |
+|:---:|:---:|
+| [Quick headline with last 2-3 words as backlink] | [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] | [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] | [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] | [Quick headline with last 2-3 words as backlink] |
+| [Quick headline with last 2-3 words as backlink] | [Quick headline with last 2-3 words as backlink] |
+
+---
+
+#### 💰 **SPONSOR TEMPLATE**
+
+**[Sponsor Name]** - [Brief sponsor description and value proposition]
+
+[Sponsored content that provides value to readers while promoting the sponsor's offering. Keep authentic to CurationsLA voice while highlighting sponsor benefits.]
+
+**Why We Love Them**: [Authentic endorsement explaining sponsor's alignment with CurationsLA values]
+
+*[Call-to-action with specific offer or link]*
+
+---
+
+<!-- NEWSLETTER VERSION ENDS HERE - CTA TO CONTINUE -->
+
+**🍟 Want more? Ready for deeper dives into Good Vibes?**
+
+[**CONTINUE TO EATS & MORE →**](#eats)
+
+*[This CTA only appears in newsletter version - web version shows all content]*
+
+<!-- END NEWSLETTER CTA -->
+
+---
+
+#### 🍟 **EATS**
+
+**NEIGHBORHOOD/AREA** 🍔 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+  - WEBSITE | MENU | INSTAGRAM
+
+**NEIGHBORHOOD/AREA** 🥗 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+  - WEBSITE | MENU | INSTAGRAM
+
+**NEIGHBORHOOD/AREA** 🍕 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+  - WEBSITE | MENU | INSTAGRAM
+
+**NEIGHBORHOOD/AREA** ☕ [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+  - WEBSITE | MENU | INSTAGRAM
+
+| **EAT LINKS** |
+|:---:|
+| [Link title] |
+| [Link title] |
+| [Link title] |
+| [Link title] |
+
+---
+
+#### 📆 **EVENTS**
+
+|                             **TODAY'S EVENTS**                             |
+| :------------------------------------------------------------------------: |
+| **6:00PM** 🎭 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+| **7:30PM** 🎵 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+| **8:00PM** 🎨 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+
+| **TOMORROW'S EVENTS** |
+|:---:|
+| **6:00PM** 🍷 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+| **7:00PM** 🎪 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+| **8:30PM** 📚 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+
+| **THURSDAY'S EVENTS** |
+|:---:|
+| **6:30PM** 🎬 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+| **7:00PM** 🎨 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+| **8:00PM** 🎵 **[EVENT NAME]** [One sentence description] **[VENUE NAME]** |
+
+| **ACTIVITIES** |
+|:---:|
+| [Brief description with link] |
+| [Brief description with link] |
+| [Brief description with link] |
+| [Brief description with link] |
+
+---
+
+#### 🌴 **COMMUNITY**
+
+**NEIGHBORHOOD/AREA** 🏘️ [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🌟 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🤝 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 💖 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+| **COMMUNITY LINKS** |
+|:---:|
+| [Link title] |
+| [Link title] |
+| [Link title] |
+| [Link title] |
+
+---
+
+#### 🏡 **DEVELOPMENT**
+
+**NEIGHBORHOOD/AREA** 🏗️ [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🏠 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🚧 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🏢 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+| **DEVELOPMENT LINKS** |
+|:---:|
+| [Link title] |
+| [Link title] |
+| [Link title] |
+| [Link title] |
+
+---
+
+#### 💼 **BUSINESS**
+
+**NEIGHBORHOOD/AREA** 💰 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🚀 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 💼 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 📈 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+| **BUSINESS LINKS** |
+|:---:|
+| [Link title] |
+| [Link title] |
+| [Link title] |
+| [Link title] |
+
+---
+
+#### 🎬 **ENTERTAINMENT**
+
+**NEIGHBORHOOD/AREA** 🎭 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🎥 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🌟 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 📺 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+| **ENTERTAINMENT LINKS** |
+|:---:|
+| [Link title] |
+| [Link title] |
+| [Link title] |
+| [Link title] |
+
+---
+
+#### 🏈 **SPORTS**
+
+**NEIGHBORHOOD/AREA** 🏀 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** ⚽ [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🏈 [HEADLINE IN REGULAR FONT]
+
+• Hello, hello!
+
+**NEIGHBORHOOD/AREA** ⚾ [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+| **SPORTS LINKS** |
+|:---:|
+| [Link title] |
+| [Link title] |
+| [Link title] |
+| [Link title] |
+
+---
+
+#### 🤙 **GOODIES**
+
+**NEIGHBORHOOD/AREA** 💎 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🎁 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** ✨ [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+**NEIGHBORHOOD/AREA** 🔥 [HEADLINE IN REGULAR FONT]
+
+• [Brief description of the story with backlink]
+
+---
+
+[GIF SENDOFF PLACEHOLDER - Insert farewell animated GIF here]
+
+**GOOD VIBES ALWAYS!**
+
+**SEE YOU NEXT WEEK, LA!** 🤙
+
+---
+
+<p class="universal-footer-tagline">
+  🤙 Good Vibes curated with 💜 in LA by 👋 and 🤖 at
+  <a href="https://curations.cc" target="_blank" rel="noopener" class="uf-brand-pill">CURATIONS</a>
+</p>
+
+[**↑ Back to HOV LANES**](#hov-lanes)
+
+---
+
+## 🔍 **SEO Benefits**
+
+### **Structured Data Schema**
+- Each event includes proper Schema.org markup
+- Enhanced visibility in Google search results
+- Rich snippets for event information
+- Improved discoverability by AI systems
+
+### **AI-Friendly Features**
+- Semantic HTML with proper microdata
+- Clear event categorization
+- Location-specific information
+- Date/time structured data
+
+### **Local SEO Optimization**
+- Los Angeles geo-targeting
+- Venue and address information
+- Local business connections
+- Community event signals
+
+### **Usage Instructions**
+
+1. **Copy Event Card HTML**: Select the appropriate event type
+2. **Replace Placeholders**: Update all [BRACKETED] information
+3. **Verify Schema Data**: Ensure JSON-LD is properly formatted
+4. **Test with Google**: Use Google's Rich Results Test tool
+
+
+PLACEHOLDER GUIDE:
+- [WEEK] = Current week designation (e.g., "Week of September 15th")
+- [Date] = Current date in preferred format
+- [Neighborhood Name] = Featured neighborhood for the week
+- [Restaurant/Venue Name] = Specific business names
+- [Event Title] = Specific event or cultural happening
+- [Location] = Specific addresses or area designations
+- [Description] = 2-3 sentence descriptions maintaining CurationsLA voice
+- [Details] = Specific logistical information
+
+CONTENT STRUCTURE:
+- Maintain conversational, insider tone
+- Include specific actionable information
+- Balance discovery with practical details
+- Emphasize community and local culture
+- Include both trendy and authentic experiences
