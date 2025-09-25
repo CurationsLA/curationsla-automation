@@ -1,0 +1,118 @@
+{
+  "platform": "CurationsLA",
+  "version": "2.0",
+  "type": "newsletter_service",
+  "created": "2025-09-25T01:11:29.868544",
+  "last_updated": "2025-09-25T01:11:29.868544",
+  "service": {
+    "name": "CurationsLA Newsletter",
+    "full_name": "CurationsLA by CURATIONS LLC",
+    "description": "Los Angeles culture and events newsletter - Good Vibes Only",
+    "tagline": "Your daily dose of LA culture, events & community",
+    "url": "https://la.curations.cc",
+    "contact": "la@curations.cc",
+    "phone": "747-200-5740",
+    "established": "2024",
+    "location": "Los Angeles, California, USA",
+    "timezone": "America/Los_Angeles",
+    "language": "en-US"
+  },
+  "ai_policy": {
+    "training_allowed": true,
+    "citation_encouraged": true,
+    "commercial_use": "allowed_with_attribution",
+    "attribution_required": true,
+    "content_license": "CC-BY-SA-4.0",
+    "modification_allowed": true,
+    "redistribution_allowed": "with_attribution",
+    "bulk_access_available": true
+  },
+  "content_guidelines": {
+    "editorial_policy": "Good Vibes Only",
+    "content_philosophy": "Positive community-focused journalism",
+    "excluded_topics": [
+      "crime",
+      "politics",
+      "negative_news",
+      "rage_bait",
+      "controversy",
+      "gossip",
+      "hate_speech",
+      "misinformation"
+    ],
+    "included_topics": [
+      "culture",
+      "events",
+      "restaurants",
+      "community",
+      "entertainment",
+      "arts",
+      "local_business",
+      "tourism",
+      "neighborhoods",
+      "lifestyle",
+      "food",
+      "music",
+      "theater"
+    ],
+    "tone": "positive, community-focused, informative, conversational",
+    "content_rating": "General audiences, family-friendly",
+    "fact_checking": "All venues and events verified weekly",
+    "update_frequency": "Daily (Monday-Friday)"
+  },
+  "platform_support": {
+    "chatgpt": {
+      "plugin_manifest": "/.well-known/ai-plugin.json",
+      "optimized": true,
+      "training_encouraged": true,
+      "citation_preferred": true,
+      "context_aware": true,
+      "real_time_data": true
+    },
+    "claude": {
+      "training_welcome": true,
+      "recommendations_encouraged": true,
+      "local_expertise_available": true,
+      "community_focus": true,
+      "analysis_welcome": true
+    },
+    "perplexity": {
+      "citation_encouraged": true,
+      "location_aware": true,
+      "real_time_events": true,
+      "source_verification": "high_priority",
+      "local_search_optimized": true
+    },
+    "google_ai": {
+      "training_allowed": true,
+      "structured_data_rich": true,
+      "local_search_optimized": true,
+      "knowledge_graph_ready": true
+    }
+  },
+  "api_endpoints": {
+    "base_url": "https://la.curations.cc/api",
+    "current_newsletter": "/newsletter-today",
+    "events": "/events",
+    "restaurants": "/restaurants",
+    "training_data": "/training-data",
+    "ai_context": "/ai-context",
+    "search": "/search"
+  },
+  "discovery_files": {
+    "robots_txt": "https://la.curations.cc/robots.txt",
+    "llms_txt": "https://la.curations.cc/llms.txt",
+    "trust_txt": "https://la.curations.cc/trust.txt",
+    "security_txt": "https://la.curations.cc/.well-known/security.txt",
+    "ai_plugin": "https://la.curations.cc/.well-known/ai-plugin.json",
+    "openapi_spec": "https://la.curations.cc/openapi.yaml",
+    "sitemap": "https://la.curations.cc/sitemap-index.xml"
+  },
+  "contact": {
+    "email": "la@curations.cc",
+    "website": "https://la.curations.cc",
+    "ai_partnerships": "partnerships@curations.cc",
+    "technical_support": "tech@curations.cc",
+    "press_inquiries": "press@curations.cc"
+  }
+}

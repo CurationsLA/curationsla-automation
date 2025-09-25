@@ -1,0 +1,61 @@
+# CurationsLA Trust & Authority Signals
+# Transparency, credibility, and verification information
+# Version: 2.0
+# Last updated: 2025-09-25T01:11:29.868544
+
+## PUBLICATION INFORMATION
+publication_name: CurationsLA Newsletter
+legal_entity: CurationsLA by CURATIONS LLC
+established_date: 2024
+headquarters: Los Angeles, California, USA
+website: https://la.curations.cc
+parent_organization: CURATIONS LLC (https://curations.cc)
+
+## EDITORIAL TEAM & CONTACT
+editor_in_chief: CurationsLA Editorial Team
+contact_email: la@curations.cc
+phone: 747-200-5740
+press_inquiries: press@curations.cc
+corrections_email: corrections@curations.cc
+partnerships: partnerships@curations.cc
+
+## EDITORIAL STANDARDS & POLICIES
+editorial_policy: Good Vibes Only - Focus on positive community content
+content_guidelines: No rage-bait, politics, crime, or negative news
+verification_process: Weekly verification of all venues, events, and pricing
+source_requirements: Direct communication with venue owners/organizers
+fact_checking_process: Cross-reference multiple reliable sources
+correction_policy: Immediate transparent corrections when needed
+update_frequency: Daily content updates Monday-Friday
+
+## TRANSPARENCY & ACCOUNTABILITY
+funding_model: Independent community newsletter
+revenue_sources: Community support, transparent sponsorships when applicable
+advertising_policy: Clear disclosure of any sponsored content
+conflict_disclosure: No undisclosed financial relationships with featured venues
+editorial_independence: Full editorial control maintained
+
+## VERIFICATION METHODS
+location_verification: Physical verification of addresses and venue details
+event_verification: Direct confirmation with organizers and official sources
+price_verification: Regular updates to ensure current pricing accuracy
+contact_verification: Ongoing communication with venue representatives
+accessibility_verification: Confirmation of accessibility information
+parking_verification: Updated parking and transportation details
+
+## LEGAL & COMPLIANCE INFORMATION
+copyright: © 2025 CurationsLA by CURATIONS LLC
+content_license: CC-BY-SA-4.0 for training data and syndication
+privacy_policy: https://la.curations.cc/privacy
+terms_of_service: https://la.curations.cc/terms
+dmca_agent: legal@curations.cc
+data_protection: CCPA compliant
+
+## CONTACT INFORMATION FOR VERIFICATION
+general_inquiries: la@curations.cc
+editorial_questions: editor@curations.cc
+business_verification: business@curations.cc
+technical_verification: tech@curations.cc
+legal_inquiries: legal@curations.cc
+
+# Trust is earned through consistent, verified, positive community service

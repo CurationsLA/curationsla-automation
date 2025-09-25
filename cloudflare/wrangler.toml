@@ -1,0 +1,90 @@
+# CurationsLA Cloudflare Workers Configuration
+# Advanced SEO and AI discovery optimization for la.curations.cc
+
+name = "curationsla-advanced-seo"
+main = "advanced-seo-worker.js"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Production environment
+[env.production]
+name = "curationsla-seo-prod"
+route = { pattern = "la.curations.cc/*", zone_name = "curations.cc" }
+
+# KV Namespaces for caching and data storage
+kv_namespaces = [
+  { binding = "CURATIONS_CACHE", id = "your-kv-namespace-id-here", preview_id = "your-preview-kv-id-here" },
+  { binding = "CURATIONS_DATA", id = "your-data-kv-namespace-id-here", preview_id = "your-preview-data-kv-id-here" }
+]
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+SITE_URL = "https://la.curations.cc"
+CONTACT_EMAIL = "la@curations.cc"
+ORGANIZATION_NAME = "CurationsLA"
+CONTENT_POLICY = "good_vibes_only"
+LICENSE = "CC-BY-SA-4.0"
+
+# Analytics and observability
+[observability]
+enabled = true
+
+# Analytics Engine binding for bot tracking
+[[analytics_engine_datasets]]
+binding = "AI_BOT_ANALYTICS"
+
+# Separate worker configurations for specialized functions
+
+# Sitemap Enhancer Worker
+[[workers]]
+name = "curationsla-sitemap-enhancer"
+main = "sitemap-enhancer-worker.js"
+compatibility_date = "2024-09-01"
+
+[workers.env.production]
+name = "curationsla-sitemap-prod"
+routes = [
+  { pattern = "la.curations.cc/sitemap*.xml", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/news-sitemap.xml", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/events-sitemap.xml", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/api-sitemap.xml", zone_name = "curations.cc" }
+]
+
+# Smart Routing Worker
+[[workers]]
+name = "curationsla-smart-routing"
+main = "smart-routing-worker.js"
+compatibility_date = "2024-09-01"
+
+[workers.env.production]
+name = "curationsla-routing-prod"
+route = { pattern = "la.curations.cc/api/*", zone_name = "curations.cc" }
+
+# Trust Signals Worker
+[[workers]]
+name = "curationsla-trust-signals"
+main = "trust-signals-worker.js"
+compatibility_date = "2024-09-01"
+
+[workers.env.production]
+name = "curationsla-trust-prod"
+routes = [
+  { pattern = "la.curations.cc/robots.txt", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/llms.txt", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/trust.txt", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/.well-known/*", zone_name = "curations.cc" }
+]
+
+# AI Discovery Worker  
+[[workers]]
+name = "curationsla-ai-discovery"
+main = "ai-discovery-worker.js"
+compatibility_date = "2024-09-01"
+
+[workers.env.production]
+name = "curationsla-ai-prod"
+routes = [
+  { pattern = "la.curations.cc/ai-manifest.json", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/openapi.yaml", zone_name = "curations.cc" }
+]

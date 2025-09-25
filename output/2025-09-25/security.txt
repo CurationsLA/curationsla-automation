@@ -1,0 +1,9 @@
+Contact: mailto:security@curations.cc
+Contact: mailto:la@curations.cc
+Expires: 2026-12-31T23:59:59Z
+Preferred-Languages: en
+Canonical: https://la.curations.cc/.well-known/security.txt
+Policy: https://la.curations.cc/security-policy
+
+# Security reporting for CurationsLA
+# We take security seriously and appreciate responsible disclosure

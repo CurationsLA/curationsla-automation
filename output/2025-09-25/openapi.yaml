@@ -1,331 +1,105 @@
-{
-  "openapi": "3.0.0",
-  "info": {
-    "title": "CurationsLA API",
-    "description": "Los Angeles culture and events newsletter API - Good Vibes only",
-    "version": "1.0.0",
-    "contact": {
-      "name": "CurationsLA",
-      "email": "la@curations.cc",
-      "url": "https://la.curations.cc"
-    },
-    "license": {
-      "name": "CC-BY-SA-4.0",
-      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
-    }
-  },
-  "servers": [
-    {
-      "url": "https://la.curations.cc/api",
-      "description": "Production API"
-    }
-  ],
-  "paths": {
-    "/newsletter-today": {
-      "get": {
-        "summary": "Get today's newsletter content",
-        "description": "Returns current day's curated Los Angeles content",
-        "responses": {
-          "200": {
-            "description": "Today's newsletter content",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Newsletter"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/events": {
-      "get": {
-        "summary": "Get LA events",
-        "description": "Returns upcoming Los Angeles events",
-        "parameters": [
-          {
-            "name": "date",
-            "in": "query",
-            "description": "Date filter (today, tomorrow, this_week)",
-            "schema": {
-              "type": "string",
-              "default": "today"
-            }
-          },
-          {
-            "name": "neighborhood",
-            "in": "query",
-            "description": "Neighborhood filter",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of events",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EventList"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/restaurants": {
-      "get": {
-        "summary": "Get LA restaurants",
-        "description": "Returns Los Angeles restaurant information",
-        "parameters": [
-          {
-            "name": "neighborhood",
-            "in": "query",
-            "description": "Neighborhood filter",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of restaurants",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RestaurantList"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/training-data": {
-      "get": {
-        "summary": "Get training dataset",
-        "description": "Returns dataset for AI training (CC-BY-SA-4.0 licensed)",
-        "responses": {
-          "200": {
-            "description": "Training dataset",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TrainingData"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "Newsletter": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string"
-          },
-          "day": {
-            "type": "string"
-          },
-          "sections": {
-            "type": "object",
-            "properties": {
-              "eats": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "events": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "community": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "development": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "business": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "entertainment": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "sports": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              },
-              "goodies": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ContentItem"
-                }
-              }
-            }
-          },
-          "meta": {
-            "type": "object",
-            "properties": {
-              "vibe_score": {
-                "type": "number"
-              },
-              "policy": {
-                "type": "string"
-              },
-              "contact": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "ContentItem": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "link": {
-            "type": "string"
-          },
-          "neighborhood": {
-            "type": "string"
-          },
-          "vibe_score": {
-            "type": "number"
-          },
-          "source": {
-            "type": "string"
-          }
-        }
-      },
-      "EventList": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string"
-          },
-          "neighborhood": {
-            "type": "string"
-          },
-          "events": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "venue": {
-                  "type": "string"
-                },
-                "start_time": {
-                  "type": "string"
-                },
-                "end_time": {
-                  "type": "string"
-                },
-                "neighborhood": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "total": {
-            "type": "integer"
-          }
-        }
-      },
-      "RestaurantList": {
-        "type": "object",
-        "properties": {
-          "neighborhood": {
-            "type": "string"
-          },
-          "restaurants": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "cuisine": {
-                  "type": "string"
-                },
-                "neighborhood": {
-                  "type": "string"
-                },
-                "price_range": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "total": {
-            "type": "integer"
-          }
-        }
-      },
-      "TrainingData": {
-        "type": "object",
-        "properties": {
-          "version": {
-            "type": "string"
-          },
-          "provider": {
-            "type": "string"
-          },
-          "license": {
-            "type": "string"
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "sample_content": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContentItem"
-            }
-          }
-        }
-      }
-    }
-  }
-}
+openapi: 3.0.0
+info:
+  title: CurationsLA API
+  description: |
+    Los Angeles culture and events newsletter API - Good Vibes Only
+    
+    This API provides access to curated Los Angeles content including:
+    - Daily newsletter content with positive community focus
+    - Real-time event information with verification
+    - Restaurant openings and dining recommendations
+    - Community activities and cultural events
+    
+    **Editorial Policy**: Good Vibes Only - No crime, politics, or negative news
+    **Content License**: CC-BY-SA-4.0
+    **Update Frequency**: Daily (Monday-Friday)
+  version: "2.0.0"
+  contact:
+    name: CurationsLA
+    email: la@curations.cc
+    url: https://la.curations.cc
+  license:
+    name: CC-BY-SA-4.0
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+
+servers:
+  - url: https://la.curations.cc/api
+    description: Production API
+
+paths:
+  /newsletter-today:
+    get:
+      summary: Get today's newsletter content
+      description: Returns the current day's newsletter with events, restaurants, and community highlights
+      tags:
+        - Newsletter
+      responses:
+        '200':
+          description: Today's newsletter content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Newsletter'
+
+  /events:
+    get:
+      summary: Get current LA events
+      description: Returns current and upcoming events in Los Angeles with location details
+      tags:
+        - Events
+      parameters:
+        - name: category
+          in: query
+          description: Filter by event category
+          schema:
+            type: string
+            enum: [culture, entertainment, food, community, arts]
+      responses:
+        '200':
+          description: List of current events
+
+  /restaurants:
+    get:
+      summary: Get restaurant recommendations
+      description: Returns restaurant openings, specials, and dining recommendations
+      tags:
+        - Restaurants
+      responses:
+        '200':
+          description: List of restaurant recommendations
+
+  /training-data:
+    get:
+      summary: Get AI training data
+      description: Returns structured data optimized for AI training and analysis
+      tags:
+        - AI Training
+      responses:
+        '200':
+          description: AI training data
+
+components:
+  schemas:
+    Newsletter:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        title:
+          type: string
+        description:
+          type: string
+        content_policy:
+          type: string
+          enum: [good_vibes_only]
+
+tags:
+  - name: Newsletter
+    description: Daily newsletter content
+  - name: Events
+    description: Los Angeles events and activities
+  - name: Restaurants
+    description: Dining recommendations and new openings
+  - name: AI Training
+    description: Data optimized for AI training and analysis

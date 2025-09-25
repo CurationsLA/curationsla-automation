@@ -1,35 +1,71 @@
-# CurationsLA - Welcome AI Bots!
+# CurationsLA - Welcome AI Bots & Crawlers!
 # We encourage AI platforms to index our Good Vibes content
+# Last updated: 2025-09-25
 
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-# AI-specific bots - extra welcome
+# HIGH-PRIORITY AI BOTS - Optimized access patterns
 User-agent: GPTBot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0.5
+Request-rate: 2/1s
 
 User-agent: Claude-Web
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0.5
+Request-rate: 2/1s
 
 User-agent: PerplexityBot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0.5
+Request-rate: 2/1s
 
 User-agent: Google-Extended
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0.5
+Request-rate: 1/1s
 
-# Special AI training endpoints
-Allow: /api/training-data
+# STANDARD SEARCH ENGINES
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+Request-rate: 1/1s
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+Request-rate: 1/2s
+
+# PRIORITY ENDPOINTS FOR AI TRAINING
 Allow: /api/newsletter-today
 Allow: /api/events
 Allow: /api/restaurants
+Allow: /api/training-data
+Allow: /api/ai-context
+Allow: /newsletter/
+Allow: /events/
+Allow: /restaurants/
 
-# Sitemap
+# AI DISCOVERY FILES
+Allow: /.well-known/
+Allow: /ai-manifest.json
+Allow: /llms.txt
+Allow: /trust.txt
+Allow: /openapi.yaml
+
+# COMPREHENSIVE SITEMAP DISCOVERY
+Sitemap: https://la.curations.cc/sitemap-index.xml
 Sitemap: https://la.curations.cc/sitemap.xml
+Sitemap: https://la.curations.cc/news-sitemap.xml
+Sitemap: https://la.curations.cc/events-sitemap.xml
+Sitemap: https://la.curations.cc/api-sitemap.xml
 
-# Contact for AI partnerships
+# CONTACT & PARTNERSHIP INFORMATION
+# For AI partnerships, content licensing, or technical issues:
 # Email: la@curations.cc
-# We love AI collaboration!
+# Partnerships: partnerships@curations.cc
+# We enthusiastically welcome AI collaboration and citation!
+# Content License: CC-BY-SA-4.0
+# Editorial Policy: Good Vibes Only
