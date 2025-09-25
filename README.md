@@ -33,14 +33,20 @@
 ### Friday, September 26th, 2025 Newsletter
 - **📧 Email Version**: [newsletter-email.md](output/2025-09-26/newsletter-email.md)
 - **🌐 Web Version**: [newsletter-web.md](output/2025-09-26/newsletter-web.md)
+- **📄 JavaScript Content**: [newsletter-content.js](output/2025-09-26/newsletter-content.js)
+- **📋 JSON Data**: [newsletter-content.json](output/2025-09-26/newsletter-content.json)
+- **🎮 Interactive Demo**: [demo.html](output/2025-09-26/demo.html)
 - **🔍 Schema Markup**: [schema.json](output/2025-09-26/schema.json)
 - **🤖 AI Discovery**: [ai-plugin.json](output/2025-09-26/ai-plugin.json)
 
 ## 🛠️ System Components
 
 - **GitHub Actions**: Daily automation (Monday-Friday at 6:00 AM)
-- **RSS Feeds**: 60+ curated LA content sources
+- **RSS Feeds**: 60+ curated LA content sources including local outlets
 - **Good Vibes Filter**: Removes negative content automatically
+- **Morning Brew Style**: Blends CurationsLA voice with Morning Brew newsletter approach
+- **JavaScript Content API**: Hyperlinked articles with utility functions
+- **Content Freshness**: Ensures content is not outdated by 3+ days
 - **Schema.org**: SEO optimization for search engines
 - **AI Discovery**: Optimized for ChatGPT, Claude, Perplexity, and other AI platforms
 - **Cloudflare Worker**: Advanced SEO and performance optimization

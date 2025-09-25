@@ -49,6 +49,30 @@
       "url": "https://toddrickallen.com/feed/",
       "type": "food_blog",
       "priority": "medium"
+    },
+    {
+      "name": "LA Taco Food",
+      "url": "https://lataco.com/category/food/feed/",
+      "type": "local_food_culture",
+      "priority": "high"
+    },
+    {
+      "name": "Thrillist LA Food",
+      "url": "https://www.thrillist.com/los-angeles/food/feed",
+      "type": "food_discovery",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Magazine Dining",
+      "url": "https://lamag.com/category/dining/feed/",
+      "type": "upscale_dining",
+      "priority": "medium"
+    },
+    {
+      "name": "Angeleno Magazine Food",
+      "url": "https://angeleno.com/category/food-drink/feed/",
+      "type": "luxury_dining",
+      "priority": "medium"
     }
   ],
   "keywords": [

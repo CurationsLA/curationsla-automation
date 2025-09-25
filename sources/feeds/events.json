@@ -49,6 +49,30 @@
       "url": "https://secretlosangeles.com/feed/",
       "type": "unique_events",
       "priority": "medium"
+    },
+    {
+      "name": "LA Magazine Events",
+      "url": "https://lamag.com/category/arts-entertainment/feed/",
+      "type": "premium_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Angeleno Events",
+      "url": "https://angeleno.com/category/arts-culture/feed/",
+      "type": "luxury_events",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Parent Events",
+      "url": "https://www.laparent.com/feed/",
+      "type": "family_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Eventbrite LA",
+      "url": "https://www.eventbrite.com/rss/city-events/5346",
+      "type": "community_events",
+      "priority": "high"
     }
   ],
   "event_types": [

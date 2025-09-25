@@ -2,7 +2,7 @@
 
 [GIF PLACEHOLDER - Insert animated GIF here]
 
-**IT'S THURSDAY**
+**IT'S FRIDAY**
 
 👋 **HEY CUTIE!**
 
@@ -26,20 +26,20 @@
 
 | **NATIONAL** |
 |:---:|
-| Tech Giants Announce Green [Energy Partnership](#) |
 | Medical Breakthrough Shows Promise [for Treatment](#) |
+| Climate Initiative Gains [Global Support](#) |
 | New Archaeological Discovery [Changes History](#) |
 | Arts Education Funding Reaches [Record High](#) |
-| Climate Initiative Gains [Global Support](#) |
+| Tech Giants Announce Green [Energy Partnership](#) |
 | Space Mission Returns with [Promising Samples](#) |
 
 | **LOCAL** | **FUN** |
 |:---:|:---:|
-| Hollywood Bowl Announces [Summer Series](#) | Food Truck Festival [Announces Lineup](#) |
+| Hollywood Bowl Announces [Summer Series](#) | Viral Cat Video Brings Joy [to Millions](#) |
 | DTLA Food Hall Opens [This Weekend](#) | Local Artist Creates [Interactive Mural](#) |
-| Santa Monica Pier Gets [New Attraction](#) | Beach Cleanup Breaks [Participation Record](#) |
-| Griffith Observatory Unveils [New Exhibit](#) | Community Garden Produces [Giant Vegetables](#) |
-| LA Metro Expands [Weekend Service](#) | Viral Cat Video Brings Joy [to Millions](#) |
+| LA Metro Expands [Weekend Service](#) | Community Garden Produces [Giant Vegetables](#) |
+| Griffith Observatory Unveils [New Exhibit](#) | Beach Cleanup Breaks [Participation Record](#) |
+| Santa Monica Pier Gets [New Attraction](#) | Food Truck Festival [Announces Lineup](#) |
 
 ---
 
