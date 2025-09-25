@@ -26,20 +26,20 @@
 
 | **NATIONAL** |
 |:---:|
-| Medical Breakthrough Shows Promise [for Treatment](#) |
-| Climate Initiative Gains [Global Support](#) |
 | New Archaeological Discovery [Changes History](#) |
-| Arts Education Funding Reaches [Record High](#) |
+| Climate Initiative Gains [Global Support](#) |
 | Tech Giants Announce Green [Energy Partnership](#) |
 | Space Mission Returns with [Promising Samples](#) |
+| Arts Education Funding Reaches [Record High](#) |
+| Medical Breakthrough Shows Promise [for Treatment](#) |
 
 | **LOCAL** | **FUN** |
 |:---:|:---:|
-| Hollywood Bowl Announces [Summer Series](#) | Viral Cat Video Brings Joy [to Millions](#) |
-| DTLA Food Hall Opens [This Weekend](#) | Local Artist Creates [Interactive Mural](#) |
 | LA Metro Expands [Weekend Service](#) | Community Garden Produces [Giant Vegetables](#) |
-| Griffith Observatory Unveils [New Exhibit](#) | Beach Cleanup Breaks [Participation Record](#) |
+| Griffith Observatory Unveils [New Exhibit](#) | Local Artist Creates [Interactive Mural](#) |
+| Hollywood Bowl Announces [Summer Series](#) | Beach Cleanup Breaks [Participation Record](#) |
 | Santa Monica Pier Gets [New Attraction](#) | Food Truck Festival [Announces Lineup](#) |
+| DTLA Food Hall Opens [This Weekend](#) | Viral Cat Video Brings Joy [to Millions](#) |
 
 ---
 

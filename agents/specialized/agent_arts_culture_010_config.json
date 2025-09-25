@@ -1,0 +1,82 @@
+{
+  "agent_id": "agent_arts_culture_010",
+  "name": "ArtsCultureSpotter",
+  "specialty": "Arts, culture, galleries, museums, creative scene",
+  "deployment_date": "2025-09-25",
+  "deployment_time": "2025-09-25T22:35:16.718145",
+  "assigned_neighborhoods": [
+    "Arts District",
+    "Silver Lake",
+    "Venice",
+    "Mid-City",
+    "West Hollywood"
+  ],
+  "content_sources": [
+    {
+      "type": "rss",
+      "name": "Hollywood Reporter Arts",
+      "url": "https://www.hollywoodreporter.com/c/culture/rss/",
+      "category": "arts"
+    },
+    {
+      "type": "web_scraper",
+      "name": "LA Canvas Arts",
+      "url": "https://lacanvas.com",
+      "scraper": "lacanvas",
+      "category": "arts"
+    },
+    {
+      "type": "web_scraper",
+      "name": "LAist Arts",
+      "url": "https://laist.com/arts-and-entertainment",
+      "scraper": "laist",
+      "category": "arts"
+    }
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.85,
+  "focus_keywords": [
+    "exhibition",
+    "gallery",
+    "art show",
+    "opening",
+    "creative",
+    "artist",
+    "cultural"
+  ],
+  "mission": "Source and curate arts, culture, galleries, museums, creative scene content for CurationsLA newsletter using both RSS feeds and web scraping",
+  "success_metrics": {
+    "content_items_target": 20,
+    "good_vibes_score_minimum": 0.85,
+    "neighborhood_coverage": 5,
+    "source_diversity": 3,
+    "web_scraping_success_rate": 0.8
+  },
+  "operational_guidelines": [
+    "Prioritize web scraping for sources with failed RSS feeds",
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards",
+    "Use focus keywords to identify relevant content",
+    "Fallback to secondary sources if primary sources fail"
+  ],
+  "scraping_configuration": {
+    "enabled": true,
+    "fallback_for_rss_failures": true,
+    "respect_robots_txt": true,
+    "rate_limiting": {
+      "requests_per_minute": 10,
+      "delay_between_requests": 6
+    },
+    "user_agent": "CurationsLA/1.0 (Newsletter Aggregator; +https://la.curations.cc)",
+    "timeout": 30
+  },
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}

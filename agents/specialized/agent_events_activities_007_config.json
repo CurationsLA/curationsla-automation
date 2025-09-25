@@ -1,0 +1,87 @@
+{
+  "agent_id": "agent_events_activities_007",
+  "name": "EventActivitiesScout",
+  "specialty": "Weekend activities, events, LA Scenestar-style event coverage",
+  "deployment_date": "2025-09-25",
+  "deployment_time": "2025-09-25T22:35:16.717478",
+  "assigned_neighborhoods": [
+    "All LA",
+    "Event venues",
+    "Cultural districts"
+  ],
+  "content_sources": [
+    {
+      "type": "rss",
+      "name": "LA Parent Events",
+      "url": "https://www.laparent.com/rss.xml",
+      "category": "events"
+    },
+    {
+      "type": "web_scraper",
+      "name": "Time Out LA Events",
+      "url": "https://www.timeout.com/los-angeles/things-to-do",
+      "scraper": "timeout_la",
+      "category": "events"
+    },
+    {
+      "type": "web_scraper",
+      "name": "Discover LA",
+      "url": "https://www.discoverlosangeles.com",
+      "scraper": "discoverla",
+      "category": "events"
+    },
+    {
+      "type": "web_scraper",
+      "name": "We Like LA Events",
+      "url": "https://welikela.com/category/events-entertainment",
+      "scraper": "welikela",
+      "category": "events"
+    }
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.85,
+  "focus_keywords": [
+    "event",
+    "festival",
+    "weekend",
+    "fun",
+    "family",
+    "celebration",
+    "activity"
+  ],
+  "mission": "Source and curate weekend activities, events, la scenestar-style event coverage content for CurationsLA newsletter using both RSS feeds and web scraping",
+  "success_metrics": {
+    "content_items_target": 20,
+    "good_vibes_score_minimum": 0.85,
+    "neighborhood_coverage": 3,
+    "source_diversity": 4,
+    "web_scraping_success_rate": 0.8
+  },
+  "operational_guidelines": [
+    "Prioritize web scraping for sources with failed RSS feeds",
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards",
+    "Use focus keywords to identify relevant content",
+    "Fallback to secondary sources if primary sources fail"
+  ],
+  "scraping_configuration": {
+    "enabled": true,
+    "fallback_for_rss_failures": true,
+    "respect_robots_txt": true,
+    "rate_limiting": {
+      "requests_per_minute": 10,
+      "delay_between_requests": 6
+    },
+    "user_agent": "CurationsLA/1.0 (Newsletter Aggregator; +https://la.curations.cc)",
+    "timeout": 30
+  },
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}

@@ -1,4 +1,3 @@
-
 /**
  * CurationsLA Newsletter Content - Friday September 26th, 2025
  * Generated with Good Vibes and Morning Brew style blend
@@ -7,7 +6,7 @@
 const CurationsLANewsletter = {
     date: '2025-09-26',
     day: 'Friday',
-    generated: '2025-09-25T20:30:26.813Z',
+    generated: '2025-09-25T22:36:53.621911',
     
     // Newsletter Header
     header: {
@@ -20,71 +19,59 @@ const CurationsLANewsletter = {
     content: {
   "eats": {
     "category": "EATS",
-    "emoji": "🍴",
+    "emoji": "\ud83c\udf74",
     "intro": "The food scene is absolutely buzzing right now...",
-    "articles": [
-      {
-        "title": "New Ramen Shop Opens in Silver Lake",
-        "blurb": "Good morning, LA legends! 💫 Michelin-trained chef brings authentic tonkotsu to the eastside. This is absolutely obsessed for our fellow angels! 🌟",
-        "link": "https://la.eater.com/sample-ramen-silver-lake",
-        "source": "LA Eater",
-        "neighborhood": "Silver Lake",
-        "category": "eats",
-        "publishDate": "2025-09-24",
-        "hyperlinkHtml": "<a href=\"https://la.eater.com/sample-ramen-silver-lake\" target=\"_blank\" rel=\"noopener noreferrer\">New Ramen Shop Opens in Silver Lake</a>",
-        "hyperlinkMarkdown": "[New Ramen Shop Opens in Silver Lake](https://la.eater.com/sample-ramen-silver-lake)"
-      },
-      {
-        "title": "Venice Beach Farmers Market Expands",
-        "blurb": "Good morning, LA legends! 💫 More local vendors join the weekly celebration of fresh produce. This is absolutely obsessed for our our people! 🌟",
-        "link": "https://laist.com/sample-venice-farmers-market",
-        "source": "LAist",
-        "neighborhood": "Venice",
-        "category": "eats",
-        "publishDate": "2025-09-25",
-        "hyperlinkHtml": "<a href=\"https://laist.com/sample-venice-farmers-market\" target=\"_blank\" rel=\"noopener noreferrer\">Venice Beach Farmers Market Expands</a>",
-        "hyperlinkMarkdown": "[Venice Beach Farmers Market Expands](https://laist.com/sample-venice-farmers-market)"
-      }
-    ],
-    "count": 2
+    "articles": [],
+    "count": 0
   },
   "events": {
     "category": "EVENTS",
-    "emoji": "🎉",
+    "emoji": "\ud83c\udf89",
     "intro": "Your social calendar is about to get very full...",
-    "articles": [
-      {
-        "title": "Free Concert Series at Grand Park",
-        "blurb": "Rise and grind, Angels! ☀️ Local artists perform every Friday evening through October. This is absolutely obsessed for our neighbors! 🌟",
-        "link": "https://www.timeout.com/sample-grand-park-concerts",
-        "source": "Time Out LA",
-        "neighborhood": "Downtown",
-        "category": "events",
-        "publishDate": "2025-09-23",
-        "hyperlinkHtml": "<a href=\"https://www.timeout.com/sample-grand-park-concerts\" target=\"_blank\" rel=\"noopener noreferrer\">Free Concert Series at Grand Park</a>",
-        "hyperlinkMarkdown": "[Free Concert Series at Grand Park](https://www.timeout.com/sample-grand-park-concerts)"
-      }
-    ],
-    "count": 1
+    "articles": [],
+    "count": 0
   },
   "community": {
     "category": "COMMUNITY",
-    "emoji": "🤝",
+    "emoji": "\ud83e\udd1d",
     "intro": "LA's heart is showing up in the best ways...",
-    "articles": [
-      {
-        "title": "Highland Park Community Garden Ribbon Cutting",
-        "blurb": "Good morning, LA legends! 💫 Neighbors transform vacant lot into green oasis for all to enjoy. This is absolutely obsessed for our LA family! 🌟",
-        "link": "https://www.theeastsiderla.com/sample-community-garden",
-        "source": "The Eastsider LA",
-        "neighborhood": "Highland Park",
-        "category": "community",
-        "publishDate": "2025-09-25",
-        "hyperlinkHtml": "<a href=\"https://www.theeastsiderla.com/sample-community-garden\" target=\"_blank\" rel=\"noopener noreferrer\">Highland Park Community Garden Ribbon Cutting</a>",
-        "hyperlinkMarkdown": "[Highland Park Community Garden Ribbon Cutting](https://www.theeastsiderla.com/sample-community-garden)"
-      }
-    ],
-    "count": 1
+    "articles": [],
+    "count": 0
+  },
+  "development": {
+    "category": "DEVELOPMENT",
+    "emoji": "\ud83c\udfd7\ufe0f",
+    "intro": "The city is transforming before our eyes...",
+    "articles": [],
+    "count": 0
+  },
+  "business": {
+    "category": "BUSINESS",
+    "emoji": "\ud83d\udcbc",
+    "intro": "Local entrepreneurs are crushing it...",
+    "articles": [],
+    "count": 0
+  },
+  "entertainment": {
+    "category": "ENTERTAINMENT",
+    "emoji": "\ud83c\udfad",
+    "intro": "The creative energy is off the charts...",
+    "articles": [],
+    "count": 0
+  },
+  "sports": {
+    "category": "SPORTS",
+    "emoji": "\ud83c\udfc6",
+    "intro": "Our teams and athletes are bringing the heat...",
+    "articles": [],
+    "count": 0
+  },
+  "goodies": {
+    "category": "GOODIES",
+    "emoji": "\u2728",
+    "intro": "Hidden gems and special finds await...",
+    "articles": [],
+    "count": 0
   }
 },
 

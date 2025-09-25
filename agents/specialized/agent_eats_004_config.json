@@ -1,0 +1,87 @@
+{
+  "agent_id": "agent_eats_004",
+  "name": "EatsExplorer",
+  "specialty": "Restaurant openings, food trucks, culinary events, dining scene",
+  "deployment_date": "2025-09-25",
+  "deployment_time": "2025-09-25T22:35:16.716787",
+  "assigned_neighborhoods": [
+    "Koreatown",
+    "Little Tokyo",
+    "Venice",
+    "Santa Monica",
+    "West Hollywood"
+  ],
+  "content_sources": [
+    {
+      "type": "rss",
+      "name": "LA Eater",
+      "url": "https://la.eater.com/rss/index.xml",
+      "category": "food"
+    },
+    {
+      "type": "rss",
+      "name": "LA Times Food",
+      "url": "https://www.latimes.com/food/rss2.0.xml",
+      "category": "food"
+    },
+    {
+      "type": "web_scraper",
+      "name": "LAist Food",
+      "url": "https://laist.com/news/food",
+      "scraper": "laist",
+      "category": "food"
+    },
+    {
+      "type": "rss",
+      "name": "LA Taco Food",
+      "url": "https://lataco.com/feed/",
+      "category": "food"
+    }
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.9,
+  "focus_keywords": [
+    "opening",
+    "new restaurant",
+    "food truck",
+    "chef",
+    "culinary",
+    "dining",
+    "delicious"
+  ],
+  "mission": "Source and curate restaurant openings, food trucks, culinary events, dining scene content for CurationsLA newsletter using both RSS feeds and web scraping",
+  "success_metrics": {
+    "content_items_target": 20,
+    "good_vibes_score_minimum": 0.9,
+    "neighborhood_coverage": 5,
+    "source_diversity": 4,
+    "web_scraping_success_rate": 0.8
+  },
+  "operational_guidelines": [
+    "Prioritize web scraping for sources with failed RSS feeds",
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards",
+    "Use focus keywords to identify relevant content",
+    "Fallback to secondary sources if primary sources fail"
+  ],
+  "scraping_configuration": {
+    "enabled": true,
+    "fallback_for_rss_failures": true,
+    "respect_robots_txt": true,
+    "rate_limiting": {
+      "requests_per_minute": 10,
+      "delay_between_requests": 6
+    },
+    "user_agent": "CurationsLA/1.0 (Newsletter Aggregator; +https://la.curations.cc)",
+    "timeout": 30
+  },
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}
