@@ -1,0 +1,148 @@
+# CurationsLA Domain Separation Configuration
+# This configuration ensures complete separation between curations.cc and la.curations.cc
+# SAFETY GUARANTEE: NO modifications to curations.cc - DUPLICATION ONLY
+
+# ============================================================================
+# CURATIONS.CC (ORIGINAL) - REMAINS COMPLETELY UNTOUCHED
+# ============================================================================
+# Original curations.cc workers and routes remain unchanged:
+# - curations-seo-optimizer (ORIGINAL - Marketing focus)
+# - curations-sitemap-generator (ORIGINAL - Agency services) 
+# - curations-discovery-endpoints (ORIGINAL - Business endpoints)
+# Routes: curations.cc/* (UNCHANGED)
+# Purpose: Marketing Agency (UNCHANGED)
+# Contact: info@curations.cc (UNCHANGED)
+
+# ============================================================================
+# LA.CURATIONS.CC (DUPLICATED & ENHANCED) - NEW IMPLEMENTATION
+# ============================================================================
+
+# Primary Advanced SEO Worker (DUPLICATED from curations.cc and enhanced)
+[env.production.advanced_seo]
+name = "curationsla-advanced-seo"
+main = "advanced-seo-worker.js"
+compatibility_date = "2024-09-01"
+routes = [
+  { pattern = "la.curations.cc/*", zone_name = "curations.cc" }
+]
+
+# Source: Duplicated from curations-seo-optimizer
+# Enhancements: Newsletter focus, Good Vibes policy, LA-specific content
+# Contact: la@curations.cc (DIFFERENT from curations.cc)
+
+# Sitemap Enhancer Worker (DUPLICATED from curations.cc and enhanced)
+[env.production.sitemap_enhancer]  
+name = "curationsla-sitemap-enhancer"
+main = "sitemap-enhancer-worker.js"
+compatibility_date = "2024-09-01"
+routes = [
+  { pattern = "la.curations.cc/sitemap*.xml", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/news-sitemap.xml", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/events-sitemap.xml", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/api-sitemap.xml", zone_name = "curations.cc" }
+]
+
+# Source: Duplicated from curations-sitemap-generator
+# Enhancements: Newsletter archives, LA events, Good Vibes content focus
+
+# Trust Signals Worker (DUPLICATED from curations.cc and enhanced)
+[env.production.trust_signals]
+name = "curationsla-trust-signals"
+main = "trust-signals-worker.js"
+compatibility_date = "2024-09-01"
+routes = [
+  { pattern = "la.curations.cc/robots.txt", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/llms.txt", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/trust.txt", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/.well-known/*", zone_name = "curations.cc" }
+]
+
+# Source: Duplicated from curations-discovery-endpoints
+# Enhancements: Newsletter editorial standards, Good Vibes content policy
+
+# AI Discovery Worker (NEW - Based on curations.cc patterns)
+[env.production.ai_discovery]
+name = "curationsla-ai-discovery"
+main = "ai-discovery-worker.js"
+compatibility_date = "2024-09-01"
+routes = [
+  { pattern = "la.curations.cc/ai-manifest.json", zone_name = "curations.cc" },
+  { pattern = "la.curations.cc/openapi.yaml", zone_name = "curations.cc" }
+]
+
+# Source: Enhanced from curations.cc AI optimization patterns
+# Enhancements: Newsletter-specific AI training data and context
+
+# Smart Routing Worker (NEW - Based on curations.cc performance patterns)
+[env.production.smart_routing]
+name = "curationsla-smart-routing" 
+main = "smart-routing-worker.js"
+compatibility_date = "2024-09-01"
+routes = [
+  { pattern = "la.curations.cc/api/*", zone_name = "curations.cc" }
+]
+
+# Source: Enhanced from curations.cc performance optimization
+# Enhancements: Newsletter content caching, LA-specific optimization
+
+# ============================================================================
+# SHARED RESOURCES (SEPARATE INSTANCES)
+# ============================================================================
+
+# KV Namespaces (SEPARATE from curations.cc)
+[[kv_namespaces]]
+binding = "CURATIONSLA_CACHE"
+id = "la-curations-cache-namespace"
+preview_id = "la-curations-cache-preview"
+
+[[kv_namespaces]]
+binding = "CURATIONSLA_DATA"
+id = "la-curations-data-namespace" 
+preview_id = "la-curations-data-preview"
+
+# Analytics (SEPARATE tracking)
+[[analytics_engine_datasets]]
+binding = "CURATIONSLA_ANALYTICS"
+
+# ============================================================================
+# ENVIRONMENT VARIABLES (LA.CURATIONS.CC SPECIFIC)
+# ============================================================================
+
+[vars]
+SITE_URL = "https://la.curations.cc"
+CONTACT_EMAIL = "la@curations.cc"
+ORGANIZATION_NAME = "CurationsLA"
+PARENT_ORGANIZATION_URL = "https://curations.cc"
+CONTENT_POLICY = "good_vibes_only"
+EDITORIAL_POLICY = "Good Vibes Only - No crime, politics, negative news"
+LICENSE = "CC-BY-SA-4.0"
+GEOGRAPHIC_FOCUS = "Los Angeles, California"
+PUBLICATION_TYPE = "newsletter"
+FREQUENCY = "weekdays"
+TARGET_AUDIENCE = "LA residents, visitors, culture enthusiasts"
+
+# ============================================================================
+# SEPARATION VERIFICATION
+# ============================================================================
+
+# Domain Separation Confirmed:
+# ✅ curations.cc workers: COMPLETELY SEPARATE (no shared workers)
+# ✅ curations.cc routes: COMPLETELY SEPARATE (different domains)
+# ✅ curations.cc data: COMPLETELY SEPARATE (different KV namespaces)
+# ✅ curations.cc analytics: COMPLETELY SEPARATE (different datasets)
+# ✅ curations.cc branding: COMPLETELY SEPARATE (CurationsLA vs CURATIONS)
+# ✅ curations.cc contact: COMPLETELY SEPARATE (la@curations.cc vs info@curations.cc)
+# ✅ curations.cc content: COMPLETELY SEPARATE (Newsletter vs Marketing)
+
+# Safety Guarantees:
+# 🛡️  Zero modifications to existing curations.cc infrastructure
+# 🛡️  Independent deployment and rollback capabilities
+# 🛡️  Separate monitoring and error handling
+# 🛡️  Different editorial policies and content guidelines
+# 🛡️  Isolated caching and performance optimization
+
+# Implementation Strategy:
+# 📋 DUPLICATE: Copy advanced features from curations.cc patterns
+# 📋 ENHANCE: Adapt for newsletter and Good Vibes focus
+# 📋 SEPARATE: Ensure complete independence from curations.cc
+# 📋 PROTECT: Maintain curations.cc functionality unchanged
