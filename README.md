@@ -39,6 +39,50 @@
 ### Sports & Recreation Agents
 10. **SportsChampion** (`agent_sports_recreation_006`) - Sports teams, recreational activities, fitness events
 
+## 🔧 Enhanced Features (v2.1)
+
+### ✅ Content Freshness Validation
+- **3-Day Rule**: Content older than 3 days from publication date is automatically filtered out
+- **Accurate Dating**: Friday, Sept 26th publication only includes content from Tuesday, Sept 23rd or newer
+- **Enhanced Logging**: Detailed reporting of outdated content removal
+
+### 🔄 Duplicate Prevention System
+- **7-Day Lookback**: Checks against previous 7 days of publications to prevent duplicate content
+- **Content Fingerprinting**: Uses content hashing for accurate duplicate detection
+- **Automated Removal**: Automatically filters out duplicate content before publication
+
+### 📁 Archive Management (7-Day Retention)
+- **Smart Archiving**: Publications older than 7 days are automatically archived with lightweight metadata
+- **Archive Hub**: Centralized index of all publications at `/archive_hub/index.html`
+- **Agent Reference**: Previous publications available for agents to reference successful content patterns
+
+### 🎯 Publication Showcase Commands
+```bash
+# Show previous publication for reference
+python scripts/curationsla_cli.py showcase --previous
+
+# Check new content for duplicates against recent publications  
+python scripts/curationsla_cli.py showcase --compare output/2025-09-26
+
+# Generate agent reference guide from publication patterns
+python scripts/curationsla_cli.py showcase --generate-guide
+
+# Generate enhanced newsletter with all features
+python scripts/curationsla_cli.py generate --enhanced
+```
+
+### 📊 Archive Management Commands
+```bash
+# Clean up archives older than 7 days
+python scripts/curationsla_cli.py archive --cleanup
+
+# Generate archive hub index page
+python scripts/curationsla_cli.py archive --generate-hub
+
+# Check specific content for duplicates
+python scripts/curationsla_cli.py archive --check-duplicates output/2025-09-26
+```
+
 ## 🛠️ Enhanced System Components
 
 ### Core Infrastructure
@@ -72,7 +116,7 @@ git clone https://github.com/CurationsLA/curationsla-automation.git
 cd curationsla-automation
 ```
 
-### Initial Setup
+### Enhanced Setup with Archive Management
 ```bash
 # 1. Deploy specialized agents
 python scripts/deploy_specialized_agents.py
@@ -80,14 +124,17 @@ python scripts/deploy_specialized_agents.py
 # 2. Test web scraping functionality  
 python scripts/test_web_scraping.py
 
-# 3. Generate newsletter content
-python scripts/content_generator.py
+# 3. Generate enhanced newsletter with duplicate prevention
+python scripts/curationsla_cli.py generate --enhanced
 
-# 4. Build Schema markup
-python scripts/schema_builder.py --day friday
+# 4. Showcase previous publication (if available)
+python scripts/curationsla_cli.py showcase --previous
 
-# 5. Create AI discovery files
-python scripts/ai_discovery.py
+# 5. Generate agent reference guide
+python scripts/curationsla_cli.py showcase --generate-guide
+
+# 6. Set up archive management (optional - runs automatically)
+python scripts/curationsla_cli.py archive --generate-hub
 ```
 
 ### Environment Configuration

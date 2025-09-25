@@ -1,0 +1,9 @@
+{
+  "last_updated": "2025-09-25T22:49:08.748698",
+  "total_publications": 0,
+  "publications": [],
+  "retention_policy": {
+    "days": 7,
+    "archive_threshold": 30
+  }
+}

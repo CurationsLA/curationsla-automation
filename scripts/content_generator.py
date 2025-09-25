@@ -23,6 +23,15 @@ except ImportError:
     print("⚠️  Web scraping not available - install beautifulsoup4")
     WEB_SCRAPING_AVAILABLE = False
 
+# Try to import archive manager for duplicate prevention
+try:
+    from archive_manager import ArchiveManager
+    from publication_showcase import PublicationShowcase
+    ARCHIVE_MANAGEMENT_AVAILABLE = True
+except ImportError:
+    print("⚠️  Archive management not available")
+    ARCHIVE_MANAGEMENT_AVAILABLE = False
+
 # Configuration
 BASE_DIR = Path(__file__).parent.parent
 SOURCES_DIR = BASE_DIR / "sources" / "feeds"
@@ -91,7 +100,7 @@ class ContentGenerator:
         self.today = self.target_date  # Use target date instead of current date
         self.day_name = self.target_date.strftime('%A').lower()
         self.date_str = self.target_date.strftime('%Y-%m-%d')
-        self.cutoff_date = datetime(2025, 9, 25) - timedelta(days=3)  # Not outdated by 3 days from Sept 25
+        self.cutoff_date = self.target_date - timedelta(days=3)  # Not outdated by 3 days from target date
         self.content = {}
         self.js_content_data = {}
         
@@ -100,6 +109,14 @@ class ContentGenerator:
             self.web_scraper = WebScraper()
         else:
             self.web_scraper = None
+        
+        # Initialize archive management for duplicate prevention (if available)
+        if ARCHIVE_MANAGEMENT_AVAILABLE:
+            self.archive_manager = ArchiveManager()
+            self.publication_showcase = PublicationShowcase()
+        else:
+            self.archive_manager = None
+            self.publication_showcase = None
         
         # Create output directory
         self.output_path = OUTPUT_DIR / self.date_str
@@ -703,13 +720,175 @@ if (typeof window !== 'undefined') {{
         
         with open(self.output_path / "stats.json", 'w') as f:
             json.dump(stats, f, indent=2)
+    
+    def check_content_freshness(self, items: List[Dict]) -> List[Dict]:
+        """Enhanced content freshness checking with detailed logging"""
+        fresh_items = []
+        outdated_items = []
+        
+        print(f"🕒 Checking content freshness (cutoff: {self.cutoff_date.strftime('%A, %B %d, %Y')})")
+        
+        for item in items:
+            if self.is_content_fresh(item.get('published', '')):
+                fresh_items.append(item)
+            else:
+                outdated_items.append(item)
+        
+        if outdated_items:
+            print(f"   ⚠️  Filtered out {len(outdated_items)} outdated items")
+            for outdated in outdated_items[:3]:  # Show first 3 outdated items
+                title = outdated.get('title', 'Unknown')[:50]
+                published = outdated.get('published', 'Unknown date')
+                print(f"      📰 {title}... (Published: {published})")
+        
+        print(f"   ✅ {len(fresh_items)} items are fresh and recent")
+        return fresh_items
+    
+    def check_for_duplicates(self) -> Dict:
+        """Check current content against recent publications to prevent duplicates"""
+        if not self.archive_manager:
+            print("⚠️  Archive management not available - skipping duplicate check")
+            return {'checked': False, 'duplicates': 0}
+        
+        print(f"\n🔄 Checking for duplicate content against recent publications...")
+        
+        # Flatten all content items for duplicate checking
+        all_items = []
+        for category, items in self.content.items():
+            for item in items:
+                all_items.append({
+                    'content': item.get('title', '') + ' ' + item.get('description', ''),
+                    'category': category,
+                    'source': item.get('source', 'Unknown'),
+                    'title': item.get('title', '')
+                })
+        
+        # Check for duplicates
+        duplicate_analysis = self.archive_manager.check_for_duplicates(all_items, lookback_days=7)
+        
+        if duplicate_analysis['duplicate_count'] > 0:
+            print(f"   ⚠️  Found {duplicate_analysis['duplicate_count']} potential duplicates!")
+            
+            # Remove duplicates from content
+            unique_hashes = {item['hash'] for item in duplicate_analysis['unique_items']}
+            
+            for category in self.content:
+                original_count = len(self.content[category])
+                self.content[category] = [
+                    item for item in self.content[category]
+                    if self.archive_manager.get_content_hash(
+                        item.get('title', '') + ' ' + item.get('description', '')
+                    ) in unique_hashes
+                ]
+                removed_count = original_count - len(self.content[category])
+                if removed_count > 0:
+                    print(f"   🗑️  Removed {removed_count} duplicates from {category}")
+        else:
+            print(f"   ✅ No duplicates found - all content is fresh!")
+        
+        return {
+            'checked': True,
+            'duplicates': duplicate_analysis['duplicate_count'],
+            'unique_items': duplicate_analysis['unique_count'],
+            'removed_duplicates': duplicate_analysis['duplicate_count'] > 0
+        }
+    
+    def showcase_previous_publication(self):
+        """Show information about the previous publication for reference"""
+        if not self.publication_showcase:
+            print("⚠️  Publication showcase not available")
+            return
+        
+        print(f"\n📚 Previous Publication Reference")
+        print("=" * 40)
+        
+        previous = self.publication_showcase.showcase_previous_publication(self.target_date)
+        
+        if previous:
+            print(f"✅ Agents can reference previous publication patterns and successful content types")
+        else:
+            print("ℹ️  This appears to be the first publication - no previous reference available")
+    
+    def archive_current_publication(self):
+        """Archive the current publication for future reference"""
+        if not self.archive_manager:
+            print("⚠️  Archive management not available - skipping archival")
+            return
+        
+        print(f"\n📁 Archiving current publication...")
+        
+        try:
+            record = self.archive_manager.archive_publication(self.target_date, self.output_path)
+            print(f"✅ Publication archived successfully")
+            print(f"   📊 {record['content_count']} content items indexed")
+            print(f"   🔍 Content hashes stored for duplicate prevention")
+            
+            # Clean up old archives if enabled
+            cleanup_result = self.archive_manager.cleanup_old_archives(retention_days=7)
+            if cleanup_result['cleaned_count'] > 0:
+                print(f"   🧹 Cleaned up {cleanup_result['cleaned_count']} old archives (7+ day retention)")
+            
+        except Exception as e:
+            print(f"❌ Error archiving publication: {str(e)}")
+    
+    def generate_enhanced_newsletter(self):
+        """Enhanced newsletter generation with duplicate prevention and archival"""
+        
+        print(f"\n🌴 Generating CurationsLA newsletter for {self.target_date.strftime('%A, %B %d, %Y')}")
+        print(f"📅 Content freshness cutoff: {self.cutoff_date.strftime('%A, %B %d, %Y')} (3 days ago)")
+        
+        # Show previous publication for agent reference
+        self.showcase_previous_publication()
+        
+        # Process all categories
+        categories = ['eats', 'events', 'community', 'development', 'business', 'entertainment', 'sports', 'goodies']
+        
+        for category in categories:
+            print(f"\n🌴 Processing {category.upper()} category...")
+            items = self.process_category(category)
+            
+            # Enhanced freshness checking
+            fresh_items = self.check_content_freshness(items)
+            self.content[category] = fresh_items
+        
+        # Check for duplicates across all content
+        duplicate_check = self.check_for_duplicates()
+        
+        # Generate newsletter content
+        if any(self.content[cat] for cat in categories):
+            newsletter_content = self.generate_newsletter_content()
+            self.save_newsletter_versions(newsletter_content)
+            self.generate_js_content()
+            self.save_content_stats()
+            
+            print(f"\n✅ Newsletter generation complete!")
+            print(f"📧 Email version: {self.output_path}/newsletter-email.md")
+            print(f"🌐 Web version: {self.output_path}/newsletter-web.md")
+            print(f"📄 JS content: {self.output_path}/newsletter-content.js")
+            
+            if duplicate_check['checked']:
+                if duplicate_check['removed_duplicates']:
+                    print(f"🔄 Duplicate prevention: {duplicate_check['duplicates']} duplicates removed")
+                print(f"✨ Final content: {duplicate_check['unique_items']} unique items")
+            
+            # Archive the publication
+            self.archive_current_publication()
+            
+        else:
+            print(f"\n⚠️  No fresh content found. Consider expanding source criteria or checking RSS feeds.")
 
 def main():
     """Main execution function"""
     print("🌴 CurationsLA Content Generator Starting...")
     
     generator = ContentGenerator()
-    generator.generate_newsletter()
+    
+    # Use enhanced newsletter generation if archive management is available
+    if ARCHIVE_MANAGEMENT_AVAILABLE:
+        generator.generate_enhanced_newsletter()
+    else:
+        print("⚠️  Using basic newsletter generation (archive management not available)")
+        generator.generate_newsletter()
     
     print("\n🎉 All done! Good Vibes generated successfully!")
 
