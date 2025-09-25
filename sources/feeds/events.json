@@ -1,0 +1,64 @@
+{
+  "category": "events",
+  "description": "Los Angeles cultural events, concerts, exhibitions, and happenings",
+  "feeds": [
+    {
+      "name": "LA Weekly Events",
+      "url": "https://www.laweekly.com/events/rss",
+      "type": "event_listings",
+      "priority": "high"
+    },
+    {
+      "name": "Time Out LA Things to Do",
+      "url": "https://www.timeout.com/los-angeles/things-to-do/feed",
+      "type": "event_guides",
+      "priority": "high"
+    },
+    {
+      "name": "Discover LA",
+      "url": "https://www.discoverlosangeles.com/rss.xml",
+      "type": "tourism_events",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Arts & Entertainment",
+      "url": "https://laist.com/news/arts-and-entertainment/rss",
+      "type": "cultural_events",
+      "priority": "high"
+    },
+    {
+      "name": "We Like LA Events",
+      "url": "https://welikela.com/feed/",
+      "type": "local_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Do LA",
+      "url": "https://dola.com/feed",
+      "type": "event_discovery",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Canvas",
+      "url": "https://lacanvas.com/feed/",
+      "type": "arts_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Secret Los Angeles",
+      "url": "https://secretlosangeles.com/feed/",
+      "type": "unique_events",
+      "priority": "medium"
+    }
+  ],
+  "event_types": [
+    "concert", "festival", "art exhibition", "theater", "comedy show",
+    "farmers market", "food festival", "community event", "outdoor cinema",
+    "museum opening", "gallery show", "book signing", "workshop", "pop-up"
+  ],
+  "keywords": [
+    "free event", "opening night", "festival", "concert", "exhibition",
+    "community gathering", "outdoor", "family-friendly", "weekend",
+    "tonight", "this week", "happy hour", "live music", "art show"
+  ]
+}

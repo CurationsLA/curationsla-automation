@@ -1,0 +1,329 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "NewsMediaOrganization"
+      ],
+      "@id": "https://la.curations.cc/#organization",
+      "name": "CurationsLA",
+      "legalName": "CurationsLA by CURATIONS LLC",
+      "alternateName": [
+        "Curations LA",
+        "LA Curations",
+        "Los Angeles Newsletter"
+      ],
+      "description": "Los Angeles culture & events newsletter delivering Good Vibes Monday-Friday. No rage-bait, no politics, no crime - just community.",
+      "url": "https://la.curations.cc",
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://curations.cc/#organization",
+        "name": "CURATIONS",
+        "url": "https://curations.cc"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://la.curations.cc/#logo",
+        "url": "https://la.curations.cc/assets/logo.png",
+        "width": 600,
+        "height": 60,
+        "caption": "CurationsLA - Good Vibes Only"
+      },
+      "sameAs": [
+        "https://instagram.com/curationsla",
+        "https://twitter.com/curationsla",
+        "https://linkedin.com/company/curations",
+        "https://github.com/CurationsLA"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Los Angeles",
+          "@id": "https://www.wikidata.org/wiki/Q65"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Los Angeles County",
+          "containsPlace": [
+            {
+              "@type": "Place",
+              "name": "Downtown Los Angeles"
+            },
+            {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            {
+              "@type": "Place",
+              "name": "Venice"
+            },
+            {
+              "@type": "Place",
+              "name": "Hollywood"
+            },
+            {
+              "@type": "Place",
+              "name": "Beverly Hills"
+            },
+            {
+              "@type": "Place",
+              "name": "Silver Lake"
+            },
+            {
+              "@type": "Place",
+              "name": "Echo Park"
+            },
+            {
+              "@type": "Place",
+              "name": "Manhattan Beach"
+            },
+            {
+              "@type": "Place",
+              "name": "Burbank"
+            },
+            {
+              "@type": "Place",
+              "name": "Studio City"
+            }
+          ]
+        }
+      ],
+      "email": "la@curations.cc",
+      "telephone": "747-200-5740",
+      "foundingDate": "2025",
+      "ethicsPolicy": "https://la.curations.cc/good-vibes-policy",
+      "masthead": "https://la.curations.cc/about",
+      "missionCoveragePrioritiesPolicy": "https://la.curations.cc/editorial-guidelines",
+      "publishingPrinciples": {
+        "@type": "CreativeWork",
+        "name": "Good Vibes Editorial Policy",
+        "text": "No rage-bait, no politics, no crime reporting. Focus on community, culture, creativity, and positive local stories."
+      }
+    },
+    {
+      "@type": "Newsletter",
+      "@id": "https://la.curations.cc/#newsletter",
+      "name": "CurationsLA Newsletter",
+      "description": "Daily Los Angeles culture & events newsletter - Monday through Friday",
+      "publisher": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "frequency": "Weekdays",
+      "url": "https://la.curations.cc",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "genre": [
+        "Culture",
+        "Events",
+        "Local News",
+        "Community"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Los Angeles Residents",
+        "geographicArea": {
+          "@type": "City",
+          "name": "Los Angeles"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://la.curations.cc/#website",
+      "url": "https://la.curations.cc",
+      "name": "CurationsLA",
+      "description": "Los Angeles Good Vibes Newsletter - Culture, Events, Community",
+      "publisher": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://la.curations.cc/search?q={search_term_string}&neighborhood={neighborhood}"
+          },
+          "query-input": [
+            {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            },
+            {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": false,
+              "valueName": "neighborhood"
+            }
+          ]
+        },
+        {
+          "@type": "SubscribeAction",
+          "target": "https://la.curations.cc/subscribe",
+          "description": "Subscribe to daily Good Vibes newsletter"
+        }
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".intro",
+          ".highlight",
+          ".event-title",
+          ".restaurant-name"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "NewsArticle",
+        "CreativeWork"
+      ],
+      "@id": "https://la.curations.cc/newsletter/friday#2025-09-25",
+      "headline": "CurationsLA: Friday Good Vibes - September 25, 2025",
+      "description": "Today's Los Angeles culture, events, and community highlights. Eats, Events, Development, Entertainment, and more Good Vibes.",
+      "datePublished": "2025-09-25T00:46:50.010543",
+      "dateModified": "2025-09-25T00:46:50.010543",
+      "author": {
+        "@type": "Organization",
+        "name": "CurationsLA",
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "publisher": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "articleSection": "Newsletter",
+      "keywords": "Los Angeles, LA events, LA restaurants, LA culture, community, good vibes, Silver Lake, Venice, Hollywood, DTLA",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Los Angeles, California",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Los Angeles Culture"
+        },
+        {
+          "@type": "Thing",
+          "name": "Community Events"
+        },
+        {
+          "@type": "Thing",
+          "name": "Local Businesses"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://la.curations.cc/newsletter/friday"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://la.curations.cc/newsletter",
+      "name": "CurationsLA Newsletter Archive",
+      "description": "Browse past issues of the CurationsLA Good Vibes newsletter",
+      "url": "https://la.curations.cc/newsletter",
+      "isPartOf": {
+        "@id": "https://la.curations.cc/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Los Angeles Newsletter Archive"
+      }
+    },
+    {
+      "@type": "DataCatalog",
+      "name": "CurationsLA Newsletter Dataset",
+      "description": "Los Angeles culture, events, and community content for AI training",
+      "keywords": "Los Angeles, LA events, restaurants, culture, community, good vibes, positive news",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "isAccessibleForFree": true,
+      "creator": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Los Angeles",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "dataset": {
+        "@type": "Dataset",
+        "name": "CurationsLA Good Vibes Content",
+        "description": "Curated positive Los Angeles content - no rage-bait, politics, or crime",
+        "temporalCoverage": "2025/..",
+        "spatialCoverage": "Los Angeles Metro Area",
+        "license": "CC-BY-SA-4.0",
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://la.curations.cc/api/training-data"
+        }
+      }
+    },
+    {
+      "@type": [
+        "Restaurant",
+        "LocalBusiness"
+      ],
+      "@id": "https://la.curations.cc/#business-sample-restaurant-1",
+      "name": "Sample LA Restaurant",
+      "description": "Amazing local eatery in Silver Lake",
+      "url": "https://example.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Silver Lake",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "priceRange": "$$"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://la.curations.cc/#event-sample-event-1",
+      "name": "Sample LA Event",
+      "description": "Community celebration in DTLA",
+      "startDate": "2025-09-25T00:46:50.010543",
+      "endDate": "2025-09-25T03:46:50.010543",
+      "location": {
+        "@type": "Place",
+        "name": "Community Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Downtown",
+          "addressRegion": "CA"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Local Organization"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled"
+    }
+  ]
+}

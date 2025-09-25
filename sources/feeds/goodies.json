@@ -1,0 +1,67 @@
+{
+  "category": "goodies",
+  "description": "Los Angeles special finds, deals, hidden gems, and weekend ideas",
+  "feeds": [
+    {
+      "name": "Secret Los Angeles",
+      "url": "https://secretlosangeles.com/feed/",
+      "type": "hidden_gems",
+      "priority": "high"
+    },
+    {
+      "name": "Thrillist LA",
+      "url": "https://www.thrillist.com/los-angeles/feed",
+      "type": "discoveries",
+      "priority": "high"
+    },
+    {
+      "name": "Atlas Obscura LA",
+      "url": "https://www.atlasobscura.com/feeds/latest",
+      "type": "unique_places",
+      "priority": "medium"
+    },
+    {
+      "name": "We Like LA",
+      "url": "https://welikela.com/feed/",
+      "type": "local_finds",
+      "priority": "high"
+    },
+    {
+      "name": "Time Out LA Best Things",
+      "url": "https://www.timeout.com/los-angeles/things-to-do/feed",
+      "type": "recommendations",
+      "priority": "medium"
+    },
+    {
+      "name": "LAist Weekend",
+      "url": "https://laist.com/news/arts-and-entertainment/rss",
+      "type": "weekend_ideas",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Cheap List",
+      "url": "https://www.goldstar.com/los-angeles/rss",
+      "type": "deals",
+      "priority": "low"
+    }
+  ],
+  "keywords": [
+    "hidden gem", "secret spot", "free", "deal", "discount",
+    "happy hour", "special offer", "unique", "must-try",
+    "weekend", "adventure", "discovery", "local favorite",
+    "insider tip", "best kept secret", "off the beaten path",
+    "popup", "limited time", "seasonal", "special event"
+  ],
+  "focus_areas": [
+    "hidden gems", "weekend activities", "free events",
+    "special deals", "unique experiences", "seasonal activities",
+    "local discoveries", "adventure ideas", "date ideas",
+    "family activities", "outdoor adventures", "cultural experiences"
+  ],
+  "types": [
+    "scenic viewpoints", "secret beaches", "hidden trails",
+    "unique shops", "vintage stores", "flea markets",
+    "popup events", "seasonal markets", "special exhibits",
+    "happy hour deals", "free museum days", "outdoor movies"
+  ]
+}

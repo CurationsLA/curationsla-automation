@@ -1,0 +1,41 @@
+{
+  "agent_id": "agent_003",
+  "name": "CommunityHero",
+  "specialty": "Neighborhood stories, local heroes, community initiatives",
+  "deployment_date": "2025-09-26",
+  "deployment_time": "2025-09-25T00:48:08.115988",
+  "assigned_neighborhoods": [
+    "Echo Park",
+    "Highland Park",
+    "South LA",
+    "Boyle Heights"
+  ],
+  "content_sources": [
+    "LAist Local",
+    "Patch",
+    "community newsletters",
+    "social media"
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.9,
+  "mission": "Source and curate neighborhood stories, local heroes, community initiatives content for CurationsLA Friday September 26th 2025 newsletter",
+  "success_metrics": {
+    "content_items_target": 25,
+    "good_vibes_score_minimum": 0.9,
+    "neighborhood_coverage": 4,
+    "source_diversity": 4
+  },
+  "operational_guidelines": [
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards"
+  ],
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}

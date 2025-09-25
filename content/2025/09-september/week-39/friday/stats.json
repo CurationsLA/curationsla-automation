@@ -1,0 +1,49 @@
+{
+  "date": "2025-09-25",
+  "day": "thursday",
+  "generation_time": "2025-09-25T00:42:27.739567",
+  "categories": {
+    "eats": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "events": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "community": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "development": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "business": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "entertainment": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "sports": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    },
+    "goodies": {
+      "items_count": 0,
+      "avg_vibe_score": 0,
+      "neighborhoods": []
+    }
+  },
+  "total_items": 0,
+  "avg_vibe_score": 0
+}

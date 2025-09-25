@@ -1,0 +1,67 @@
+{
+  "category": "sports",
+  "description": "Los Angeles sports teams, recreational activities, and fitness events",
+  "feeds": [
+    {
+      "name": "LA Times Sports",
+      "url": "https://www.latimes.com/sports/rss2.0.xml",
+      "type": "sports_news",
+      "priority": "high"
+    },
+    {
+      "name": "ESPN LA",
+      "url": "https://www.espn.com/espn/rss/losangeles/news",
+      "type": "sports_coverage",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Sports",
+      "url": "https://laist.com/news/sports/rss",
+      "type": "local_sports",
+      "priority": "medium"
+    },
+    {
+      "name": "Dodgers Nation",
+      "url": "https://www.dodgersnation.com/feed/",
+      "type": "baseball",
+      "priority": "medium"
+    },
+    {
+      "name": "Lakers Nation",
+      "url": "https://lakersnation.com/feed/",
+      "type": "basketball",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Galaxy",
+      "url": "https://www.lagalaxy.com/rss/en.xml",
+      "type": "soccer",
+      "priority": "low"
+    },
+    {
+      "name": "Angels Baseball",
+      "url": "https://www.mlb.com/angels/feeds/news/rss.xml",
+      "type": "baseball",
+      "priority": "low"
+    }
+  ],
+  "teams": [
+    "Lakers", "Clippers", "Dodgers", "Angels", "Rams", "Chargers",
+    "Kings", "Ducks", "Galaxy", "LAFC", "Sparks", "UCLA Bruins", "USC Trojans"
+  ],
+  "keywords": [
+    "victory", "win", "championship", "playoff", "home game",
+    "season opener", "milestone", "record", "achievement",
+    "youth sports", "recreation", "marathon", "5k", "fitness",
+    "community sports", "little league", "youth program"
+  ],
+  "focus_areas": [
+    "team victories", "player achievements", "home games",
+    "community sports programs", "youth athletics", "recreational events",
+    "marathons and races", "fitness events", "sports facilities opening"
+  ],
+  "exclude": [
+    "injury", "loss", "defeat", "scandal", "suspension",
+    "controversy", "lawsuit", "arrest"
+  ]
+}

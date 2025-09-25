@@ -1,0 +1,41 @@
+{
+  "agent_id": "agent_008",
+  "name": "GoodiesHunter",
+  "specialty": "Hidden gems, deals, unique experiences, weekend ideas",
+  "deployment_date": "2025-09-26",
+  "deployment_time": "2025-09-25T00:48:08.116760",
+  "assigned_neighborhoods": [
+    "Manhattan Beach",
+    "Pasadena",
+    "Beverly Hills",
+    "Venice"
+  ],
+  "content_sources": [
+    "Secret LA",
+    "Thrillist",
+    "Atlas Obscura",
+    "local Instagram"
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.9,
+  "mission": "Source and curate hidden gems, deals, unique experiences, weekend ideas content for CurationsLA Friday September 26th 2025 newsletter",
+  "success_metrics": {
+    "content_items_target": 25,
+    "good_vibes_score_minimum": 0.9,
+    "neighborhood_coverage": 4,
+    "source_diversity": 4
+  },
+  "operational_guidelines": [
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards"
+  ],
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}

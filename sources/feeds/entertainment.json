@@ -1,0 +1,66 @@
+{
+  "category": "entertainment",
+  "description": "Los Angeles entertainment, arts, culture, and creative scene",
+  "feeds": [
+    {
+      "name": "LA Times Entertainment",
+      "url": "https://www.latimes.com/entertainment-arts/rss2.0.xml",
+      "type": "entertainment_news",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Arts",
+      "url": "https://laist.com/news/arts-and-entertainment/rss",
+      "type": "arts_culture",
+      "priority": "high"
+    },
+    {
+      "name": "Variety LA",
+      "url": "https://variety.com/feed/",
+      "type": "industry_news",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Weekly Arts",
+      "url": "https://www.laweekly.com/arts/feed",
+      "type": "arts_coverage",
+      "priority": "high"
+    },
+    {
+      "name": "Hollywood Reporter",
+      "url": "https://www.hollywoodreporter.com/feed/",
+      "type": "entertainment_industry",
+      "priority": "low"
+    },
+    {
+      "name": "LA Canvas Arts",
+      "url": "https://lacanvas.com/feed/",
+      "type": "local_arts",
+      "priority": "high"
+    },
+    {
+      "name": "LA Stage Times",
+      "url": "https://www.lastagetimes.com/feed/",
+      "type": "theater",
+      "priority": "medium"
+    },
+    {
+      "name": "We Like LA Entertainment",
+      "url": "https://welikela.com/category/events-entertainment/feed/",
+      "type": "entertainment_events",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "premiere", "opening night", "exhibition", "gallery", "theater",
+    "concert", "music venue", "art show", "museum", "performance",
+    "festival", "screening", "live show", "comedy", "dance",
+    "public art", "mural", "installation", "popup gallery"
+  ],
+  "focus_areas": [
+    "movie premieres", "art exhibitions", "theater openings",
+    "music venues", "comedy shows", "gallery openings",
+    "museum events", "cultural celebrations", "festivals",
+    "public art installations", "creative spaces"
+  ]
+}

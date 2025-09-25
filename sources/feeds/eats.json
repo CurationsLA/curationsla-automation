@@ -1,0 +1,63 @@
+{
+  "category": "eats",
+  "description": "Los Angeles restaurants, food trucks, and culinary experiences",
+  "feeds": [
+    {
+      "name": "LA Eater",
+      "url": "https://la.eater.com/rss/index.xml",
+      "type": "restaurant_news",
+      "priority": "high"
+    },
+    {
+      "name": "LAist Food",
+      "url": "https://laist.com/news/food/rss",
+      "type": "food_culture",
+      "priority": "high"
+    },
+    {
+      "name": "LA Times Food",
+      "url": "https://www.latimes.com/food/rss2.0.xml",
+      "type": "restaurant_reviews",
+      "priority": "high"
+    },
+    {
+      "name": "Time Out LA Restaurants",
+      "url": "https://www.timeout.com/los-angeles/restaurants/feed",
+      "type": "restaurant_guides",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Weekly Food",
+      "url": "https://www.laweekly.com/restaurants/feed",
+      "type": "food_news",
+      "priority": "medium"
+    },
+    {
+      "name": "Infatuation LA",
+      "url": "https://www.theinfatuation.com/los-angeles/feed.xml",
+      "type": "restaurant_reviews",
+      "priority": "high"
+    },
+    {
+      "name": "We Like LA Food",
+      "url": "https://welikela.com/category/food-drink/feed/",
+      "type": "food_events",
+      "priority": "medium"
+    },
+    {
+      "name": "Todd Rick Allen",
+      "url": "https://toddrickallen.com/feed/",
+      "type": "food_blog",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "restaurant opening", "new restaurant", "food truck", "farmers market",
+    "chef", "menu", "brunch", "happy hour", "taco", "coffee shop",
+    "bakery", "vegan", "plant-based", "cocktail", "brewery", "wine bar"
+  ],
+  "neighborhoods_focus": [
+    "Downtown", "Silver Lake", "Venice", "Santa Monica", "Beverly Hills",
+    "West Hollywood", "Echo Park", "Los Feliz", "Manhattan Beach", "Pasadena"
+  ]
+}

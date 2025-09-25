@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "created": "2025-09-25T00:46:50.043291",
+  "provider": "CurationsLA",
+  "parent": "CURATIONS Agency",
+  "license": "CC-BY-SA-4.0",
+  "location": "Los Angeles",
+  "type": "newsletter",
+  "frequency": "weekdays",
+  "editorial_policy": "Good Vibes Only - No rage-bait, politics, or crime",
+  "contact": "la@curations.cc",
+  "phone": "747-200-5740",
+  "categories": [
+    "eats",
+    "events",
+    "community",
+    "development",
+    "business",
+    "entertainment",
+    "sports",
+    "goodies"
+  ],
+  "neighborhoods": [
+    "Downtown Los Angeles",
+    "Silver Lake",
+    "Venice",
+    "Santa Monica",
+    "Beverly Hills",
+    "West Hollywood",
+    "Echo Park",
+    "Los Feliz",
+    "Manhattan Beach",
+    "Hermosa Beach",
+    "Hollywood",
+    "Burbank",
+    "Studio City",
+    "Sherman Oaks",
+    "Fairfax",
+    "Miracle Mile"
+  ],
+  "sample_content": {
+    "description": "Positive, community-focused Los Angeles content",
+    "examples": [
+      {
+        "category": "eats",
+        "title": "New Coffee Shop Opens in Silver Lake",
+        "description": "Local entrepreneur opens community-focused cafe featuring local artists",
+        "neighborhood": "Silver Lake",
+        "vibe_score": 0.85
+      },
+      {
+        "category": "events",
+        "title": "Free Concert Series Starts This Weekend",
+        "description": "Community music series brings free entertainment to Echo Park",
+        "neighborhood": "Echo Park",
+        "vibe_score": 0.92
+      },
+      {
+        "category": "community",
+        "title": "Local Artist Creates New Mural",
+        "description": "Beautiful community art project celebrates neighborhood diversity",
+        "neighborhood": "Venice",
+        "vibe_score": 0.88
+      }
+    ]
+  }
+}
