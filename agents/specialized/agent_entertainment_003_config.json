@@ -1,0 +1,88 @@
+{
+  "agent_id": "agent_entertainment_003",
+  "name": "EntertainmentSpotter",
+  "specialty": "Entertainment events, concerts, festivals, LA Scenestar-style coverage",
+  "deployment_date": "2025-09-25",
+  "deployment_time": "2025-09-25T22:35:16.716554",
+  "assigned_neighborhoods": [
+    "Hollywood",
+    "West Hollywood",
+    "Arts District",
+    "Silver Lake",
+    "Venice"
+  ],
+  "content_sources": [
+    {
+      "type": "rss",
+      "name": "LA Times Entertainment",
+      "url": "https://www.latimes.com/entertainment/rss2.0.xml",
+      "category": "entertainment"
+    },
+    {
+      "type": "rss",
+      "name": "Variety LA",
+      "url": "https://variety.com/c/film/rss/",
+      "category": "entertainment"
+    },
+    {
+      "type": "web_scraper",
+      "name": "LA Weekly Arts",
+      "url": "https://www.laweekly.com/arts",
+      "scraper": "laweekly",
+      "category": "arts"
+    },
+    {
+      "type": "web_scraper",
+      "name": "Secret LA Events",
+      "url": "https://secretlosangeles.com",
+      "scraper": "secret_la",
+      "category": "events"
+    }
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.85,
+  "focus_keywords": [
+    "concert",
+    "festival",
+    "opening night",
+    "premiere",
+    "celebration",
+    "art show",
+    "exhibition"
+  ],
+  "mission": "Source and curate entertainment events, concerts, festivals, la scenestar-style coverage content for CurationsLA newsletter using both RSS feeds and web scraping",
+  "success_metrics": {
+    "content_items_target": 20,
+    "good_vibes_score_minimum": 0.85,
+    "neighborhood_coverage": 5,
+    "source_diversity": 4,
+    "web_scraping_success_rate": 0.8
+  },
+  "operational_guidelines": [
+    "Prioritize web scraping for sources with failed RSS feeds",
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards",
+    "Use focus keywords to identify relevant content",
+    "Fallback to secondary sources if primary sources fail"
+  ],
+  "scraping_configuration": {
+    "enabled": true,
+    "fallback_for_rss_failures": true,
+    "respect_robots_txt": true,
+    "rate_limiting": {
+      "requests_per_minute": 10,
+      "delay_between_requests": 6
+    },
+    "user_agent": "CurationsLA/1.0 (Newsletter Aggregator; +https://la.curations.cc)",
+    "timeout": 30
+  },
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}

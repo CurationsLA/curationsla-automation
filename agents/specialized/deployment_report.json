@@ -1,0 +1,174 @@
+{
+  "deployment_summary": {
+    "date": "2025-09-25",
+    "time": "2025-09-25T22:35:16.718573",
+    "total_agents": 10,
+    "successful_deployments": 10,
+    "failed_deployments": 0
+  },
+  "agent_overview": {
+    "agent_la_news_001": {
+      "name": "LocalNewsScout",
+      "specialty": "Local Los Angeles news, breaking stories, community updates",
+      "sources_count": 4,
+      "neighborhoods": [
+        "All LA neighborhoods",
+        "City-wide coverage"
+      ],
+      "status": "active"
+    },
+    "agent_biz_realestate_002": {
+      "name": "BizRealEstateTracker",
+      "specialty": "Business openings, commercial real estate, development projects",
+      "sources_count": 4,
+      "neighborhoods": [
+        "Downtown",
+        "Beverly Hills",
+        "Culver City",
+        "El Segundo",
+        "Santa Monica"
+      ],
+      "status": "active"
+    },
+    "agent_entertainment_003": {
+      "name": "EntertainmentSpotter",
+      "specialty": "Entertainment events, concerts, festivals, LA Scenestar-style coverage",
+      "sources_count": 4,
+      "neighborhoods": [
+        "Hollywood",
+        "West Hollywood",
+        "Arts District",
+        "Silver Lake",
+        "Venice"
+      ],
+      "status": "active"
+    },
+    "agent_eats_004": {
+      "name": "EatsExplorer",
+      "specialty": "Restaurant openings, food trucks, culinary events, dining scene",
+      "sources_count": 4,
+      "neighborhoods": [
+        "Koreatown",
+        "Little Tokyo",
+        "Venice",
+        "Santa Monica",
+        "West Hollywood"
+      ],
+      "status": "active"
+    },
+    "agent_community_005": {
+      "name": "CommunityHero",
+      "specialty": "Neighborhood stories, community initiatives, local heroes",
+      "sources_count": 4,
+      "neighborhoods": [
+        "All LA neighborhoods",
+        "Hyperlocal focus"
+      ],
+      "status": "active"
+    },
+    "agent_sports_recreation_006": {
+      "name": "SportsChampion",
+      "specialty": "Sports teams, recreational activities, fitness events",
+      "sources_count": 4,
+      "neighborhoods": [
+        "All LA",
+        "Sports venues",
+        "Parks and recreation"
+      ],
+      "status": "active"
+    },
+    "agent_events_activities_007": {
+      "name": "EventActivitiesScout",
+      "specialty": "Weekend activities, events, LA Scenestar-style event coverage",
+      "sources_count": 4,
+      "neighborhoods": [
+        "All LA",
+        "Event venues",
+        "Cultural districts"
+      ],
+      "status": "active"
+    },
+    "agent_commercial_development_008": {
+      "name": "CommercialDevTracker",
+      "specialty": "Commercial real estate, development projects, infrastructure",
+      "sources_count": 3,
+      "neighborhoods": [
+        "Downtown",
+        "Century City",
+        "Santa Monica",
+        "Culver City",
+        "Beverly Hills"
+      ],
+      "status": "active"
+    },
+    "agent_shopping_commercial_009": {
+      "name": "ShoppingCommercialScout",
+      "specialty": "Shopping, retail openings, commercial districts, pop-ups",
+      "sources_count": 3,
+      "neighborhoods": [
+        "Beverly Hills",
+        "Melrose",
+        "Abbot Kinney",
+        "Third Street",
+        "Robertson"
+      ],
+      "status": "active"
+    },
+    "agent_arts_culture_010": {
+      "name": "ArtsCultureSpotter",
+      "specialty": "Arts, culture, galleries, museums, creative scene",
+      "sources_count": 3,
+      "neighborhoods": [
+        "Arts District",
+        "Silver Lake",
+        "Venice",
+        "Mid-City",
+        "West Hollywood"
+      ],
+      "status": "active"
+    }
+  },
+  "source_analysis": {
+    "total_sources": 37,
+    "rss_sources": 19,
+    "web_scraping_sources": 18,
+    "working_sources": 0,
+    "failed_sources": 0
+  },
+  "specialization_coverage": {},
+  "neighborhood_coverage": [
+    "Culver City",
+    "Sports venues",
+    "City-wide coverage",
+    "Koreatown",
+    "Silver Lake",
+    "West Hollywood",
+    "Little Tokyo",
+    "Arts District",
+    "Melrose",
+    "Robertson",
+    "Mid-City",
+    "El Segundo",
+    "Downtown",
+    "Event venues",
+    "Santa Monica",
+    "Abbot Kinney",
+    "Parks and recreation",
+    "All LA",
+    "All LA neighborhoods",
+    "Hollywood",
+    "Hyperlocal focus",
+    "Cultural districts",
+    "Venice",
+    "Beverly Hills",
+    "Century City",
+    "Third Street"
+  ],
+  "next_steps": [
+    "Test RSS feed connectivity",
+    "Validate web scraping functionality",
+    "Run content generation with new agents",
+    "Monitor Good Vibes filtering performance",
+    "Optimize scraping rate limits and timeouts"
+  ]
+}

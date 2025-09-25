@@ -15,6 +15,14 @@ from typing import Dict, List, Any
 import time
 import random
 
+# Try to import web scraper, but make it optional
+try:
+    from web_scraper import WebScraper
+    WEB_SCRAPING_AVAILABLE = True
+except ImportError:
+    print("⚠️  Web scraping not available - install beautifulsoup4")
+    WEB_SCRAPING_AVAILABLE = False
+
 # Configuration
 BASE_DIR = Path(__file__).parent.parent
 SOURCES_DIR = BASE_DIR / "sources" / "feeds"
@@ -87,6 +95,12 @@ class ContentGenerator:
         self.content = {}
         self.js_content_data = {}
         
+        # Initialize web scraper for failed RSS feeds (if available)
+        if WEB_SCRAPING_AVAILABLE:
+            self.web_scraper = WebScraper()
+        else:
+            self.web_scraper = None
+        
         # Create output directory
         self.output_path = OUTPUT_DIR / self.date_str
         self.output_path.mkdir(parents=True, exist_ok=True)
@@ -140,6 +154,54 @@ class ContentGenerator:
         except Exception as e:
             print(f"❌ Error fetching {name}: {str(e)}")
             return []
+    
+    def fetch_with_scraping_fallback(self, feed_info: Dict, category: str) -> List[Dict]:
+        """Fetch content with web scraping fallback for failed RSS feeds"""
+        # First try RSS
+        rss_items = self.fetch_rss_feed(feed_info['url'], feed_info['name'])
+        
+        if rss_items:
+            return rss_items
+        
+        # If RSS failed and web scraping is available, try web scraping fallback
+        if not self.web_scraper:
+            return []
+            
+        print(f"🕷️  RSS failed for {feed_info['name']}, attempting web scraping...")
+        
+        # Map common sources to scrapers
+        scraper_mapping = {
+            'laist': 'laist',
+            'la weekly': 'laweekly', 
+            'timeout': 'timeout_la',
+            'time out': 'timeout_la',
+            'we like la': 'welikela',
+            'thrillist': 'thrillist_la',
+            'la magazine': 'la_magazine',
+            'secret': 'secret_la',
+            'discover': 'discoverla',
+            'downtown news': 'la_downtown_news'
+        }
+        
+        # Try to find a matching scraper
+        source_name = feed_info['name'].lower()
+        scraper_name = None
+        
+        for key, scraper in scraper_mapping.items():
+            if key in source_name:
+                scraper_name = scraper
+                break
+        
+        if scraper_name:
+            try:
+                scraped_items = self.web_scraper.scrape_content(scraper_name, category, 10)
+                if scraped_items:
+                    print(f"✅ Web scraping successful for {feed_info['name']}: {len(scraped_items)} items")
+                    return scraped_items
+            except Exception as e:
+                print(f"❌ Web scraping also failed for {feed_info['name']}: {str(e)}")
+        
+        return []
     
     def is_content_fresh(self, item_date_str: str) -> bool:
         """Check if content is not outdated by more than 3 days from Sept 25, 2025"""
@@ -236,7 +298,7 @@ class ContentGenerator:
         
         for feed in config.get('feeds', []):
             if feed.get('active', True):  # Default to active if not specified
-                items = self.fetch_rss_feed(feed['url'], feed['name'])
+                items = self.fetch_with_scraping_fallback(feed, category)
                 all_items.extend(items)
         
         # Filter for Good Vibes
