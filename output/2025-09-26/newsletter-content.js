@@ -6,7 +6,7 @@
 const CurationsLANewsletter = {
     date: '2025-09-26',
     day: 'Friday',
-    generated: '2025-09-25T22:36:53.621911',
+    generated: '2025-09-25T23:21:11.243429',
     
     // Newsletter Header
     header: {
