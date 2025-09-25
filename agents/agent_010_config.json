@@ -1,0 +1,37 @@
+{
+  "agent_id": "agent_010",
+  "name": "QualityControl",
+  "specialty": "Content verification, fact-checking, Good Vibes scoring",
+  "deployment_date": "2025-09-26",
+  "deployment_time": "2025-09-25T00:48:08.117127",
+  "assigned_neighborhoods": [
+    "All LA neighborhoods"
+  ],
+  "content_sources": [
+    "All agent feeds",
+    "primary sources",
+    "verification databases"
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.95,
+  "mission": "Source and curate content verification, fact-checking, good vibes scoring content for CurationsLA Friday September 26th 2025 newsletter",
+  "success_metrics": {
+    "content_items_target": 25,
+    "good_vibes_score_minimum": 0.95,
+    "neighborhood_coverage": 1,
+    "source_diversity": 3
+  },
+  "operational_guidelines": [
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements",
+    "Verify all information from primary sources",
+    "Include specific neighborhood and venue details",
+    "Maintain CurationsLA's Good Vibes editorial standards"
+  ],
+  "reporting_schedule": {
+    "content_delivery": "6:00 AM Pacific Time",
+    "status_updates": "Every 4 hours",
+    "final_report": "5:00 PM Pacific Time"
+  }
+}

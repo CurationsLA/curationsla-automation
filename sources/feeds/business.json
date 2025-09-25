@@ -1,0 +1,63 @@
+{
+  "category": "business",
+  "description": "Los Angeles business news, startups, and economic development",
+  "feeds": [
+    {
+      "name": "LA Business Journal",
+      "url": "https://labusinessjournal.com/feed/",
+      "type": "business_news",
+      "priority": "high"
+    },
+    {
+      "name": "LA Times Business",
+      "url": "https://www.latimes.com/business/rss2.0.xml",
+      "type": "business_coverage",
+      "priority": "high"
+    },
+    {
+      "name": "dot.LA",
+      "url": "https://dot.la/feed",
+      "type": "tech_startups",
+      "priority": "high"
+    },
+    {
+      "name": "Built In LA",
+      "url": "https://www.builtinla.com/rss.xml",
+      "type": "tech_jobs",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Startup News",
+      "url": "https://www.americaninno.com/losangeles/feed/",
+      "type": "startup_ecosystem",
+      "priority": "medium"
+    },
+    {
+      "name": "Silicon Beach News",
+      "url": "https://techzulu.com/feed/",
+      "type": "tech_scene",
+      "priority": "medium"
+    },
+    {
+      "name": "Voyage LA",
+      "url": "http://voyagela.com/feed/",
+      "type": "entrepreneur_stories",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "new business", "grand opening", "startup", "entrepreneur",
+    "small business", "job creation", "expansion", "innovation",
+    "success story", "milestone", "partnership", "collaboration",
+    "local business", "women-owned", "minority-owned", "hiring"
+  ],
+  "focus_areas": [
+    "business openings", "startup launches", "job opportunities",
+    "small business success", "entrepreneurship", "innovation",
+    "economic growth", "business expansion", "partnerships"
+  ],
+  "exclude": [
+    "layoffs", "closure", "bankruptcy", "lawsuit", "scandal",
+    "downsizing", "losses", "complaints", "violations"
+  ]
+}

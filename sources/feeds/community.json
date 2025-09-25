@@ -1,0 +1,65 @@
+{
+  "category": "community",
+  "description": "Los Angeles neighborhood stories, local heroes, and community initiatives",
+  "feeds": [
+    {
+      "name": "LAist Local News",
+      "url": "https://laist.com/news/local-news/rss",
+      "type": "local_news",
+      "priority": "high"
+    },
+    {
+      "name": "LA Times California",
+      "url": "https://www.latimes.com/california/rss2.0.xml",
+      "type": "regional_news",
+      "priority": "high"
+    },
+    {
+      "name": "Patch LA",
+      "url": "https://patch.com/california/los-angeles/rss",
+      "type": "hyperlocal",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Daily News",
+      "url": "https://www.dailynews.com/feed/",
+      "type": "local_news",
+      "priority": "medium"
+    },
+    {
+      "name": "Streetsblog LA",
+      "url": "https://la.streetsblog.org/feed/",
+      "type": "urban_planning",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Taco",
+      "url": "https://lataco.com/feed/",
+      "type": "community_culture",
+      "priority": "high"
+    },
+    {
+      "name": "Curbed LA",
+      "url": "https://la.curbed.com/rss/index.xml",
+      "type": "neighborhoods",
+      "priority": "high"
+    },
+    {
+      "name": "We Like LA Community",
+      "url": "https://welikela.com/category/community/feed/",
+      "type": "community_events",
+      "priority": "medium"
+    }
+  ],
+  "keywords": [
+    "community", "neighborhood", "local hero", "volunteer", "nonprofit",
+    "charity event", "community garden", "block party", "celebration",
+    "ribbon cutting", "grand opening", "local business", "success story",
+    "transformation", "beautification", "public art", "mural"
+  ],
+  "focus_areas": [
+    "neighborhood improvements", "community celebrations", "local achievements",
+    "volunteer opportunities", "nonprofit initiatives", "public spaces",
+    "community gardens", "local art projects", "youth programs"
+  ]
+}

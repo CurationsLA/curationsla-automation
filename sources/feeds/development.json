@@ -1,0 +1,63 @@
+{
+  "category": "development",
+  "description": "Los Angeles urban development, infrastructure, and city improvements",
+  "feeds": [
+    {
+      "name": "Urbanize LA",
+      "url": "https://urbanize.la/rss.xml",
+      "type": "development_news",
+      "priority": "high"
+    },
+    {
+      "name": "Curbed LA Development",
+      "url": "https://la.curbed.com/rss/index.xml",
+      "type": "real_estate",
+      "priority": "high"
+    },
+    {
+      "name": "LA Business Journal Real Estate",
+      "url": "https://labusinessjournal.com/news/real-estate/rss/",
+      "type": "commercial_development",
+      "priority": "medium"
+    },
+    {
+      "name": "Streetsblog LA",
+      "url": "https://la.streetsblog.org/feed/",
+      "type": "transportation",
+      "priority": "high"
+    },
+    {
+      "name": "The Real Deal LA",
+      "url": "https://therealdeal.com/la/feed/",
+      "type": "real_estate_news",
+      "priority": "medium"
+    },
+    {
+      "name": "LA Downtown News",
+      "url": "https://www.ladowntownnews.com/rss.xml",
+      "type": "downtown_development",
+      "priority": "medium"
+    },
+    {
+      "name": "Building Los Angeles",
+      "url": "https://buildinglosangeles.blogspot.com/feeds/posts/default",
+      "type": "construction_updates",
+      "priority": "low"
+    }
+  ],
+  "keywords": [
+    "groundbreaking", "opening soon", "new development", "transit",
+    "bike lanes", "public space", "park opening", "renovation",
+    "restoration", "affordable housing", "mixed-use", "pedestrian",
+    "community center", "library", "infrastructure improvement"
+  ],
+  "focus_areas": [
+    "new business openings", "public space improvements", "transit updates",
+    "bike infrastructure", "park developments", "community facilities",
+    "historic preservation", "pedestrian improvements", "housing projects"
+  ],
+  "exclude": [
+    "demolition", "displacement", "eviction", "controversy",
+    "protest", "lawsuit", "opposition", "gentrification concerns"
+  ]
+}

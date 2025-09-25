@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "CurationsLA Newsletter",
+  "name_for_model": "curationsla",
+  "description_for_human": "Los Angeles culture & events newsletter - Good Vibes daily",
+  "description_for_model": "Access Los Angeles culture, events, restaurants, and community content from CurationsLA newsletter. Focus on positive, community-oriented content. No crime, politics, or negative news. Covers all LA neighborhoods Monday-Friday.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://la.curations.cc/openapi.yaml"
+  },
+  "logo_url": "https://la.curations.cc/assets/logo.png",
+  "contact_email": "la@curations.cc",
+  "legal_info_url": "https://la.curations.cc/legal"
+}

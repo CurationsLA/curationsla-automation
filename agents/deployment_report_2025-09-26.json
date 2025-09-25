@@ -1,0 +1,154 @@
+{
+  "deployment_summary": {
+    "date": "2025-09-26",
+    "time": "2025-09-25T00:48:08.117425",
+    "total_agents": 10,
+    "mission": "Friday September 26th 2025 CurationsLA Newsletter Generation"
+  },
+  "agent_roster": [
+    {
+      "id": "agent_001",
+      "name": "EatsExplorer",
+      "specialty": "Restaurant openings, food trucks, culinary events",
+      "status": "active"
+    },
+    {
+      "id": "agent_002",
+      "name": "EventsScout",
+      "specialty": "Cultural events, concerts, exhibitions, festivals",
+      "status": "active"
+    },
+    {
+      "id": "agent_003",
+      "name": "CommunityHero",
+      "specialty": "Neighborhood stories, local heroes, community initiatives",
+      "status": "active"
+    },
+    {
+      "id": "agent_004",
+      "name": "DevTracker",
+      "specialty": "Urban development, infrastructure, public improvements",
+      "status": "active"
+    },
+    {
+      "id": "agent_005",
+      "name": "BizBooster",
+      "specialty": "Business openings, startups, economic development",
+      "status": "active"
+    },
+    {
+      "id": "agent_006",
+      "name": "ShowtimeSpotter",
+      "specialty": "Entertainment, arts, culture, creative scene",
+      "status": "active"
+    },
+    {
+      "id": "agent_007",
+      "name": "SportsChampion",
+      "specialty": "Sports teams, recreational activities, fitness events",
+      "status": "active"
+    },
+    {
+      "id": "agent_008",
+      "name": "GoodiesHunter",
+      "specialty": "Hidden gems, deals, unique experiences, weekend ideas",
+      "status": "active"
+    },
+    {
+      "id": "agent_009",
+      "name": "TrendSpotter",
+      "specialty": "Emerging trends, viral content, social media discoveries",
+      "status": "active"
+    },
+    {
+      "id": "agent_010",
+      "name": "QualityControl",
+      "specialty": "Content verification, fact-checking, Good Vibes scoring",
+      "status": "active"
+    }
+  ],
+  "coverage_analysis": {
+    "neighborhoods": [
+      "Santa Monica",
+      "DTLA",
+      "Boyle Heights",
+      "West Hollywood",
+      "Arts District",
+      "Echo Park",
+      "Downtown",
+      "Highland Park",
+      "Westside",
+      "South LA",
+      "Silver Lake",
+      "East LA",
+      "Hollywood",
+      "Venice",
+      "Beverly Hills",
+      "Culver City",
+      "Manhattan Beach",
+      "El Segundo",
+      "Koreatown",
+      "Valley",
+      "Pasadena"
+    ],
+    "content_categories": [
+      "eats",
+      "events",
+      "community",
+      "development",
+      "business",
+      "entertainment",
+      "sports",
+      "goodies"
+    ],
+    "source_diversity": [
+      "local Instagram",
+      "startup databases",
+      "Secret LA",
+      "Atlas Obscura",
+      "theater schedules",
+      "social media",
+      "gallery websites",
+      "ESPN LA",
+      "city planning docs",
+      "dot.LA",
+      "recreation centers",
+      "Metro updates",
+      "Curbed LA",
+      "local influencers",
+      "Time Out LA",
+      "Eventbrite",
+      "LAist Food",
+      "team websites",
+      "Patch",
+      "Instagram",
+      "TikTok",
+      "primary sources",
+      "Built In LA",
+      "All agent feeds",
+      "venue websites",
+      "LA Business Journal",
+      "LA Times Sports",
+      "Reddit",
+      "verification databases",
+      "LA Eater",
+      "LA Weekly Events",
+      "community newsletters",
+      "LAist Arts",
+      "Thrillist",
+      "Twitter",
+      "Yelp",
+      "LAist Local",
+      "Urbanize LA",
+      "local restaurant social media",
+      "LA Times Entertainment"
+    ]
+  },
+  "quality_standards": {
+    "editorial_policy": "Good Vibes Only - No rage-bait, politics, or crime",
+    "minimum_vibe_score": 0.6,
+    "maximum_vibe_score": 0.95,
+    "average_vibe_threshold": 0.8
+  },
+  "operational_status": "FULLY DEPLOYED AND ACTIVE"
+}
