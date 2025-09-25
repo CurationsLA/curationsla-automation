@@ -46,12 +46,46 @@ BLOCKED_KEYWORDS = [
     'layoffs', 'fired', 'political', 'politics', 'election'
 ]
 
+# Morning Brew Style Elements
+MORNING_BREW_STYLE = {
+    'intros': [
+        "What's crackin', LA? 🌴",
+        "Rise and grind, Angels! ☀️", 
+        "Good morning, LA legends! 💫",
+        "Hey gorgeous people of LA! ✨"
+    ],
+    'transitions': [
+        "But wait, there's more...",
+        "Speaking of which...",
+        "In other news that'll make you smile...",
+        "Plot twist:",
+        "Meanwhile, across town..."
+    ],
+    'callouts': [
+        "💡 Pro tip:",
+        "🔥 Hot take:",
+        "📈 Trending up:",
+        "✨ Good vibes only:",
+        "🎯 Don't miss:"
+    ]
+}
+
+# CurationsLA Voice Elements  
+CURATIONS_VOICE = {
+    'enthusiasm': ["absolutely obsessed", "can't even", "total game-changer", "pure magic"],
+    'community': ["neighbors", "LA family", "our people", "fellow angels"],
+    'positivity': ["good vibes", "positive energy", "spreading joy", "celebrating wins"]
+}
+
 class ContentGenerator:
     def __init__(self):
-        self.today = datetime.now()
-        self.day_name = self.today.strftime('%A').lower()
-        self.date_str = self.today.strftime('%Y-%m-%d')
+        self.target_date = datetime(2025, 9, 26)  # Friday September 26th, 2025
+        self.today = self.target_date  # Use target date instead of current date
+        self.day_name = self.target_date.strftime('%A').lower()
+        self.date_str = self.target_date.strftime('%Y-%m-%d')
+        self.cutoff_date = datetime(2025, 9, 25) - timedelta(days=3)  # Not outdated by 3 days from Sept 25
         self.content = {}
+        self.js_content_data = {}
         
         # Create output directory
         self.output_path = OUTPUT_DIR / self.date_str
@@ -106,6 +140,47 @@ class ContentGenerator:
         except Exception as e:
             print(f"❌ Error fetching {name}: {str(e)}")
             return []
+    
+    def is_content_fresh(self, item_date_str: str) -> bool:
+        """Check if content is not outdated by more than 3 days from Sept 25, 2025"""
+        try:
+            # Parse the date from the RSS item
+            item_date = datetime.strptime(item_date_str, '%a, %d %b %Y %H:%M:%S %z')
+            item_date = item_date.replace(tzinfo=None)  # Remove timezone for comparison
+            return item_date >= self.cutoff_date
+        except:
+            # If we can't parse the date, assume it's fresh
+            return True
+    
+    def get_random_style_element(self, category: str) -> str:
+        """Get random Morning Brew or CurationsLA style element"""
+        if category == 'intro':
+            return random.choice(MORNING_BREW_STYLE['intros'])
+        elif category == 'transition':
+            return random.choice(MORNING_BREW_STYLE['transitions'])
+        elif category == 'callout':
+            return random.choice(MORNING_BREW_STYLE['callouts'])
+        elif category == 'enthusiasm':
+            return random.choice(CURATIONS_VOICE['enthusiasm'])
+        elif category == 'community':
+            return random.choice(CURATIONS_VOICE['community'])
+        elif category == 'positivity':
+            return random.choice(CURATIONS_VOICE['positivity'])
+        return ""
+    
+    def generate_morning_brew_style_blurb(self, item: Dict) -> str:
+        """Generate content blurb mixing Morning Brew and CurationsLA styles"""
+        enthusiasm = self.get_random_style_element('enthusiasm')
+        community = self.get_random_style_element('community')
+        
+        # Clean and shorten description
+        desc = re.sub(r'<[^>]+>', '', item['description'])
+        if len(desc) > 120:
+            desc = desc[:117] + "..."
+        
+        # Create Morning Brew style blurb
+        blurb = f"{desc} This is {enthusiasm} for our {community}! 🌟"
+        return blurb
     
     def calculate_vibe_score(self, text: str) -> float:
         """Calculate Good Vibes score for content"""
@@ -354,11 +429,168 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 
         # Save newsletter content
         self.save_newsletter_versions(newsletter_content)
+        self.generate_js_content()  # Generate JS content file
         self.generate_summary_stats()
         
         print(f"\n✅ Newsletter generation complete!")
         print(f"📧 Email version: {self.output_path}/newsletter-email.md")
         print(f"🌐 Web version: {self.output_path}/newsletter-web.md")
+        print(f"📄 JS content: {self.output_path}/newsletter-content.js")
+    
+    def generate_js_content(self):
+        """Generate JavaScript content file with hyperlinked articles"""
+        print("📄 Generating JavaScript content file...")
+        
+        # Process content for JS format
+        js_content_data = {}
+        for category, items in self.content.items():
+            js_articles = []
+            for item in items:
+                if self.is_content_fresh(item.get('published', '')):
+                    js_article = {
+                        'title': item['title'],
+                        'blurb': self.generate_morning_brew_style_blurb(item),
+                        'link': item['link'],
+                        'source': item.get('source', 'Unknown'),
+                        'neighborhood': item.get('neighborhood', 'Los Angeles'),
+                        'category': category,
+                        'publishDate': item.get('published', '2025-09-25'),
+                        'hyperlinkHtml': f'<a href="{item["link"]}" target="_blank" rel="noopener noreferrer">{item["title"]}</a>',
+                        'hyperlinkMarkdown': f'[{item["title"]}]({item["link"]})'
+                    }
+                    js_articles.append(js_article)
+            
+            js_content_data[category] = {
+                'category': category.upper(),
+                'emoji': self.get_category_emoji(category),
+                'intro': self.get_category_intro(category),
+                'articles': js_articles,
+                'count': len(js_articles)
+            }
+        
+        # Generate JS file content
+        js_content = f'''/**
+ * CurationsLA Newsletter Content - Friday September 26th, 2025
+ * Generated with Good Vibes and Morning Brew style blend
+ */
+
+const CurationsLANewsletter = {{
+    date: '{self.date_str}',
+    day: '{self.day_name.title()}',
+    generated: '{datetime.now().isoformat()}',
+    
+    // Newsletter Header
+    header: {{
+        greeting: "HEY LOS ANGELES! 🌴",
+        tagline: "IT'S {self.day_name.upper()} - YOUR WEEKLY DOSE OF GOOD VIBES",
+        intro: "Welcome to your daily dose of LA's good vibes! We've scoured the city to bring you the best openings, events, and community celebrations happening right now."
+    }},
+
+    // Content Categories with Hyperlinked Articles
+    content: {json.dumps(js_content_data, indent=2)},
+
+    // Utility Functions
+    utils: {{
+        getArticleLink: function(category, index) {{
+            const article = this.content[category].articles[index];
+            return article ? article.link : '#';
+        }},
+        
+        getArticleHTML: function(category, index) {{
+            const article = this.content[category].articles[index];
+            return article ? article.hyperlinkHtml : '';
+        }},
+        
+        getArticleMarkdown: function(category, index) {{
+            const article = this.content[category].articles[index];
+            return article ? article.hyperlinkMarkdown : '';
+        }},
+        
+        getAllLinks: function() {{
+            const allLinks = [];
+            Object.values(this.content).forEach(category => {{
+                category.articles.forEach(article => {{
+                    allLinks.push({{
+                        title: article.title,
+                        url: article.link,
+                        category: article.category,
+                        source: article.source
+                    }});
+                }});
+            }});
+            return allLinks;
+        }}
+    }},
+
+    // Newsletter Footer
+    footer: {{
+        signature: "Made with 💜 in Los Angeles",
+        tagline: "Bringing Good Vibes when our city needs it most",
+        contact: {{
+            email: "la@curations.cc",
+            website: "https://la.curations.cc",
+            phone: "747-200-5740"
+        }}
+    }}
+}};
+
+// Export for Node.js environments
+if (typeof module !== 'undefined' && module.exports) {{
+    module.exports = CurationsLANewsletter;
+}}
+
+// Make available globally for browsers
+if (typeof window !== 'undefined') {{
+    window.CurationsLANewsletter = CurationsLANewsletter;
+}}
+'''
+        
+        # Save JS content file
+        js_file_path = self.output_path / 'newsletter-content.js'
+        with open(js_file_path, 'w') as f:
+            f.write(js_content)
+        
+        # Also save JSON version
+        json_file_path = self.output_path / 'newsletter-content.json'
+        with open(json_file_path, 'w') as f:
+            json.dump({
+                'meta': {
+                    'date': self.date_str,
+                    'generated': datetime.now().isoformat(),
+                    'style': 'CurationsLA + Morning Brew blend'
+                },
+                'content': js_content_data
+            }, f, indent=2)
+        
+        print(f"✅ JavaScript content saved: {js_file_path}")
+        
+    def get_category_emoji(self, category: str) -> str:
+        """Get emoji for category"""
+        emojis = {
+            'eats': '🍴',
+            'events': '🎉', 
+            'community': '🤝',
+            'development': '🏗️',
+            'business': '💼',
+            'entertainment': '🎭',
+            'sports': '🏆',
+            'goodies': '✨'
+        }
+        return emojis.get(category, '📍')
+    
+    def get_category_intro(self, category: str) -> str:
+        """Get Morning Brew style intro for category"""
+        intros = {
+            'eats': "The food scene is absolutely buzzing right now...",
+            'events': "Your social calendar is about to get very full...",
+            'community': "LA's heart is showing up in the best ways...",
+            'development': "The city is transforming before our eyes...",
+            'business': "Local entrepreneurs are crushing it...",
+            'entertainment': "The creative energy is off the charts...",
+            'sports': "Our teams and athletes are bringing the heat...",
+            'goodies': "Hidden gems and special finds await..."
+        }
+        return intros.get(category, "Amazing things are happening...")
     
     def save_newsletter_versions(self, content: str):
         """Save both email and web versions of newsletter"""

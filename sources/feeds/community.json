@@ -49,6 +49,36 @@
       "url": "https://welikela.com/category/community/feed/",
       "type": "community_events",
       "priority": "medium"
+    },
+    {
+      "name": "LA Downtown News",
+      "url": "https://www.ladowntownnews.com/feed.xml",
+      "type": "downtown_community",
+      "priority": "high"
+    },
+    {
+      "name": "Beverly Press",
+      "url": "https://beverlypress.com/feed/",
+      "type": "local_community_news",
+      "priority": "medium"
+    },
+    {
+      "name": "Highland Park-Mount Washington Patch",
+      "url": "https://patch.com/california/highlandpark/rss",
+      "type": "eastside_community",
+      "priority": "medium"
+    },
+    {
+      "name": "Santa Monica Daily Press",
+      "url": "https://smdp.com/feed/",
+      "type": "westside_community",
+      "priority": "high"
+    },
+    {
+      "name": "The Eastsider LA",
+      "url": "https://www.theeastsiderla.com/feed/",
+      "type": "eastside_local",
+      "priority": "high"
     }
   ],
   "keywords": [
