@@ -26,20 +26,20 @@
 
 | **NATIONAL** |
 |:---:|
-| Tech Giants Announce Green [Energy Partnership](#) |
-| Medical Breakthrough Shows Promise [for Treatment](#) |
-| New Archaeological Discovery [Changes History](#) |
-| Climate Initiative Gains [Global Support](#) |
 | Arts Education Funding Reaches [Record High](#) |
 | Space Mission Returns with [Promising Samples](#) |
+| Climate Initiative Gains [Global Support](#) |
+| New Archaeological Discovery [Changes History](#) |
+| Tech Giants Announce Green [Energy Partnership](#) |
+| Medical Breakthrough Shows Promise [for Treatment](#) |
 
 | **LOCAL** | **FUN** |
 |:---:|:---:|
-| Hollywood Bowl Announces [Summer Series](#) | Food Truck Festival [Announces Lineup](#) |
-| Griffith Observatory Unveils [New Exhibit](#) | Beach Cleanup Breaks [Participation Record](#) |
-| Santa Monica Pier Gets [New Attraction](#) | Local Artist Creates [Interactive Mural](#) |
+| LA Metro Expands [Weekend Service](#) | Beach Cleanup Breaks [Participation Record](#) |
+| Hollywood Bowl Announces [Summer Series](#) | Local Artist Creates [Interactive Mural](#) |
+| Santa Monica Pier Gets [New Attraction](#) | Viral Cat Video Brings Joy [to Millions](#) |
 | DTLA Food Hall Opens [This Weekend](#) | Community Garden Produces [Giant Vegetables](#) |
-| LA Metro Expands [Weekend Service](#) | Viral Cat Video Brings Joy [to Millions](#) |
+| Griffith Observatory Unveils [New Exhibit](#) | Food Truck Festival [Announces Lineup](#) |
 
 ---
 

@@ -6,7 +6,7 @@
 const CurationsLANewsletter = {
     date: '2025-09-26',
     day: 'Friday',
-    generated: '2025-09-25T23:21:11.243429',
+    generated: '2025-09-25T23:25:49.610798',
     
     // Newsletter Header
     header: {
@@ -21,22 +21,58 @@ const CurationsLANewsletter = {
     "category": "EATS",
     "emoji": "\ud83c\udf74",
     "intro": "The food scene is absolutely buzzing right now...",
-    "articles": [],
-    "count": 0
+    "articles": [
+      {
+        "title": "LA Food Scene Updates",
+        "blurb": "Keep exploring the vibrant culinary landscape of Los Angeles with new restaurant openings and chef collaborations acr... This is total game-changer for our fellow angels! \ud83c\udf1f",
+        "link": "https://curationsla.com/food",
+        "source": "CurationsLA",
+        "neighborhood": "Los Angeles",
+        "category": "eats",
+        "publishDate": "Fri, 26 Sep 2025 00:00:00 +0000",
+        "hyperlinkHtml": "<a href=\"https://curationsla.com/food\" target=\"_blank\" rel=\"noopener noreferrer\">LA Food Scene Updates</a>",
+        "hyperlinkMarkdown": "[LA Food Scene Updates](https://curationsla.com/food)"
+      }
+    ],
+    "count": 1
   },
   "events": {
     "category": "EVENTS",
     "emoji": "\ud83c\udf89",
     "intro": "Your social calendar is about to get very full...",
-    "articles": [],
-    "count": 0
+    "articles": [
+      {
+        "title": "Weekend Events in LA",
+        "blurb": "Discover exciting events happening across Los Angeles this weekend, from art galleries to live music venues. This is can't even for our our people! \ud83c\udf1f",
+        "link": "https://curationsla.com/events",
+        "source": "CurationsLA",
+        "neighborhood": "Los Angeles",
+        "category": "events",
+        "publishDate": "Fri, 26 Sep 2025 00:00:00 +0000",
+        "hyperlinkHtml": "<a href=\"https://curationsla.com/events\" target=\"_blank\" rel=\"noopener noreferrer\">Weekend Events in LA</a>",
+        "hyperlinkMarkdown": "[Weekend Events in LA](https://curationsla.com/events)"
+      }
+    ],
+    "count": 1
   },
   "community": {
     "category": "COMMUNITY",
     "emoji": "\ud83e\udd1d",
     "intro": "LA's heart is showing up in the best ways...",
-    "articles": [],
-    "count": 0
+    "articles": [
+      {
+        "title": "LA Community Highlights",
+        "blurb": "Celebrating the amazing people and initiatives that make Los Angeles neighborhoods vibrant and connected. This is total game-changer for our fellow angels! \ud83c\udf1f",
+        "link": "https://curationsla.com/community",
+        "source": "CurationsLA",
+        "neighborhood": "Los Angeles",
+        "category": "community",
+        "publishDate": "Fri, 26 Sep 2025 00:00:00 +0000",
+        "hyperlinkHtml": "<a href=\"https://curationsla.com/community\" target=\"_blank\" rel=\"noopener noreferrer\">LA Community Highlights</a>",
+        "hyperlinkMarkdown": "[LA Community Highlights](https://curationsla.com/community)"
+      }
+    ],
+    "count": 1
   },
   "development": {
     "category": "DEVELOPMENT",
@@ -49,15 +85,39 @@ const CurationsLANewsletter = {
     "category": "BUSINESS",
     "emoji": "\ud83d\udcbc",
     "intro": "Local entrepreneurs are crushing it...",
-    "articles": [],
-    "count": 0
+    "articles": [
+      {
+        "title": "LA Business Innovation",
+        "blurb": "Local businesses continue to drive innovation and growth across Los Angeles, creating opportunities for our community. This is can't even for our LA family! \ud83c\udf1f",
+        "link": "https://curationsla.com/business",
+        "source": "CurationsLA",
+        "neighborhood": "Los Angeles",
+        "category": "business",
+        "publishDate": "Fri, 26 Sep 2025 00:00:00 +0000",
+        "hyperlinkHtml": "<a href=\"https://curationsla.com/business\" target=\"_blank\" rel=\"noopener noreferrer\">LA Business Innovation</a>",
+        "hyperlinkMarkdown": "[LA Business Innovation](https://curationsla.com/business)"
+      }
+    ],
+    "count": 1
   },
   "entertainment": {
     "category": "ENTERTAINMENT",
     "emoji": "\ud83c\udfad",
     "intro": "The creative energy is off the charts...",
-    "articles": [],
-    "count": 0
+    "articles": [
+      {
+        "title": "Arts & Entertainment in LA",
+        "blurb": "From Hollywood premieres to intimate theater performances, LA's entertainment scene continues to inspire and delight. This is total game-changer for our fellow angels! \ud83c\udf1f",
+        "link": "https://curationsla.com/entertainment",
+        "source": "CurationsLA",
+        "neighborhood": "Los Angeles",
+        "category": "entertainment",
+        "publishDate": "Fri, 26 Sep 2025 00:00:00 +0000",
+        "hyperlinkHtml": "<a href=\"https://curationsla.com/entertainment\" target=\"_blank\" rel=\"noopener noreferrer\">Arts & Entertainment in LA</a>",
+        "hyperlinkMarkdown": "[Arts & Entertainment in LA](https://curationsla.com/entertainment)"
+      }
+    ],
+    "count": 1
   },
   "sports": {
     "category": "SPORTS",

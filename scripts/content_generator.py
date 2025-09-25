@@ -429,6 +429,11 @@ class ContentGenerator:
         for category in categories:
             self.content[category] = self.aggregate_category_content(category)
         
+        # Check if we have any content, if not, generate fallback content
+        if not any(self.content[cat] for cat in categories):
+            print("⚠️  No content found from external sources. Generating fallback content...")
+            self.generate_fallback_content()
+        
         # Generate newsletter header
         day_name = self.day_name.title()
         newsletter_content = f"""**HEY LOS ANGELES!**
@@ -818,7 +823,7 @@ if (typeof window !== 'undefined') {{
                 {
                     'title': 'LA Food Scene Updates',
                     'description': 'Keep exploring the vibrant culinary landscape of Los Angeles with new restaurant openings and chef collaborations across the city.',
-                    'url': 'https://curationsla.com/food',
+                    'link': 'https://curationsla.com/food',
                     'source': 'CurationsLA',
                     'published': self.target_date.strftime('%a, %d %b %Y %H:%M:%S +0000')
                 }
@@ -827,7 +832,7 @@ if (typeof window !== 'undefined') {{
                 {
                     'title': 'Weekend Events in LA',
                     'description': 'Discover exciting events happening across Los Angeles this weekend, from art galleries to live music venues.',
-                    'url': 'https://curationsla.com/events',
+                    'link': 'https://curationsla.com/events',
                     'source': 'CurationsLA',
                     'published': self.target_date.strftime('%a, %d %b %Y %H:%M:%S +0000')
                 }
@@ -836,7 +841,7 @@ if (typeof window !== 'undefined') {{
                 {
                     'title': 'LA Community Highlights',
                     'description': 'Celebrating the amazing people and initiatives that make Los Angeles neighborhoods vibrant and connected.',
-                    'url': 'https://curationsla.com/community',
+                    'link': 'https://curationsla.com/community',
                     'source': 'CurationsLA',
                     'published': self.target_date.strftime('%a, %d %b %Y %H:%M:%S +0000')
                 }
@@ -845,7 +850,7 @@ if (typeof window !== 'undefined') {{
                 {
                     'title': 'LA Business Innovation',
                     'description': 'Local businesses continue to drive innovation and growth across Los Angeles, creating opportunities for our community.',
-                    'url': 'https://curationsla.com/business',
+                    'link': 'https://curationsla.com/business',
                     'source': 'CurationsLA',
                     'published': self.target_date.strftime('%a, %d %b %Y %H:%M:%S +0000')
                 }
@@ -854,7 +859,7 @@ if (typeof window !== 'undefined') {{
                 {
                     'title': 'Arts & Entertainment in LA',
                     'description': 'From Hollywood premieres to intimate theater performances, LA\'s entertainment scene continues to inspire and delight.',
-                    'url': 'https://curationsla.com/entertainment',
+                    'link': 'https://curationsla.com/entertainment',
                     'source': 'CurationsLA',
                     'published': self.target_date.strftime('%a, %d %b %Y %H:%M:%S +0000')
                 }

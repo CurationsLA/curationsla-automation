@@ -1,22 +1,28 @@
 {
   "date": "2025-09-26",
   "day": "friday",
-  "generation_time": "2025-09-25T23:21:11.243872",
+  "generation_time": "2025-09-25T23:25:49.611329",
   "categories": {
     "eats": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 1,
+      "avg_vibe_score": 0.0,
+      "neighborhoods": [
+        "LA"
+      ]
     },
     "events": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 1,
+      "avg_vibe_score": 0.0,
+      "neighborhoods": [
+        "LA"
+      ]
     },
     "community": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 1,
+      "avg_vibe_score": 0.0,
+      "neighborhoods": [
+        "LA"
+      ]
     },
     "development": {
       "items_count": 0,
@@ -24,14 +30,18 @@
       "neighborhoods": []
     },
     "business": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 1,
+      "avg_vibe_score": 0.0,
+      "neighborhoods": [
+        "LA"
+      ]
     },
     "entertainment": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 1,
+      "avg_vibe_score": 0.0,
+      "neighborhoods": [
+        "LA"
+      ]
     },
     "sports": {
       "items_count": 0,
@@ -44,6 +54,6 @@
       "neighborhoods": []
     }
   },
-  "total_items": 0,
-  "avg_vibe_score": 0
+  "total_items": 5,
+  "avg_vibe_score": 0.0
 }
