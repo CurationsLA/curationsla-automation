@@ -492,23 +492,23 @@ const CurationsLANewsletter = {{
     // Utility Functions
     utils: {{
         getArticleLink: function(category, index) {{
-            const article = this.content[category].articles[index];
+            const article = CurationsLANewsletter.content[category].articles[index];
             return article ? article.link : '#';
         }},
         
         getArticleHTML: function(category, index) {{
-            const article = this.content[category].articles[index];
+            const article = CurationsLANewsletter.content[category].articles[index];
             return article ? article.hyperlinkHtml : '';
         }},
         
         getArticleMarkdown: function(category, index) {{
-            const article = this.content[category].articles[index];
+            const article = CurationsLANewsletter.content[category].articles[index];
             return article ? article.hyperlinkMarkdown : '';
         }},
         
         getAllLinks: function() {{
             const allLinks = [];
-            Object.values(this.content).forEach(category => {{
+            Object.values(CurationsLANewsletter.content).forEach(category => {{
                 category.articles.forEach(article => {{
                     allLinks.push({{
                         title: article.title,
