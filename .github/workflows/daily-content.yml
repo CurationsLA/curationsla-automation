@@ -41,6 +41,8 @@ jobs:
         pip install -r requirements.txt
     
     - name: Deploy specialized agents
+      env:
+        PYTHONPATH: scripts:$PYTHONPATH
       run: |
         python scripts/deploy_specialized_agents.py || {
           echo "⚠️ Agent deployment had issues, continuing with default configuration"
@@ -68,14 +70,23 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PYTHONPATH: scripts:$PYTHONPATH
       run: |
         echo "🌴 Starting CurationsLA content generation..."
-        python scripts/content_generator.py || {
-          echo "❌ Content generation failed, but continuing with available content"
+        timeout 300 python scripts/content_generator.py || {
+          echo "❌ Content generation failed or timed out, but continuing with available content"
+          # Create minimal content if generation failed completely
+          if [ ! -d "output/$(date +%Y-%m-%d)" ]; then
+            mkdir -p "output/$(date +%Y-%m-%d)"
+            echo "# CurationsLA Newsletter - $(date +%A, %B %d, %Y)" > "output/$(date +%Y-%m-%d)/newsletter-web.md"
+            echo "Content generation encountered issues - please check logs" >> "output/$(date +%Y-%m-%d)/newsletter-web.md"
+          fi
           exit 0
         }
     
     - name: Generate Schema markup
+      env:
+        PYTHONPATH: scripts:$PYTHONPATH
       run: |
         python scripts/schema_builder.py --day ${{ steps.get-day.outputs.day }} || {
           echo "⚠️ Schema generation skipped due to error"
@@ -83,6 +94,8 @@ jobs:
         }
     
     - name: Create AI discovery files
+      env:
+        PYTHONPATH: scripts:$PYTHONPATH
       run: |
         python scripts/ai_discovery.py || {
           echo "⚠️ AI discovery file generation skipped due to error"

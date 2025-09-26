@@ -1,49 +1,73 @@
 {
   "date": "2025-09-26",
   "day": "friday",
-  "generation_time": "2025-09-25T22:36:53.622305",
+  "generation_time": "2025-09-26T17:04:23.727328",
   "categories": {
     "eats": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 5,
+      "avg_vibe_score": 0.78,
+      "neighborhoods": [
+        "Downtown",
+        "Los Angeles",
+        "Beverly Hills"
+      ]
     },
     "events": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 4,
+      "avg_vibe_score": 0.65,
+      "neighborhoods": [
+        "Los Angeles"
+      ]
     },
     "community": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 8,
+      "avg_vibe_score": 0.67,
+      "neighborhoods": [
+        "Los Angeles",
+        "Santa Monica"
+      ]
     },
     "development": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 8,
+      "avg_vibe_score": 0.76,
+      "neighborhoods": [
+        "Arts District",
+        "Downtown",
+        "Los Angeles",
+        "Beverly Hills",
+        "Brentwood",
+        "Santa Monica"
+      ]
     },
     "business": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 1,
+      "avg_vibe_score": 1.0,
+      "neighborhoods": [
+        "Santa Monica"
+      ]
     },
     "entertainment": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 8,
+      "avg_vibe_score": 0.75,
+      "neighborhoods": [
+        "Los Angeles"
+      ]
     },
     "sports": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 8,
+      "avg_vibe_score": 0.69,
+      "neighborhoods": [
+        "Los Angeles"
+      ]
     },
     "goodies": {
-      "items_count": 0,
-      "avg_vibe_score": 0,
-      "neighborhoods": []
+      "items_count": 6,
+      "avg_vibe_score": 0.73,
+      "neighborhoods": [
+        "Los Angeles"
+      ]
     }
   },
-  "total_items": 0,
-  "avg_vibe_score": 0
+  "total_items": 48,
+  "avg_vibe_score": 0.73
 }

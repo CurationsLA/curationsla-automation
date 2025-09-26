@@ -6,6 +6,7 @@ Generates daily newsletter content from RSS feeds with Good Vibes filtering
 
 import os
 import json
+import sys
 import feedparser
 import requests
 from datetime import datetime, timedelta
@@ -14,6 +15,11 @@ import re
 from typing import Dict, List, Any
 import time
 import random
+
+# Add scripts directory to path for imports
+script_dir = Path(__file__).parent
+if str(script_dir) not in sys.path:
+    sys.path.insert(0, str(script_dir))
 
 # Try to import web scraper, but make it optional
 try:
@@ -418,6 +424,81 @@ class ContentGenerator:
             hov_content += f"| {local_display} | {fun_display} |\n"
         
         return hov_content + "\n---\n\n"
+    
+    def _format_newsletter_content(self, categories):
+        """Format newsletter content using pre-aggregated content"""
+        # Generate newsletter header
+        day_name = self.day_name.title()
+        newsletter_content = f"""**HEY LOS ANGELES!**
+
+[GIF PLACEHOLDER - Insert animated GIF here]
+
+**IT'S {day_name.upper()}**
+
+👋 **HEY CUTIE!**
+
+• Welcome to your daily dose of LA's good vibes! We've scoured the city to bring you the best openings, events, and community celebrations happening right now.
+
+• From new restaurant launches in Silver Lake to art exhibitions in DTLA, we've got your weekend (and beyond) covered with positive energy only.
+
+• Ready to explore? Let's dive into what makes LA amazing today! 🌴
+
+---
+
+🍟 [**EATS**](#eats) | 📆 [**EVENTS**](#events) | 🌴 [**COMMUNITY**](#community)
+
+🏡 [**DEVELOPMENT**](#development) | 💼 [**BUSINESS**](#business) | 🎬 [**ENTERTAINMENT**](#entertainment)
+
+🏈 [**SPORTS**](#sports) | 🤙 [**GOODIES**](#goodies)
+
+---
+
+{self.generate_hov_lanes()}
+
+#### 💰 **SPONSOR TEMPLATE**
+
+**[Partner with CurationsLA]** - Reach LA's most engaged community
+
+Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newsletter connects local businesses with residents who love discovering the best of our city.
+
+[Sponsor this newsletter](#) | *Good vibes partnerships available*
+
+---
+
+"""
+        
+        # Process each category
+        for category in categories:
+            items = self.content.get(category, [])
+            section_content = self.format_newsletter_section(category, items)
+            newsletter_content += section_content
+        
+        # Add footer
+        newsletter_content += """
+---
+
+**📱 THE SOCIAL**
+
+Follow us for real-time LA discoveries:
+
+[Instagram @CurationsLA](#) | [Twitter @CurationsLA](#) | [Website](#)
+
+---
+
+**💌 THAT'S A WRAP!**
+
+Keep spreading those good vibes, LA! See you tomorrow for another round of the city's best discoveries.
+
+*With love from the CurationsLA Team* 🌴
+
+---
+
+*This newsletter was generated with positive energy detection. [Learn more about our Good Vibes filtering](#)*
+
+[Unsubscribe](#) | [Update preferences](#) | [Forward to a friend](#)
+"""
+        
+        return newsletter_content
     
     def generate_newsletter(self):
         """Generate complete newsletter content"""
@@ -856,7 +937,11 @@ if (typeof window !== 'undefined') {{
         
         # Generate newsletter content
         if any(self.content[cat] for cat in categories):
-            self.generate_newsletter()
+            # Format newsletter content using already aggregated content
+            newsletter_content = self._format_newsletter_content(categories)
+            self.save_newsletter_versions(newsletter_content)
+            self.generate_js_content()
+            self.generate_summary_stats()
             
             print(f"\n✅ Newsletter generation complete!")
             print(f"📧 Email version: {self.output_path}/newsletter-email.md")
