@@ -1,0 +1,31 @@
+{
+  "agent_id": "agent_008",
+  "name": "SportsSpotter",
+  "specialty": "Lakers, Dodgers, Rams, Galaxy, Angels coverage",
+  "deployment_date": "2025-09-26",
+  "assigned_neighborhoods": [
+    "Downtown",
+    "El Segundo",
+    "Carson",
+    "Anaheim"
+  ],
+  "content_sources": [
+    "ESPN LA",
+    "LA Times Sports",
+    "Lakers Nation",
+    "Dodgers Nation"
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.8,
+  "success_metrics": {
+    "content_items_target": 25,
+    "good_vibes_score_minimum": 0.8,
+    "neighborhood_coverage": 4,
+    "source_diversity": 4
+  },
+  "operational_guidelines": [
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements"
+  ]
+}

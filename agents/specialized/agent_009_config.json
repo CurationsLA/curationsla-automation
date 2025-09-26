@@ -1,0 +1,31 @@
+{
+  "agent_id": "agent_009",
+  "name": "GoodiesGuru",
+  "specialty": "Hidden gems, unique experiences, local secrets",
+  "deployment_date": "2025-09-26",
+  "assigned_neighborhoods": [
+    "Silver Lake",
+    "Venice",
+    "Los Feliz",
+    "Manhattan Beach"
+  ],
+  "content_sources": [
+    "Secret Los Angeles",
+    "Thrillist LA",
+    "Atlas Obscura",
+    "We Like LA"
+  ],
+  "status": "active",
+  "good_vibes_threshold": 0.8,
+  "success_metrics": {
+    "content_items_target": 25,
+    "good_vibes_score_minimum": 0.8,
+    "neighborhood_coverage": 4,
+    "source_diversity": 4
+  },
+  "operational_guidelines": [
+    "Focus on positive, community-oriented content only",
+    "Exclude crime, politics, controversy, and rage-bait",
+    "Prioritize new openings, celebrations, and achievements"
+  ]
+}
