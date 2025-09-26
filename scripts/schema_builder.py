@@ -445,6 +445,55 @@ class SchemaBuilder:
         
         return ghost_schema
 
+    def build_unified_ghost_block(self) -> str:
+        """Build unified HTML+Schema block for easy copy-paste into Ghost CMS"""
+        # Load events HTML
+        events_file = self.output_path / "friday-sunday-events.html"
+        events_html = ""
+        
+        if events_file.exists():
+            with open(events_file, 'r') as f:
+                events_html = f.read()
+        
+        # Build schema for structured data
+        schema = self.build_complete_schema()
+        
+        # Extract just the table content from the HTML
+        table_content = ""
+        if events_html:
+            # Extract everything between <body> and </body>
+            import re
+            body_match = re.search(r'<body[^>]*>(.*?)</body>', events_html, re.DOTALL)
+            if body_match:
+                table_content = body_match.group(1).strip()
+        
+        # Create unified block with embedded schema
+        unified_block = f'''<!-- CurationsLA Ghost Import Block - Copy & Paste Ready -->
+<!-- Events Table with Hidden Schema for SEO & Tag Cards -->
+
+{table_content}
+
+<!-- Hidden Schema.org Structured Data for SEO & Social Cards -->
+<script type="application/ld+json">
+{json.dumps(schema, indent=2)}
+</script>
+
+<!-- Ghost CMS Meta Tags -->
+<meta property="article:tag" content="Los Angeles Events">
+<meta property="article:tag" content="Weekend Events">
+<meta property="article:tag" content="LA Culture">
+<meta property="article:tag" content="Good Vibes">
+<meta property="article:section" content="Events">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CurationsLA: Weekend Events | {self.date_str}">
+<meta property="og:description" content="Your guide to the best LA events this weekend - Friday through Sunday. Good Vibes Only.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CurationsLA Weekend Events">
+
+<!-- End CurationsLA Ghost Import Block -->'''
+        
+        return unified_block
+
     def generate_schema_file(self):
         """Generate and save schema markup file"""
         print(f"🔍 Generating Schema.org markup for {self.day}...")
@@ -463,6 +512,13 @@ class SchemaBuilder:
         with open(ghost_file, 'w') as f:
             json.dump(ghost_schema, f, indent=2)
         
+        # Generate unified Ghost block
+        print(f"🔍 Generating unified Ghost copy-paste block...")
+        unified_block = self.build_unified_ghost_block()
+        unified_file = self.output_path / "ghost-unified-block.html"
+        with open(unified_file, 'w') as f:
+            f.write(unified_block)
+        
         # Generate HTML meta tags
         meta_tags = self.generate_meta_tags()
         meta_file = self.output_path / "meta-tags.html"
@@ -471,6 +527,7 @@ class SchemaBuilder:
         
         print(f"✅ Schema generated: {schema_file}")
         print(f"✅ Ghost schema generated: {ghost_file}")
+        print(f"✅ Ghost unified block generated: {unified_file}")
         print(f"✅ Meta tags generated: {meta_file}")
         
         return schema
@@ -565,12 +622,24 @@ def main():
     parser.add_argument('--day', type=str, help='Day of week (monday, tuesday, etc.)')
     parser.add_argument('--ghost-only', action='store_true', help='Generate only Ghost-optimized schema')
     parser.add_argument('--table-only', action='store_true', help='Generate only events table JSON for Ghost import')
+    parser.add_argument('--unified-block', action='store_true', help='Generate only unified copy-paste HTML block for Ghost')
     
     args = parser.parse_args()
     
     print("🔍 CurationsLA Schema Builder Starting...")
     
     builder = SchemaBuilder(args.day)
+    
+    if args.unified_block:
+        # Generate unified copy-paste block
+        unified_block = builder.build_unified_ghost_block()
+        unified_file = builder.output_path / "ghost-unified-block.html"
+        with open(unified_file, 'w') as f:
+            f.write(unified_block)
+        
+        print(f"✅ Unified Ghost block generated: {unified_file}")
+        print(f"📋 Ready to copy-paste into Ghost CMS!")
+        return
     
     if args.table_only:
         # Generate just the events table for easy Ghost import
@@ -619,7 +688,8 @@ def main():
     print(f"\n🎉 Schema generation complete!")
     print(f"📊 Generated {len(schema['@graph'])} schema objects")
     print(f"👻 Ghost schema: {builder.output_path}/ghost-schema.json")
-    print(f"📋 Standard schema: {builder.output_path}/schema.json")
+    print(f"📋 Unified block: {builder.output_path}/ghost-unified-block.html")
+    print(f"📄 Standard schema: {builder.output_path}/schema.json")
 
 if __name__ == "__main__":
     main()
