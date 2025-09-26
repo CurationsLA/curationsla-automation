@@ -349,6 +349,151 @@ class SchemaBuilder:
             "@graph": graph
         }
     
+    def build_ghost_schema(self) -> Dict:
+        """Build Ghost CMS optimized schema with newsletter content and tables"""
+        # Load newsletter content if available
+        newsletter_file = self.output_path / "newsletter-content.json"
+        events_file = self.output_path / "friday-sunday-events.html"
+        
+        newsletter_content = {}
+        events_html = ""
+        
+        if newsletter_file.exists():
+            with open(newsletter_file, 'r') as f:
+                newsletter_content = json.load(f)
+        
+        if events_file.exists():
+            with open(events_file, 'r') as f:
+                events_html = f.read()
+        
+        # Build comprehensive Ghost schema
+        ghost_schema = {
+            "@context": "https://schema.org",
+            "ghost": {
+                "version": "5.0",
+                "optimized": True,
+                "content_type": "newsletter_post"
+            },
+            "curationsla": {
+                "date": self.date_str,
+                "day": self.day,
+                "version": "2.1-ghost-optimized",
+                "generated": self.today.isoformat()
+            },
+            "@graph": self.build_complete_schema()["@graph"]
+        }
+        
+        # Add newsletter content if available
+        if newsletter_content:
+            ghost_schema["newsletter_content"] = {
+                "meta": newsletter_content.get("meta", {}),
+                "categories": []
+            }
+            
+            # Extract categories with structured data
+            if "content" in newsletter_content:
+                for category_key, category_data in newsletter_content["content"].items():
+                    if isinstance(category_data, dict) and "articles" in category_data:
+                        category_schema = {
+                            "name": category_data.get("category", category_key.upper()),
+                            "emoji": category_data.get("emoji", "📰"),
+                            "intro": category_data.get("intro", ""),
+                            "count": category_data.get("count", len(category_data.get("articles", []))),
+                            "articles": []
+                        }
+                        
+                        # Structure articles for Ghost
+                        for article in category_data.get("articles", []):
+                            article_schema = {
+                                "@type": "NewsArticle",
+                                "headline": article.get("title", ""),
+                                "description": article.get("blurb", ""),
+                                "url": article.get("link", ""),
+                                "publisher": {
+                                    "@type": "Organization",
+                                    "name": article.get("source", "Unknown Source")
+                                },
+                                "spatialCoverage": {
+                                    "@type": "Place",
+                                    "name": article.get("neighborhood", "Los Angeles")
+                                },
+                                "datePublished": article.get("publishDate", ""),
+                                "category": article.get("category", category_key),
+                                "ghost_metadata": {
+                                    "hyperlinkHtml": article.get("hyperlinkHtml", ""),
+                                    "hyperlinkMarkdown": article.get("hyperlinkMarkdown", "")
+                                }
+                            }
+                            category_schema["articles"].append(article_schema)
+                        
+                        ghost_schema["newsletter_content"]["categories"].append(category_schema)
+        
+        # Add events table if available
+        if events_html:
+            ghost_schema["events_table"] = {
+                "@type": "Table",
+                "name": "CurationsLA Weekend Events",
+                "description": "Friday through Sunday LA events in HTML table format",
+                "format": "text/html",
+                "content": events_html,
+                "ghost_metadata": {
+                    "ready_for_import": True,
+                    "table_type": "events_schedule",
+                    "styling": "curationsla_branded"
+                }
+            }
+        
+        return ghost_schema
+
+    def build_unified_ghost_block(self) -> str:
+        """Build unified HTML+Schema block for easy copy-paste into Ghost CMS"""
+        # Load events HTML
+        events_file = self.output_path / "friday-sunday-events.html"
+        events_html = ""
+        
+        if events_file.exists():
+            with open(events_file, 'r') as f:
+                events_html = f.read()
+        
+        # Build schema for structured data
+        schema = self.build_complete_schema()
+        
+        # Extract just the table content from the HTML
+        table_content = ""
+        if events_html:
+            # Extract everything between <body> and </body>
+            import re
+            body_match = re.search(r'<body[^>]*>(.*?)</body>', events_html, re.DOTALL)
+            if body_match:
+                table_content = body_match.group(1).strip()
+        
+        # Create unified block with embedded schema
+        unified_block = f'''<!-- CurationsLA Ghost Import Block - Copy & Paste Ready -->
+<!-- Events Table with Hidden Schema for SEO & Tag Cards -->
+
+{table_content}
+
+<!-- Hidden Schema.org Structured Data for SEO & Social Cards -->
+<script type="application/ld+json">
+{json.dumps(schema, indent=2)}
+</script>
+
+<!-- Ghost CMS Meta Tags -->
+<meta property="article:tag" content="Los Angeles Events">
+<meta property="article:tag" content="Weekend Events">
+<meta property="article:tag" content="LA Culture">
+<meta property="article:tag" content="Good Vibes">
+<meta property="article:section" content="Events">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CurationsLA: Weekend Events | {self.date_str}">
+<meta property="og:description" content="Your guide to the best LA events this weekend - Friday through Sunday. Good Vibes Only.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CurationsLA Weekend Events">
+
+<!-- End CurationsLA Ghost Import Block -->'''
+        
+        return unified_block
+
     def generate_schema_file(self):
         """Generate and save schema markup file"""
         print(f"🔍 Generating Schema.org markup for {self.day}...")
@@ -360,6 +505,20 @@ class SchemaBuilder:
         with open(schema_file, 'w') as f:
             json.dump(schema, f, indent=2)
         
+        # Generate Ghost-optimized schema
+        print(f"🔍 Generating Ghost-optimized schema...")
+        ghost_schema = self.build_ghost_schema()
+        ghost_file = self.output_path / "ghost-schema.json"
+        with open(ghost_file, 'w') as f:
+            json.dump(ghost_schema, f, indent=2)
+        
+        # Generate unified Ghost block
+        print(f"🔍 Generating unified Ghost copy-paste block...")
+        unified_block = self.build_unified_ghost_block()
+        unified_file = self.output_path / "ghost-unified-block.html"
+        with open(unified_file, 'w') as f:
+            f.write(unified_block)
+        
         # Generate HTML meta tags
         meta_tags = self.generate_meta_tags()
         meta_file = self.output_path / "meta-tags.html"
@@ -367,6 +526,8 @@ class SchemaBuilder:
             f.write(meta_tags)
         
         print(f"✅ Schema generated: {schema_file}")
+        print(f"✅ Ghost schema generated: {ghost_file}")
+        print(f"✅ Ghost unified block generated: {unified_file}")
         print(f"✅ Meta tags generated: {meta_file}")
         
         return schema
@@ -459,16 +620,76 @@ def main():
     """Main execution function"""
     parser = argparse.ArgumentParser(description='Generate Schema.org markup for CurationsLA')
     parser.add_argument('--day', type=str, help='Day of week (monday, tuesday, etc.)')
+    parser.add_argument('--ghost-only', action='store_true', help='Generate only Ghost-optimized schema')
+    parser.add_argument('--table-only', action='store_true', help='Generate only events table JSON for Ghost import')
+    parser.add_argument('--unified-block', action='store_true', help='Generate only unified copy-paste HTML block for Ghost')
     
     args = parser.parse_args()
     
     print("🔍 CurationsLA Schema Builder Starting...")
     
     builder = SchemaBuilder(args.day)
+    
+    if args.unified_block:
+        # Generate unified copy-paste block
+        unified_block = builder.build_unified_ghost_block()
+        unified_file = builder.output_path / "ghost-unified-block.html"
+        with open(unified_file, 'w') as f:
+            f.write(unified_block)
+        
+        print(f"✅ Unified Ghost block generated: {unified_file}")
+        print(f"📋 Ready to copy-paste into Ghost CMS!")
+        return
+    
+    if args.table_only:
+        # Generate just the events table for easy Ghost import
+        events_file = builder.output_path / "friday-sunday-events.html"
+        if events_file.exists():
+            with open(events_file, 'r') as f:
+                events_html = f.read()
+            
+            table_json = {
+                "ghost_import": {
+                    "version": "1.0",
+                    "type": "events_table",
+                    "date": builder.date_str,
+                    "generated": builder.today.isoformat()
+                },
+                "table": {
+                    "name": "CurationsLA Weekend Events",
+                    "description": "Friday through Sunday LA events",
+                    "format": "html",
+                    "content": events_html,
+                    "ready_for_ghost": True
+                }
+            }
+            
+            table_file = builder.output_path / "ghost-table.json"
+            with open(table_file, 'w') as f:
+                json.dump(table_json, f, indent=2)
+            
+            print(f"✅ Ghost table generated: {table_file}")
+        else:
+            print("❌ No events table found to export")
+        return
+    
+    if args.ghost_only:
+        # Generate only Ghost schema
+        ghost_schema = builder.build_ghost_schema()
+        ghost_file = builder.output_path / "ghost-schema.json"
+        with open(ghost_file, 'w') as f:
+            json.dump(ghost_schema, f, indent=2)
+        print(f"✅ Ghost schema generated: {ghost_file}")
+        return
+    
+    # Generate all schemas (default behavior)
     schema = builder.generate_schema_file()
     
     print(f"\n🎉 Schema generation complete!")
     print(f"📊 Generated {len(schema['@graph'])} schema objects")
+    print(f"👻 Ghost schema: {builder.output_path}/ghost-schema.json")
+    print(f"📋 Unified block: {builder.output_path}/ghost-unified-block.html")
+    print(f"📄 Standard schema: {builder.output_path}/schema.json")
 
 if __name__ == "__main__":
     main()

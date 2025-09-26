@@ -1,0 +1,1405 @@
+{
+  "@context": "https://schema.org",
+  "ghost": {
+    "version": "5.0",
+    "optimized": true,
+    "content_type": "newsletter_post"
+  },
+  "curationsla": {
+    "date": "2025-09-26",
+    "day": "friday",
+    "version": "2.1-ghost-optimized",
+    "generated": "2025-09-26T22:29:53.808989"
+  },
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "NewsMediaOrganization"
+      ],
+      "@id": "https://la.curations.cc/#organization",
+      "name": "CurationsLA",
+      "legalName": "CurationsLA by CURATIONS LLC",
+      "alternateName": [
+        "Curations LA",
+        "LA Curations",
+        "Los Angeles Newsletter"
+      ],
+      "description": "Los Angeles culture & events newsletter delivering Good Vibes Monday-Friday. No rage-bait, no politics, no crime - just community.",
+      "url": "https://la.curations.cc",
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://curations.cc/#organization",
+        "name": "CURATIONS",
+        "url": "https://curations.cc"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://la.curations.cc/#logo",
+        "url": "https://la.curations.cc/assets/logo.png",
+        "width": 600,
+        "height": 60,
+        "caption": "CurationsLA - Good Vibes Only"
+      },
+      "sameAs": [
+        "https://instagram.com/curationsla",
+        "https://twitter.com/curationsla",
+        "https://linkedin.com/company/curations",
+        "https://github.com/CurationsLA"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Los Angeles",
+          "@id": "https://www.wikidata.org/wiki/Q65"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Los Angeles County",
+          "containsPlace": [
+            {
+              "@type": "Place",
+              "name": "Downtown Los Angeles"
+            },
+            {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            {
+              "@type": "Place",
+              "name": "Venice"
+            },
+            {
+              "@type": "Place",
+              "name": "Hollywood"
+            },
+            {
+              "@type": "Place",
+              "name": "Beverly Hills"
+            },
+            {
+              "@type": "Place",
+              "name": "Silver Lake"
+            },
+            {
+              "@type": "Place",
+              "name": "Echo Park"
+            },
+            {
+              "@type": "Place",
+              "name": "Manhattan Beach"
+            },
+            {
+              "@type": "Place",
+              "name": "Burbank"
+            },
+            {
+              "@type": "Place",
+              "name": "Studio City"
+            }
+          ]
+        }
+      ],
+      "email": "la@curations.cc",
+      "telephone": "747-200-5740",
+      "foundingDate": "2025",
+      "ethicsPolicy": "https://la.curations.cc/good-vibes-policy",
+      "masthead": "https://la.curations.cc/about",
+      "missionCoveragePrioritiesPolicy": "https://la.curations.cc/editorial-guidelines",
+      "publishingPrinciples": {
+        "@type": "CreativeWork",
+        "name": "Good Vibes Editorial Policy",
+        "text": "No rage-bait, no politics, no crime reporting. Focus on community, culture, creativity, and positive local stories."
+      }
+    },
+    {
+      "@type": "Newsletter",
+      "@id": "https://la.curations.cc/#newsletter",
+      "name": "CurationsLA Newsletter",
+      "description": "Daily Los Angeles culture & events newsletter - Monday through Friday",
+      "publisher": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "frequency": "Weekdays",
+      "url": "https://la.curations.cc",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "genre": [
+        "Culture",
+        "Events",
+        "Local News",
+        "Community"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Los Angeles Residents",
+        "geographicArea": {
+          "@type": "City",
+          "name": "Los Angeles"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://la.curations.cc/#website",
+      "url": "https://la.curations.cc",
+      "name": "CurationsLA",
+      "description": "Los Angeles Good Vibes Newsletter - Culture, Events, Community",
+      "publisher": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://la.curations.cc/search?q={search_term_string}&neighborhood={neighborhood}"
+          },
+          "query-input": [
+            {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            },
+            {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": false,
+              "valueName": "neighborhood"
+            }
+          ]
+        },
+        {
+          "@type": "SubscribeAction",
+          "target": "https://la.curations.cc/subscribe",
+          "description": "Subscribe to daily Good Vibes newsletter"
+        }
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".intro",
+          ".highlight",
+          ".event-title",
+          ".restaurant-name"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "NewsArticle",
+        "CreativeWork"
+      ],
+      "@id": "https://la.curations.cc/newsletter/friday#2025-09-26",
+      "headline": "CurationsLA: Friday Good Vibes - September 26, 2025",
+      "description": "Today's Los Angeles culture, events, and community highlights. Eats, Events, Development, Entertainment, and more Good Vibes.",
+      "datePublished": "2025-09-26T22:29:53.808989",
+      "dateModified": "2025-09-26T22:29:53.808989",
+      "author": {
+        "@type": "Organization",
+        "name": "CurationsLA",
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "publisher": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "articleSection": "Newsletter",
+      "keywords": "Los Angeles, LA events, LA restaurants, LA culture, community, good vibes, Silver Lake, Venice, Hollywood, DTLA",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Los Angeles, California",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Los Angeles Culture"
+        },
+        {
+          "@type": "Thing",
+          "name": "Community Events"
+        },
+        {
+          "@type": "Thing",
+          "name": "Local Businesses"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://la.curations.cc/newsletter/friday"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://la.curations.cc/newsletter",
+      "name": "CurationsLA Newsletter Archive",
+      "description": "Browse past issues of the CurationsLA Good Vibes newsletter",
+      "url": "https://la.curations.cc/newsletter",
+      "isPartOf": {
+        "@id": "https://la.curations.cc/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Los Angeles Newsletter Archive"
+      }
+    },
+    {
+      "@type": "DataCatalog",
+      "name": "CurationsLA Newsletter Dataset",
+      "description": "Los Angeles culture, events, and community content for AI training",
+      "keywords": "Los Angeles, LA events, restaurants, culture, community, good vibes, positive news",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "isAccessibleForFree": true,
+      "creator": {
+        "@id": "https://la.curations.cc/#organization"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Los Angeles",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      },
+      "dataset": {
+        "@type": "Dataset",
+        "name": "CurationsLA Good Vibes Content",
+        "description": "Curated positive Los Angeles content - no rage-bait, politics, or crime",
+        "temporalCoverage": "2025/..",
+        "spatialCoverage": "Los Angeles Metro Area",
+        "license": "CC-BY-SA-4.0",
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://la.curations.cc/api/training-data"
+        }
+      }
+    },
+    {
+      "@type": [
+        "Restaurant",
+        "LocalBusiness"
+      ],
+      "@id": "https://la.curations.cc/#business-sample-restaurant-1",
+      "name": "Sample LA Restaurant",
+      "description": "Amazing local eatery in Silver Lake",
+      "url": "https://example.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Silver Lake",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "priceRange": "$$"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://la.curations.cc/#event-sample-event-1",
+      "name": "Sample LA Event",
+      "description": "Community celebration in DTLA",
+      "startDate": "2025-09-26T22:29:53.808989",
+      "endDate": "2025-09-27T01:29:53.808989",
+      "location": {
+        "@type": "Place",
+        "name": "Community Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Downtown",
+          "addressRegion": "CA"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Local Organization"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled"
+    }
+  ],
+  "newsletter_content": {
+    "meta": {
+      "date": "2025-09-26",
+      "generated": "2025-09-26T18:46:59.966065",
+      "style": "CurationsLA + Morning Brew blend"
+    },
+    "categories": [
+      {
+        "name": "EATS",
+        "emoji": "\ud83c\udf74",
+        "intro": "The food scene is absolutely buzzing right now...",
+        "count": 5,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "These Los Angeles Restaurants Were Just Named in the First-Ever North America\u2019s 50 Best Restaurants",
+            "description": "The inaugural North America\u2019s 50 Best Restaurants list debuted last night at a ceremony at the Wynn in Las Vegas, whe... This is absolutely obsessed for our neighbors! \ud83c\udf1f",
+            "url": "https://la.eater.com/restaurant-news/293016/worlds-50-best-restaurants-north-america-los-angeles-2025",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Eater"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "2025-09-26T11:35:35-04:00",
+            "category": "eats",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://la.eater.com/restaurant-news/293016/worlds-50-best-restaurants-north-america-los-angeles-2025\" target=\"_blank\" rel=\"noopener noreferrer\">These Los Angeles Restaurants Were Just Named in the First-Ever North America\u2019s 50 Best Restaurants</a>",
+              "hyperlinkMarkdown": "[These Los Angeles Restaurants Were Just Named in the First-Ever North America\u2019s 50 Best Restaurants](https://la.eater.com/restaurant-news/293016/worlds-50-best-restaurants-north-america-los-angeles-2025)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Legendary Bay Area Chef Dominique Crenn Is Opening a Restaurant in Beverly Hills",
+            "description": "One of the Bay Area\u2019s most famous chefs will head down the coast to Rodeo Drive for her forthcoming restaurant. Domin... This is absolutely obsessed for our neighbors! \ud83c\udf1f",
+            "url": "https://la.eater.com/coming-attractions/292923/dominique-crenn-opening-monsieur-dior-beverly-hills",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Eater"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Beverly Hills"
+            },
+            "datePublished": "2025-09-24T14:32:50-04:00",
+            "category": "eats",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://la.eater.com/coming-attractions/292923/dominique-crenn-opening-monsieur-dior-beverly-hills\" target=\"_blank\" rel=\"noopener noreferrer\">Legendary Bay Area Chef Dominique Crenn Is Opening a Restaurant in Beverly Hills</a>",
+              "hyperlinkMarkdown": "[Legendary Bay Area Chef Dominique Crenn Is Opening a Restaurant in Beverly Hills](https://la.eater.com/coming-attractions/292923/dominique-crenn-opening-monsieur-dior-beverly-hills)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "One of L.A.'s best bakeries launches a new pizzeria. Yes, there are lines out the door",
+            "description": "Plus, a Michelin-starred tasting menu flips to a steakhouse, an Italian sandwich legend debuts in L.A., some of the c... This is absolutely obsessed for our neighbors! \ud83c\udf1f",
+            "url": "https://www.latimes.com/food/story/2025-09-26/bub-grandmas-pizzeria-highland-park-kali-steakhouse-pinos-sandwiches-los-feliz",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Food"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 10:00:00 GMT",
+            "category": "eats",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/food/story/2025-09-26/bub-grandmas-pizzeria-highland-park-kali-steakhouse-pinos-sandwiches-los-feliz\" target=\"_blank\" rel=\"noopener noreferrer\">One of L.A.'s best bakeries launches a new pizzeria. Yes, there are lines out the door</a>",
+              "hyperlinkMarkdown": "[One of L.A.'s best bakeries launches a new pizzeria. Yes, there are lines out the door](https://www.latimes.com/food/story/2025-09-26/bub-grandmas-pizzeria-highland-park-kali-steakhouse-pinos-sandwiches-los-feliz)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Will the Reel Inn rise again? Iconic seafood shack in back-and-forth limbo with state",
+            "description": "First, the state told the owners the restaurant could no longer rebuild on its site. A new update provides 'glimmerin... This is total game-changer for our our people! \ud83c\udf1f",
+            "url": "https://www.latimes.com/food/story/2025-09-22/reel-inn-malibu-topanga-possibly-reopening-palisades-fire",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Food"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Mon, 22 Sep 2025 21:12:27 GMT",
+            "category": "eats",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/food/story/2025-09-22/reel-inn-malibu-topanga-possibly-reopening-palisades-fire\" target=\"_blank\" rel=\"noopener noreferrer\">Will the Reel Inn rise again? Iconic seafood shack in back-and-forth limbo with state</a>",
+              "hyperlinkMarkdown": "[Will the Reel Inn rise again? Iconic seafood shack in back-and-forth limbo with state](https://www.latimes.com/food/story/2025-09-22/reel-inn-malibu-topanga-possibly-reopening-palisades-fire)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "The Best Restaurants in Downtown Los Angeles, According to Eater Editors",
+            "description": "There\u2019s much to eat in the heart of Downtown LA \u2014 the official city center that spans from Bunker Hill to South Park ... This is pure magic for our LA family! \ud83c\udf1f",
+            "url": "https://la.eater.com/maps/best-downtown-los-angeles-restaurants-la-live-bunker-hill-historic-core",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Eater"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Downtown"
+            },
+            "datePublished": "2025-09-25T18:01:09-04:00",
+            "category": "eats",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://la.eater.com/maps/best-downtown-los-angeles-restaurants-la-live-bunker-hill-historic-core\" target=\"_blank\" rel=\"noopener noreferrer\">The Best Restaurants in Downtown Los Angeles, According to Eater Editors</a>",
+              "hyperlinkMarkdown": "[The Best Restaurants in Downtown Los Angeles, According to Eater Editors](https://la.eater.com/maps/best-downtown-los-angeles-restaurants-la-live-bunker-hill-historic-core)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "EVENTS",
+        "emoji": "\ud83c\udf89",
+        "intro": "Your social calendar is about to get very full...",
+        "count": 5,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "This Hidden Mexico City-Inspired Caf\u00e9 In L.A.\u2019s Chinatown Is Perfect To enjoy Live Music \u2013 From Jazz And Bolero To DJ Sets",
+            "description": "Behind an unassuming fa\u00e7ade highlighted by its vibrant red color, a hidden slice of old-school L.A. vibes sits right ... This is total game-changer for our our people! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Chinatown"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:07:41 +0000",
+            "category": "events",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/\" target=\"_blank\" rel=\"noopener noreferrer\">This Hidden Mexico City-Inspired Caf\u00e9 In L.A.\u2019s Chinatown Is Perfect To enjoy Live Music \u2013 From Jazz And Bolero To DJ Sets</a>",
+              "hyperlinkMarkdown": "[This Hidden Mexico City-Inspired Caf\u00e9 In L.A.\u2019s Chinatown Is Perfect To enjoy Live Music \u2013 From Jazz And Bolero To DJ Sets](https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Concert One Hour From L.A.",
+            "description": "Lake Hughes, a small town north of the city and just an hour away, will become next month the gathering place for thr... This is pure magic for our neighbors! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/harvest-moon-benefit-concert-la/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 14:10:06 +0000",
+            "category": "events",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/harvest-moon-benefit-concert-la/\" target=\"_blank\" rel=\"noopener noreferrer\">Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Concert One Hour From L.A.</a>",
+              "hyperlinkMarkdown": "[Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Concert One Hour From L.A.](https://secretlosangeles.com/harvest-moon-benefit-concert-la/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "A California Astronaut Will Pilot NASA\u2019s First Crewed Moon Mission In 50 Years \u2014 Launching In 2026",
+            "description": "\u201cOne small step for a man, one giant leap for mankind.\u201d Those were the impactful words from Neil Armstrong that milli... This is absolutely obsessed for our LA family! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/artemis-ii-nasa-mission-california-astronaut/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 15:09:06 +0000",
+            "category": "events",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/artemis-ii-nasa-mission-california-astronaut/\" target=\"_blank\" rel=\"noopener noreferrer\">A California Astronaut Will Pilot NASA\u2019s First Crewed Moon Mission In 50 Years \u2014 Launching In 2026</a>",
+              "hyperlinkMarkdown": "[A California Astronaut Will Pilot NASA\u2019s First Crewed Moon Mission In 50 Years \u2014 Launching In 2026](https://secretlosangeles.com/artemis-ii-nasa-mission-california-astronaut/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "FIFA World Cup 26\u2122 Los Angeles",
+            "description": "\"The Beautiful Game\" comes to LA when SoFi Stadium hosts eight matches of FIFA World Cup 26\u2122, including the U.S. Men\u2019... This is absolutely obsessed for our fellow angels! \ud83c\udf1f",
+            "url": "https://www.discoverlosangeles.com/fifaworldcupla",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Discover LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "2025-09-26T18:45:21.461939",
+            "category": "events",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.discoverlosangeles.com/fifaworldcupla\" target=\"_blank\" rel=\"noopener noreferrer\">FIFA World Cup 26\u2122 Los Angeles</a>",
+              "hyperlinkMarkdown": "[FIFA World Cup 26\u2122 Los Angeles](https://www.discoverlosangeles.com/fifaworldcupla)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "This Scenic California Steam Train Is One Of The Most Beautiful In The U.S. \u2014 Perfect For Enjoying Fall Foliage",
+            "description": "Fall season isn\u2019t just about spooky movies, and During this time of year, we\u2019re lucky to experience the magical trans... This is absolutely obsessed for our our people! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/yosemite-train-most-scenic-ride-u-s/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Tue, 23 Sep 2025 17:07:59 +0000",
+            "category": "events",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/yosemite-train-most-scenic-ride-u-s/\" target=\"_blank\" rel=\"noopener noreferrer\">This Scenic California Steam Train Is One Of The Most Beautiful In The U.S. \u2014 Perfect For Enjoying Fall Foliage</a>",
+              "hyperlinkMarkdown": "[This Scenic California Steam Train Is One Of The Most Beautiful In The U.S. \u2014 Perfect For Enjoying Fall Foliage](https://secretlosangeles.com/yosemite-train-most-scenic-ride-u-s/)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY",
+        "emoji": "\ud83e\udd1d",
+        "intro": "LA's heart is showing up in the best ways...",
+        "count": 8,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Big Blue Bus Offers Free Rides for California Clean Air Day",
+            "description": "Santa Monica's Big Blue Bus will provide free rides for everyone on Wednesday, Oct. 1, 2025, in observance of the eig... This is can't even for our LA family! \ud83c\udf1f",
+            "url": "https://smdp.com/news/transportation/big-blue-bus-offers-free-rides-for-california-clean-air-day/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Santa Monica Daily Press"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            "datePublished": "Thu, 25 Sep 2025 19:00:00 +0000",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://smdp.com/news/transportation/big-blue-bus-offers-free-rides-for-california-clean-air-day/\" target=\"_blank\" rel=\"noopener noreferrer\">Big Blue Bus Offers Free Rides for California Clean Air Day</a>",
+              "hyperlinkMarkdown": "[Big Blue Bus Offers Free Rides for California Clean Air Day](https://smdp.com/news/transportation/big-blue-bus-offers-free-rides-for-california-clean-air-day/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "LA Card Show! Dodger Stadium will be full Sunday even though the team is in Seattle",
+            "description": "LA Card Show will make its Dodger Stadium debut with a format that includes a DodgerVision watch party for the team's... This is absolutely obsessed for our neighbors! \ud83c\udf1f",
+            "url": "https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times California"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:29:03 GMT",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party\" target=\"_blank\" rel=\"noopener noreferrer\">LA Card Show! Dodger Stadium will be full Sunday even though the team is in Seattle</a>",
+              "hyperlinkMarkdown": "[LA Card Show! Dodger Stadium will be full Sunday even though the team is in Seattle](https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Santa Monica ends free parking for clean air vehicles as Federal program expires",
+            "description": "Drivers displaying Clean Air Vehicle decals will no longer receive free parking at Santa Monica meters starting Oct. ... This is pure magic for our neighbors! \ud83c\udf1f",
+            "url": "https://smdp.com/news/transportation/santa-monica-ends-free-parking-for-clean-air-vehilces-as-federal-program-expires/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Santa Monica Daily Press"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            "datePublished": "Fri, 26 Sep 2025 13:00:00 +0000",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://smdp.com/news/transportation/santa-monica-ends-free-parking-for-clean-air-vehilces-as-federal-program-expires/\" target=\"_blank\" rel=\"noopener noreferrer\">Santa Monica ends free parking for clean air vehicles as Federal program expires</a>",
+              "hyperlinkMarkdown": "[Santa Monica ends free parking for clean air vehicles as Federal program expires](https://smdp.com/news/transportation/santa-monica-ends-free-parking-for-clean-air-vehilces-as-federal-program-expires/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Santa Monica Eyes Major Parks Expansion in New \u2018City as Habitat\u2019 Vision Plan",
+            "description": "The city is moving to dramatically expand its park system with a new vision plan that could more than double availabl... This is absolutely obsessed for our LA family! \ud83c\udf1f",
+            "url": "https://smdp.com/featured/santa-monica-eyes-major-parks-expansion-in-new-city-as-habitat-vision-plan/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Santa Monica Daily Press"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            "datePublished": "Fri, 26 Sep 2025 13:00:00 +0000",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://smdp.com/featured/santa-monica-eyes-major-parks-expansion-in-new-city-as-habitat-vision-plan/\" target=\"_blank\" rel=\"noopener noreferrer\">Santa Monica Eyes Major Parks Expansion in New \u2018City as Habitat\u2019 Vision Plan</a>",
+              "hyperlinkMarkdown": "[Santa Monica Eyes Major Parks Expansion in New \u2018City as Habitat\u2019 Vision Plan](https://smdp.com/featured/santa-monica-eyes-major-parks-expansion-in-new-city-as-habitat-vision-plan/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "California schools launch immigration protection efforts",
+            "description": "California schools are rolling out new protections for immigrant families following disturbing incidents this spring ... This is pure magic for our neighbors! \ud83c\udf1f",
+            "url": "https://smdp.com/news/education/california-schools-launch-immigration-protection-efforts/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Santa Monica Daily Press"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            "datePublished": "Thu, 25 Sep 2025 19:00:00 +0000",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://smdp.com/news/education/california-schools-launch-immigration-protection-efforts/\" target=\"_blank\" rel=\"noopener noreferrer\">California schools launch immigration protection efforts</a>",
+              "hyperlinkMarkdown": "[California schools launch immigration protection efforts](https://smdp.com/news/education/california-schools-launch-immigration-protection-efforts/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "See L.A. Zoo's newest inhabitants: Two baby chimpanzees",
+            "description": "The infants, both unnamed females, are bonding with their mothers, the zoo said. This is can't even for our fellow angels! \ud83c\udf1f",
+            "url": "https://www.latimes.com/california/story/2025-09-26/two-baby-chimpanzees-born-at-l-a-zoo",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times California"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 16:46:52 GMT",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/california/story/2025-09-26/two-baby-chimpanzees-born-at-l-a-zoo\" target=\"_blank\" rel=\"noopener noreferrer\">See L.A. Zoo's newest inhabitants: Two baby chimpanzees</a>",
+              "hyperlinkMarkdown": "[See L.A. Zoo's newest inhabitants: Two baby chimpanzees](https://www.latimes.com/california/story/2025-09-26/two-baby-chimpanzees-born-at-l-a-zoo)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Her husband killed her for 'failure to lose weight' and threatening to leave him, SoCal prosecutors say",
+            "description": "Renteria allegedly told prosecutors in a recorded interview that he got into a fight with his wife about her \"failure... This is absolutely obsessed for our our people! \ud83c\udf1f",
+            "url": "https://www.latimes.com/california/story/2025-09-26/uk-woman-killed-hollywood",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times California"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 16:30:47 GMT",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/california/story/2025-09-26/uk-woman-killed-hollywood\" target=\"_blank\" rel=\"noopener noreferrer\">Her husband killed her for 'failure to lose weight' and threatening to leave him, SoCal prosecutors say</a>",
+              "hyperlinkMarkdown": "[Her husband killed her for 'failure to lose weight' and threatening to leave him, SoCal prosecutors say](https://www.latimes.com/california/story/2025-09-26/uk-woman-killed-hollywood)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Mt. Whitney hikers love this Chinese restaurant pitstop that looks like a merry-go-round",
+            "description": "Once a fancy steakhouse, a carousel-shaped restaurant located in the Eastern Sierra town of Lone Pine feeds famished ... This is can't even for our neighbors! \ud83c\udf1f",
+            "url": "https://www.latimes.com/environment/story/2025-09-26/mt-whitney-hikers-love-this-chinese-restaurant-that-looks-like-a-merry-go-round",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times California"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 10:00:00 GMT",
+            "category": "community",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/environment/story/2025-09-26/mt-whitney-hikers-love-this-chinese-restaurant-that-looks-like-a-merry-go-round\" target=\"_blank\" rel=\"noopener noreferrer\">Mt. Whitney hikers love this Chinese restaurant pitstop that looks like a merry-go-round</a>",
+              "hyperlinkMarkdown": "[Mt. Whitney hikers love this Chinese restaurant pitstop that looks like a merry-go-round](https://www.latimes.com/environment/story/2025-09-26/mt-whitney-hikers-love-this-chinese-restaurant-that-looks-like-a-merry-go-round)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DEVELOPMENT",
+        "emoji": "\ud83c\udfd7\ufe0f",
+        "intro": "The city is transforming before our eyes...",
+        "count": 8,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Vibiana-Adjacent Residential Complex Breaks Ground",
+            "description": "\n\nImage: Togawa Smith Martin, Inc. via the Downtown News\n\n\nYet another mixed-use development is now pushing dirt in D... This is pure magic for our LA family! \ud83c\udf1f",
+            "url": "https://buildinglosangeles.blogspot.com/2015/03/vibiana-adjacent-residential-complex.html",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Building Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Downtown"
+            },
+            "datePublished": "2015-03-04T06:10:00.002-08:00",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://buildinglosangeles.blogspot.com/2015/03/vibiana-adjacent-residential-complex.html\" target=\"_blank\" rel=\"noopener noreferrer\">Vibiana-Adjacent Residential Complex Breaks Ground</a>",
+              "hyperlinkMarkdown": "[Vibiana-Adjacent Residential Complex Breaks Ground](https://buildinglosangeles.blogspot.com/2015/03/vibiana-adjacent-residential-complex.html)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Hilton Hilton co-CEOs Barron, Tessa Hilton shift to Compass",
+            "description": "Hilton Hilton co-founders and co-CEOs Barron N. Hilton and Tessa Hilton have abruptly headed for the exit as they set... This is absolutely obsessed for our LA family! \ud83c\udf1f",
+            "url": "https://therealdeal.com/la/2025/09/25/hilton-hiltons-co-ceos-head-for-compass/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "The Real Deal LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Beverly Hills"
+            },
+            "datePublished": "Thu, 25 Sep 2025 16:30:00 +0000",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://therealdeal.com/la/2025/09/25/hilton-hiltons-co-ceos-head-for-compass/\" target=\"_blank\" rel=\"noopener noreferrer\">Hilton Hilton co-CEOs Barron, Tessa Hilton shift to Compass</a>",
+              "hyperlinkMarkdown": "[Hilton Hilton co-CEOs Barron, Tessa Hilton shift to Compass](https://therealdeal.com/la/2025/09/25/hilton-hiltons-co-ceos-head-for-compass/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Shabby Section of Palms Getting Mixed-Use Development",
+            "description": "\n\nThe Roy @ Overland\n\n\nAccording to a mitigated negative declaration published by the Los Angeles Department of City ... This is absolutely obsessed for our LA family! \ud83c\udf1f",
+            "url": "https://buildinglosangeles.blogspot.com/2015/02/shabby-section-of-palms-getting-mixed.html",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Building Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "2015-02-26T06:03:00.001-08:00",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://buildinglosangeles.blogspot.com/2015/02/shabby-section-of-palms-getting-mixed.html\" target=\"_blank\" rel=\"noopener noreferrer\">Shabby Section of Palms Getting Mixed-Use Development</a>",
+              "hyperlinkMarkdown": "[Shabby Section of Palms Getting Mixed-Use Development](https://buildinglosangeles.blogspot.com/2015/02/shabby-section-of-palms-getting-mixed.html)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Dolce & Gabbana, Casa Tua signed to Cain\u2019s One Beverly Hills",
+            "description": "LOCAL DEK: HOMEPAGE HED:&#160; HOMEPAGE SUBHED (DEK):&#160; FOCUS KEYPHRASE: One Beverly Hills is still in its early ... This is pure magic for our our people! \ud83c\udf1f",
+            "url": "https://therealdeal.com/la/2025/09/26/cain-internationals-one-beverly-hills-signs-high-end-tenants/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "The Real Deal LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Beverly Hills"
+            },
+            "datePublished": "Fri, 26 Sep 2025 18:19:26 +0000",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://therealdeal.com/la/2025/09/26/cain-internationals-one-beverly-hills-signs-high-end-tenants/\" target=\"_blank\" rel=\"noopener noreferrer\">Dolce & Gabbana, Casa Tua signed to Cain\u2019s One Beverly Hills</a>",
+              "hyperlinkMarkdown": "[Dolce & Gabbana, Casa Tua signed to Cain\u2019s One Beverly Hills](https://therealdeal.com/la/2025/09/26/cain-internationals-one-beverly-hills-signs-high-end-tenants/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Construction crane injures worker in Malibu as rebuild efforts lag",
+            "description": "A beachfront construction site in Malibu became the site of a rescue Wednesday.&#160; A construction worker was injur... This is total game-changer for our our people! \ud83c\udf1f",
+            "url": "https://therealdeal.com/la/2025/09/25/construction-crane-in-malibu-traps-worker/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "The Real Deal LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 18:08:49 +0000",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://therealdeal.com/la/2025/09/25/construction-crane-in-malibu-traps-worker/\" target=\"_blank\" rel=\"noopener noreferrer\">Construction crane injures worker in Malibu as rebuild efforts lag</a>",
+              "hyperlinkMarkdown": "[Construction crane injures worker in Malibu as rebuild efforts lag](https://therealdeal.com/la/2025/09/25/construction-crane-in-malibu-traps-worker/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Introducing Urbanize LA",
+            "description": "\n\n\nBuilding Los Angeles and Creative Pursuits Web Development are pleased to announce the launch Urbanize LA, a new w... This is can't even for our neighbors! \ud83c\udf1f",
+            "url": "https://buildinglosangeles.blogspot.com/2015/03/introducing-urbanize-la.html",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Building Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "2015-03-06T07:52:00.000-08:00",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://buildinglosangeles.blogspot.com/2015/03/introducing-urbanize-la.html\" target=\"_blank\" rel=\"noopener noreferrer\">Introducing Urbanize LA</a>",
+              "hyperlinkMarkdown": "[Introducing Urbanize LA](https://buildinglosangeles.blogspot.com/2015/03/introducing-urbanize-la.html)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Luxury Apartments to Rise in Brentwood",
+            "description": "\n\n\nA pair of vacant mid-century residential buildings in Brentwood will soon meet with the wrecking ball, to be repla... This is pure magic for our neighbors! \ud83c\udf1f",
+            "url": "https://buildinglosangeles.blogspot.com/2015/03/luxury-apartments-to-rise-in-brentwood.html",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Building Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Brentwood"
+            },
+            "datePublished": "2015-03-02T06:14:00.001-08:00",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://buildinglosangeles.blogspot.com/2015/03/luxury-apartments-to-rise-in-brentwood.html\" target=\"_blank\" rel=\"noopener noreferrer\">Luxury Apartments to Rise in Brentwood</a>",
+              "hyperlinkMarkdown": "[Luxury Apartments to Rise in Brentwood](https://buildinglosangeles.blogspot.com/2015/03/luxury-apartments-to-rise-in-brentwood.html)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Updated Look for Proposed Arts District Development",
+            "description": "\n\n1800 E 7th (All images: HansonLA)\n\n\nArchitecture firm HansonLA has revealed an updated look for 1800 East Seventh S... This is total game-changer for our neighbors! \ud83c\udf1f",
+            "url": "https://buildinglosangeles.blogspot.com/2015/02/updated-look-for-proposed-arts-district.html",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Building Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Arts District"
+            },
+            "datePublished": "2015-02-27T06:07:00.001-08:00",
+            "category": "development",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://buildinglosangeles.blogspot.com/2015/02/updated-look-for-proposed-arts-district.html\" target=\"_blank\" rel=\"noopener noreferrer\">Updated Look for Proposed Arts District Development</a>",
+              "hyperlinkMarkdown": "[Updated Look for Proposed Arts District Development](https://buildinglosangeles.blogspot.com/2015/02/updated-look-for-proposed-arts-district.html)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "BUSINESS",
+        "emoji": "\ud83d\udcbc",
+        "intro": "Local entrepreneurs are crushing it...",
+        "count": 1,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Salt AI Secures $10M to Untangle Healthcare\u2019s Toughest Workflows",
+            "description": "\ud83d\udd26 SpotlightHello Los Angeles,Not every startup raise deserves the spotlight, but this week\u2019s news from Salt AI is wor... This is absolutely obsessed for our our people! \ud83c\udf1f",
+            "url": "https://dot.la/salt-ai-raises-10m-healthcare-2674044954.html",
+            "publisher": {
+              "@type": "Organization",
+              "name": "dot.LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Santa Monica"
+            },
+            "datePublished": "Fri, 26 Sep 2025 16:22:35 +0000",
+            "category": "business",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://dot.la/salt-ai-raises-10m-healthcare-2674044954.html\" target=\"_blank\" rel=\"noopener noreferrer\">Salt AI Secures $10M to Untangle Healthcare\u2019s Toughest Workflows</a>",
+              "hyperlinkMarkdown": "[Salt AI Secures $10M to Untangle Healthcare\u2019s Toughest Workflows](https://dot.la/salt-ai-raises-10m-healthcare-2674044954.html)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ENTERTAINMENT",
+        "emoji": "\ud83c\udfad",
+        "intro": "The creative energy is off the charts...",
+        "count": 8,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "How to Watch \u2018Lilith Fair: Making a Mystery\u2019 Online",
+            "description": "Music fans can transport themselves back to the &#8217;90s with the help of a new documentary on the storied Lilith F... This is total game-changer for our our people! \ud83c\udf1f",
+            "url": "https://variety.com/2025/shopping/news/how-to-watch-lilith-fair-making-a-mystery-doc-online-1236529740/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Variety LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:40:11 +0000",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://variety.com/2025/shopping/news/how-to-watch-lilith-fair-making-a-mystery-doc-online-1236529740/\" target=\"_blank\" rel=\"noopener noreferrer\">How to Watch \u2018Lilith Fair: Making a Mystery\u2019 Online</a>",
+              "hyperlinkMarkdown": "[How to Watch \u2018Lilith Fair: Making a Mystery\u2019 Online](https://variety.com/2025/shopping/news/how-to-watch-lilith-fair-making-a-mystery-doc-online-1236529740/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Marc Maron, Shane Gillis, Zach Woods denounce Saudi comedy festival with A-list lineup",
+            "description": "Comedians from Dave Chappelle to Pete Davidson are drawing fire for their upcoming performances at a Saudi comedy fes... This is absolutely obsessed for our our people! \ud83c\udf1f",
+            "url": "https://www.latimes.com/entertainment-arts/story/2025-09-26/saudi-comedy-festival-lineup-riyadh-marc-maron-shane-gillis",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Entertainment"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 18:03:48 GMT",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/entertainment-arts/story/2025-09-26/saudi-comedy-festival-lineup-riyadh-marc-maron-shane-gillis\" target=\"_blank\" rel=\"noopener noreferrer\">Marc Maron, Shane Gillis, Zach Woods denounce Saudi comedy festival with A-list lineup</a>",
+              "hyperlinkMarkdown": "[Marc Maron, Shane Gillis, Zach Woods denounce Saudi comedy festival with A-list lineup](https://www.latimes.com/entertainment-arts/story/2025-09-26/saudi-comedy-festival-lineup-riyadh-marc-maron-shane-gillis)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Caleb Landry Jones, Peter Sarsgaard and Andrea Riseborough to Star in Michael Almereyda\u2019s \u2018Zero K,\u2019 Produced by RT Features and Keep Your Head",
+            "description": "Cannes&#8217; best actor winner Caleb Landry Jones (\u201cNitram\u201d), Emmy-nominated actor Peter Sarsgaard (\u201cMemory\u201d) and Os... This is absolutely obsessed for our LA family! \ud83c\udf1f",
+            "url": "https://variety.com/2025/film/global/caleb-landry-jones-zero-k-rt-features-and-keep-your-head-1236530440/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Variety LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 18:24:21 +0000",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://variety.com/2025/film/global/caleb-landry-jones-zero-k-rt-features-and-keep-your-head-1236530440/\" target=\"_blank\" rel=\"noopener noreferrer\">Caleb Landry Jones, Peter Sarsgaard and Andrea Riseborough to Star in Michael Almereyda\u2019s \u2018Zero K,\u2019 Produced by RT Features and Keep Your Head</a>",
+              "hyperlinkMarkdown": "[Caleb Landry Jones, Peter Sarsgaard and Andrea Riseborough to Star in Michael Almereyda\u2019s \u2018Zero K,\u2019 Produced by RT Features and Keep Your Head](https://variety.com/2025/film/global/caleb-landry-jones-zero-k-rt-features-and-keep-your-head-1236530440/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "\u2018Robin Hood\u2019 Trailer: Jack Patten and Lauren McQueen Fight for Freedom in MGM+ Series (TV News Roundup)",
+            "description": "MGM+ has premiered the official trailer for \u201cRobin Hood,\u201d set to premiere on Nov. 2 in the U.S. with two episodes, wi... This is can't even for our LA family! \ud83c\udf1f",
+            "url": "https://variety.com/2025/tv/news/tv-news-roundup-sept-22-2025-1236526341/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Variety LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:35:21 +0000",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://variety.com/2025/tv/news/tv-news-roundup-sept-22-2025-1236526341/\" target=\"_blank\" rel=\"noopener noreferrer\">\u2018Robin Hood\u2019 Trailer: Jack Patten and Lauren McQueen Fight for Freedom in MGM+ Series (TV News Roundup)</a>",
+              "hyperlinkMarkdown": "[\u2018Robin Hood\u2019 Trailer: Jack Patten and Lauren McQueen Fight for Freedom in MGM+ Series (TV News Roundup)](https://variety.com/2025/tv/news/tv-news-roundup-sept-22-2025-1236526341/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Mark Hamill Tapped for Gregory Peck Award for Cinematic Excellence at the San Diego Film Festival",
+            "description": "Mark Hamill will receive the Gregory Peck Award for Cinematic Excellence at the San Diego Intl. Film Festival, which ... This is total game-changer for our neighbors! \ud83c\udf1f",
+            "url": "https://variety.com/2025/film/news/mark-hamill-gregory-peck-award-san-diego-film-festival-1236530379/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Variety LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:29:10 +0000",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://variety.com/2025/film/news/mark-hamill-gregory-peck-award-san-diego-film-festival-1236530379/\" target=\"_blank\" rel=\"noopener noreferrer\">Mark Hamill Tapped for Gregory Peck Award for Cinematic Excellence at the San Diego Film Festival</a>",
+              "hyperlinkMarkdown": "[Mark Hamill Tapped for Gregory Peck Award for Cinematic Excellence at the San Diego Film Festival](https://variety.com/2025/film/news/mark-hamill-gregory-peck-award-san-diego-film-festival-1236530379/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "\u2018The Social Network Part II\u2019 Gets New Title and 2026 Fall Release",
+            "description": "Aaron Sorkin directs the Sony film that stars Mikey Madison, Jeremy Allen White and Jeremy Strong. This is pure magic for our neighbors! \ud83c\udf1f",
+            "url": "https://www.hollywoodreporter.com/movies/movie-news/the-social-reckoning-release-date-social-network-sorkin-1236386361/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hollywood Reporter"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:30:00 +0000",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.hollywoodreporter.com/movies/movie-news/the-social-reckoning-release-date-social-network-sorkin-1236386361/\" target=\"_blank\" rel=\"noopener noreferrer\">\u2018The Social Network Part II\u2019 Gets New Title and 2026 Fall Release</a>",
+              "hyperlinkMarkdown": "[\u2018The Social Network Part II\u2019 Gets New Title and 2026 Fall Release](https://www.hollywoodreporter.com/movies/movie-news/the-social-reckoning-release-date-social-network-sorkin-1236386361/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Reinstallation of Trump and Epstein statue denied after its removal from National Mall",
+            "description": "The creators of the controversial statue of President Trump dancing with Jeffrey Epstein say they weren't granted a n... This is absolutely obsessed for our neighbors! \ud83c\udf1f",
+            "url": "https://www.latimes.com/entertainment-arts/story/2025-09-25/trump-epstein-statue-removed-reinstalled-permit-denied",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Entertainment"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 01:43:02 GMT",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/entertainment-arts/story/2025-09-25/trump-epstein-statue-removed-reinstalled-permit-denied\" target=\"_blank\" rel=\"noopener noreferrer\">Reinstallation of Trump and Epstein statue denied after its removal from National Mall</a>",
+              "hyperlinkMarkdown": "[Reinstallation of Trump and Epstein statue denied after its removal from National Mall](https://www.latimes.com/entertainment-arts/story/2025-09-25/trump-epstein-statue-removed-reinstalled-permit-denied)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "\u2018One Battle After Another\u2019 Formats: What Is VistaVision and What Are All the Ways to Watch?",
+            "description": "Why did Paul Thomas Anderson decide to shoot and release his new movie \u201cOne Battle After Another\u201d in VistaVision, the... This is can't even for our our people! \ud83c\udf1f",
+            "url": "https://variety.com/2025/film/news/one-battle-after-another-vistavision-imax-best-format-1236528528/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Variety LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 18:40:00 +0000",
+            "category": "entertainment",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://variety.com/2025/film/news/one-battle-after-another-vistavision-imax-best-format-1236528528/\" target=\"_blank\" rel=\"noopener noreferrer\">\u2018One Battle After Another\u2019 Formats: What Is VistaVision and What Are All the Ways to Watch?</a>",
+              "hyperlinkMarkdown": "[\u2018One Battle After Another\u2019 Formats: What Is VistaVision and What Are All the Ways to Watch?](https://variety.com/2025/film/news/one-battle-after-another-vistavision-imax-best-format-1236528528/)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SPORTS",
+        "emoji": "\ud83c\udfc6",
+        "intro": "Our teams and athletes are bringing the heat...",
+        "count": 8,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Lakers News: Magic Johnson Excited About New Sparks Practice Facility",
+            "description": "Los Angeles Lakers icon Magic Johnson may not be with the franchise in an official capacity anymore, but he remains a... This is can't even for our fellow angels! \ud83c\udf1f",
+            "url": "https://lakersnation.com/lakers-news-magic-johnson-excited-about-new-sparks-practice-facility/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Lakers Nation"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 15:10:16 +0000",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://lakersnation.com/lakers-news-magic-johnson-excited-about-new-sparks-practice-facility/\" target=\"_blank\" rel=\"noopener noreferrer\">Lakers News: Magic Johnson Excited About New Sparks Practice Facility</a>",
+              "hyperlinkMarkdown": "[Lakers News: Magic Johnson Excited About New Sparks Practice Facility](https://lakersnation.com/lakers-news-magic-johnson-excited-about-new-sparks-practice-facility/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "LA Card Show! Dodger Stadium will be full Sunday even though the team is in Seattle",
+            "description": "LA Card Show will make its Dodger Stadium debut with a format that includes a DodgerVision watch party for the team's... This is pure magic for our fellow angels! \ud83c\udf1f",
+            "url": "https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Sports"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:29:03 GMT",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party\" target=\"_blank\" rel=\"noopener noreferrer\">LA Card Show! Dodger Stadium will be full Sunday even though the team is in Seattle</a>",
+              "hyperlinkMarkdown": "[LA Card Show! Dodger Stadium will be full Sunday even though the team is in Seattle](https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Dodgers\u2019 Shohei Ohtani Told Dave Roberts He Wanted to Pitch Longer",
+            "description": "Los Angeles Dodgers two-way star Shohei Ohtani pitched through the sixth inning in his final start of the regular sea... This is absolutely obsessed for our neighbors! \ud83c\udf1f",
+            "url": "https://dodgersnation.com/dodgers-shohei-ohtani-told-dave-roberts-he-wanted-to-pitch-longer/2025/09/26/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Dodgers Nation"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 16:30:00 +0000",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://dodgersnation.com/dodgers-shohei-ohtani-told-dave-roberts-he-wanted-to-pitch-longer/2025/09/26/\" target=\"_blank\" rel=\"noopener noreferrer\">Dodgers\u2019 Shohei Ohtani Told Dave Roberts He Wanted to Pitch Longer</a>",
+              "hyperlinkMarkdown": "[Dodgers\u2019 Shohei Ohtani Told Dave Roberts He Wanted to Pitch Longer](https://dodgersnation.com/dodgers-shohei-ohtani-told-dave-roberts-he-wanted-to-pitch-longer/2025/09/26/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Dodgers Scratch Ben Rortvedt From Lineup for Thursday\u2019s Game vs Diamondbacks",
+            "description": "The Los Angeles Dodgers have scratched catcher Ben Rortvedt from Thursday&#8217;s lineup against the Arizona Diamondb... This is can't even for our fellow angels! \ud83c\udf1f",
+            "url": "https://dodgersnation.com/dodgers-scratch-ben-rortvedt-from-lineup-for-thursdays-game-vs-diamondbacks/2025/09/25/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Dodgers Nation"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 18:16:10 +0000",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://dodgersnation.com/dodgers-scratch-ben-rortvedt-from-lineup-for-thursdays-game-vs-diamondbacks/2025/09/25/\" target=\"_blank\" rel=\"noopener noreferrer\">Dodgers Scratch Ben Rortvedt From Lineup for Thursday\u2019s Game vs Diamondbacks</a>",
+              "hyperlinkMarkdown": "[Dodgers Scratch Ben Rortvedt From Lineup for Thursday\u2019s Game vs Diamondbacks](https://dodgersnation.com/dodgers-scratch-ben-rortvedt-from-lineup-for-thursdays-game-vs-diamondbacks/2025/09/25/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Lakers News: JJ Redick Gives Reason For Dalton Knecht\u2019s Poor Summer League",
+            "description": "Dalton Knecht had a rollercoaster of a rookie season as he started the 2024-25 season getting minutes off the bench b... This is total game-changer for our fellow angels! \ud83c\udf1f",
+            "url": "https://lakersnation.com/lakers-news-jj-redick-gives-reason-for-dalton-knecht-poor-summer-league/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Lakers Nation"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 16:11:15 +0000",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://lakersnation.com/lakers-news-jj-redick-gives-reason-for-dalton-knecht-poor-summer-league/\" target=\"_blank\" rel=\"noopener noreferrer\">Lakers News: JJ Redick Gives Reason For Dalton Knecht\u2019s Poor Summer League</a>",
+              "hyperlinkMarkdown": "[Lakers News: JJ Redick Gives Reason For Dalton Knecht\u2019s Poor Summer League](https://lakersnation.com/lakers-news-jj-redick-gives-reason-for-dalton-knecht-poor-summer-league/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "USC vs. Illinois: Lincoln Riley shares his expectations for quarterback Jayden Maiava",
+            "description": "Check out what to watch for when No. 21 USC takes on No. 23 Illinois on the road Saturday during a key Big Ten showdown. This is pure magic for our LA family! \ud83c\udf1f",
+            "url": "https://www.latimes.com/sports/usc/story/2025-09-26/usc-football-vs-illinois-what-to-watch-for",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Sports"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 14:05:35 GMT",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/sports/usc/story/2025-09-26/usc-football-vs-illinois-what-to-watch-for\" target=\"_blank\" rel=\"noopener noreferrer\">USC vs. Illinois: Lincoln Riley shares his expectations for quarterback Jayden Maiava</a>",
+              "hyperlinkMarkdown": "[USC vs. Illinois: Lincoln Riley shares his expectations for quarterback Jayden Maiava](https://www.latimes.com/sports/usc/story/2025-09-26/usc-football-vs-illinois-what-to-watch-for)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Lakers have given coach JJ Redick a contract extension",
+            "description": "Terms of the deal were not given at a news conference Thursday, when the second-year coach spoke highly of Luka Donci... This is total game-changer for our LA family! \ud83c\udf1f",
+            "url": "https://www.latimes.com/sports/lakers/story/2025-09-25/lakers-give-coach-jj-redick-a-contract-extension",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Sports"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 22:30:51 GMT",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/sports/lakers/story/2025-09-25/lakers-give-coach-jj-redick-a-contract-extension\" target=\"_blank\" rel=\"noopener noreferrer\">Lakers have given coach JJ Redick a contract extension</a>",
+              "hyperlinkMarkdown": "[Lakers have given coach JJ Redick a contract extension](https://www.latimes.com/sports/lakers/story/2025-09-25/lakers-give-coach-jj-redick-a-contract-extension)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Shaikin: Dodgers fans should take a moment to appreciate team's success before anxiety returns",
+            "description": "Dodgers fans should take it from Kenley Jansen: Don't take this golden era of postseason appearances for granted. Tak... This is pure magic for our neighbors! \ud83c\udf1f",
+            "url": "https://www.latimes.com/sports/dodgers/story/2025-09-25/dodgers-fans-gratitude-on-the-eve-of-anxiety-postseason",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LA Times Sports"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 22:17:38 GMT",
+            "category": "sports",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.latimes.com/sports/dodgers/story/2025-09-25/dodgers-fans-gratitude-on-the-eve-of-anxiety-postseason\" target=\"_blank\" rel=\"noopener noreferrer\">Shaikin: Dodgers fans should take a moment to appreciate team's success before anxiety returns</a>",
+              "hyperlinkMarkdown": "[Shaikin: Dodgers fans should take a moment to appreciate team's success before anxiety returns](https://www.latimes.com/sports/dodgers/story/2025-09-25/dodgers-fans-gratitude-on-the-eve-of-anxiety-postseason)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GOODIES",
+        "emoji": "\u2728",
+        "intro": "Hidden gems and special finds await...",
+        "count": 6,
+        "articles": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Harvesting the Heirloom Corn That Nourishes the Oneida Nation",
+            "description": "\nThe first weekend in October is always the annual Harvest and Husking Bee at Tsyunh\u00e9hkw\u2227 Farm. Located just outside ... This is total game-changer for our neighbors! \ud83c\udf1f",
+            "url": "https://www.atlasobscura.com/articles/oneida-white-corn-harvest",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Atlas Obscura LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Fri, 26 Sep 2025 09:00:00 -0400",
+            "category": "goodies",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.atlasobscura.com/articles/oneida-white-corn-harvest\" target=\"_blank\" rel=\"noopener noreferrer\">Harvesting the Heirloom Corn That Nourishes the Oneida Nation</a>",
+              "hyperlinkMarkdown": "[Harvesting the Heirloom Corn That Nourishes the Oneida Nation](https://www.atlasobscura.com/articles/oneida-white-corn-harvest)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "This Hidden Mexico City-Inspired Caf\u00e9 In L.A.\u2019s Chinatown Is Perfect To enjoy Live Music \u2013 From Jazz And Bolero To DJ Sets",
+            "description": "Behind an unassuming fa\u00e7ade highlighted by its vibrant red color, a hidden slice of old-school L.A. vibes sits right ... This is pure magic for our LA family! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Chinatown"
+            },
+            "datePublished": "Fri, 26 Sep 2025 17:07:41 +0000",
+            "category": "goodies",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/\" target=\"_blank\" rel=\"noopener noreferrer\">This Hidden Mexico City-Inspired Caf\u00e9 In L.A.\u2019s Chinatown Is Perfect To enjoy Live Music \u2013 From Jazz And Bolero To DJ Sets</a>",
+              "hyperlinkMarkdown": "[This Hidden Mexico City-Inspired Caf\u00e9 In L.A.\u2019s Chinatown Is Perfect To enjoy Live Music \u2013 From Jazz And Bolero To DJ Sets](https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Concert One Hour From L.A.",
+            "description": "Lake Hughes, a small town north of the city and just an hour away, will become next month the gathering place for thr... This is total game-changer for our fellow angels! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/harvest-moon-benefit-concert-la/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 14:10:06 +0000",
+            "category": "goodies",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/harvest-moon-benefit-concert-la/\" target=\"_blank\" rel=\"noopener noreferrer\">Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Concert One Hour From L.A.</a>",
+              "hyperlinkMarkdown": "[Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Concert One Hour From L.A.](https://secretlosangeles.com/harvest-moon-benefit-concert-la/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "A California Astronaut Will Pilot NASA\u2019s First Crewed Moon Mission In 50 Years \u2014 Launching In 2026",
+            "description": "\u201cOne small step for a man, one giant leap for mankind.\u201d Those were the impactful words from Neil Armstrong that milli... This is total game-changer for our our people! \ud83c\udf1f",
+            "url": "https://secretlosangeles.com/artemis-ii-nasa-mission-california-astronaut/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Secret Los Angeles"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 15:09:06 +0000",
+            "category": "goodies",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://secretlosangeles.com/artemis-ii-nasa-mission-california-astronaut/\" target=\"_blank\" rel=\"noopener noreferrer\">A California Astronaut Will Pilot NASA\u2019s First Crewed Moon Mission In 50 Years \u2014 Launching In 2026</a>",
+              "hyperlinkMarkdown": "[A California Astronaut Will Pilot NASA\u2019s First Crewed Moon Mission In 50 Years \u2014 Launching In 2026](https://secretlosangeles.com/artemis-ii-nasa-mission-california-astronaut/)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "You Aren\u2019t Paying Enough Attention to Moss",
+            "description": "This is a transcript of an episode of Untold Earth, a series from Atlas Obscura in partnership with Nature and PBS Di... This is absolutely obsessed for our LA family! \ud83c\udf1f",
+            "url": "https://www.atlasobscura.com/articles/untold-earth-103-moss",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Atlas Obscura LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Thu, 25 Sep 2025 13:15:00 -0400",
+            "category": "goodies",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.atlasobscura.com/articles/untold-earth-103-moss\" target=\"_blank\" rel=\"noopener noreferrer\">You Aren\u2019t Paying Enough Attention to Moss</a>",
+              "hyperlinkMarkdown": "[You Aren\u2019t Paying Enough Attention to Moss](https://www.atlasobscura.com/articles/untold-earth-103-moss)"
+            }
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "The Well at Jordan\u2019s Farm  in Cape Elizabeth, Maine",
+            "description": " The Well at Jordan\u2019s Farm is a farm-to-table eatery in Cape Elizabeth, Maine with a daily tasting menu that incorpor... This is total game-changer for our neighbors! \ud83c\udf1f",
+            "url": "https://www.atlasobscura.com/places/the-well-at-jordans-farm",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Atlas Obscura LA"
+            },
+            "spatialCoverage": {
+              "@type": "Place",
+              "name": "Los Angeles"
+            },
+            "datePublished": "Tue, 23 Sep 2025 14:01:00 -0400",
+            "category": "goodies",
+            "ghost_metadata": {
+              "hyperlinkHtml": "<a href=\"https://www.atlasobscura.com/places/the-well-at-jordans-farm\" target=\"_blank\" rel=\"noopener noreferrer\">The Well at Jordan\u2019s Farm  in Cape Elizabeth, Maine</a>",
+              "hyperlinkMarkdown": "[The Well at Jordan\u2019s Farm  in Cape Elizabeth, Maine](https://www.atlasobscura.com/places/the-well-at-jordans-farm)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "events_table": {
+    "@type": "Table",
+    "name": "CurationsLA Weekend Events",
+    "description": "Friday through Sunday LA events in HTML table format",
+    "format": "text/html",
+    "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>CurationsLA: Friday - Sunday Events | September 26-28, 2025</title>\n    <style>\n        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }\n        table { width: 100%; border-collapse: collapse; margin: 20px 0; }\n        th { background-color: #f4f4f4; padding: 15px; text-align: left; }\n        td { padding: 15px; border-bottom: 1px solid #eee; }\n        strong { font-weight: bold; }\n        a { color: #0066cc; text-decoration: none; }\n        a:hover { text-decoration: underline; }\n        .header { text-align: center; margin-bottom: 30px; }\n    </style>\n</head>\n<body>\n    <div class=\"header\">\n        <h1>\ud83c\udf34 CurationsLA: Friday - Sunday Events</h1>\n        <h2>September 26-28, 2025</h2>\n        <p><em>Source: The Scenestar's on-screen show list</em></p>\n    </div>\n    \n<table>\n  <thead>\n    <tr>\n      <th><strong>FRIDAY'S EVENTS</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>\n        5:00PM \ud83c\udfb8 <strong>NEKO CASE ('NEON GREY MIDNIGHT GREEN' LISTENING PARTY)</strong> intimate album experience brings fans together at <a href=\"#amoeba-music-hollywood\"><strong>AMOEBA MUSIC HOLLYWOOD</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        5:30PM \ud83c\udfa7 <strong>PULP</strong> Britpop legends return with anthemic energy and nostalgic power at <a href=\"https://www.hollywoodbowl.com/\"><strong>HOLLYWOOD BOWL</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        6:00PM \ud83c\udfb8 <strong>DAISY THE GREAT</strong> brings indie charm and devoted fanbase at <a href=\"#w/-the-ophelias-and-theo-moss-at-el-cid\"><strong>W/ THE OPHELIAS & THEO MOSS AT EL CID</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        6:00PM \ud83c\udfb7 <strong>JAZZ AT LACMA</strong> brings sophisticated soundscapes and musical virtuosity at <a href=\"#lacma-w/-alexis-lombre-at-lacma-smidt-welcome-plaza\"><strong>LACMA W/ ALEXIS LOMBRE AT LACMA SMIDT WELCOME PLAZA</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb5 <strong>TATE MCRAE</strong> Pop sensation delivers chart-topping hits and dynamic performance at <a href=\"https://www.kiaforum.com/\"><strong>KIA FORUM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>CHEVELLE</strong> delivers chart-topping hits and dynamic performance at <a href=\"https://www.palladiumhollywood.com/\"><strong>HOLLYWOOD PALLADIUM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>THE HOLD STEADY</strong> Alt-rock anthems and punchy live energy kick off at <a href=\"https://www.spacelandpresents.com/teragram-ballroom/\"><strong>TERAGRAM BALLROOM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>S.G. GOODMAN</strong> brings indie charm and devoted fanbase at <a href=\"https://www.troubadour.com/\"><strong>TROUBADOUR</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>MR. GNOME</strong> delivers chart-topping hits and dynamic performance at <a href=\"https://www.golddiggersbar.com/\"><strong>GOLD-DIGGERS</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>STOLEN GIN</strong> kicks off with punchy live energy and anthems at <a href=\"#echo\"><strong>ECHO</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb7 <strong>THE SOUL REBELS</strong> delivers chart-topping hits and dynamic performance at <a href=\"https://bluenotejazz.com/losangeles/\"><strong>BLUE NOTE LOS ANGELES</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:30PM \ud83c\udfb7 <strong>LAUFEY</strong> Jazz-pop sensation brings sophisticated vocals and modern elegance at <a href=\"https://www.cryptoarena.com/\"><strong>CRYPTO.COM ARENA</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:30PM \ud83c\udfb8 <strong>THE DROP: MARGO PRICE</strong> kicks off with punchy live energy and anthems at <a href=\"#ray-charles-rooftop-terrace-at-the-grammy-museum-at-la-live\"><strong>RAY CHARLES ROOFTOP TERRACE AT THE GRAMMY MUSEUM AT L.A. LIVE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>ALEX G</strong> Indie rock innovator brings experimental sounds and devoted fanbase at <a href=\"https://www.lagreektheatre.com/\"><strong>GREEK THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>MAGDALENA BAY</strong> delivers chart-topping hits and dynamic performance at <a href=\"https://hollywoodforever.com/\"><strong>FAIRBANKS LAWN AT HOLLYWOOD FOREVER CEMETERY</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>PINO PALLADINO</strong> brings heartfelt vocals and emotional depth at <a href=\"#ford\"><strong>FORD</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>RAINBOW KITTEN SURPRISE</strong> kicks off with punchy live energy and anthems at <a href=\"https://www.spacelandpresents.com/echoplex/\"><strong>ECHOPLEX</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>THE WATERBOYS</strong> kicks off with punchy live energy and anthems at <a href=\"https://www.bellwetherla.com/\"><strong>BELLWETHER</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>BEHERIT</strong> brings indie charm and devoted fanbase at <a href=\"https://www.regenttheater.com/\"><strong>REGENT THEATER</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>YEULE</strong> creates a communal evening with infectious energy at <a href=\"https://belascotheater.com/\"><strong>BELASCO</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfa7 <strong>JACQUES GREENE</strong> brings heartfelt vocals and emotional depth at <a href=\"https://www.elreylosangeles.com/\"><strong>EL REY THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>MAE</strong> delivers hypnotic artistry and fearless stage presence at <a href=\"#roxy\"><strong>ROXY</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>TEI SHI</strong> kicks off with punchy live energy and anthems at <a href=\"https://www.lodgeroomhlp.com/\"><strong>LODGE ROOM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>YURI</strong> delivers hypnotic artistry and fearless stage presence at <a href=\"https://www.youtube.com/intl/ALL_us/creators/theater/\"><strong>YOUTUBE THEATER</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>JEFFREY OSBORNE (OF BAR KAYS)</strong> brings heartfelt vocals and emotional depth at <a href=\"#novo\"><strong>NOVO</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfbc <strong>DUDAMEL LEADS LEADS AN 'ALPINE SYMPHONY'</strong> brings classical mastery and orchestral grandeur at <a href=\"https://www.laphil.com/\"><strong>WALT DISNEY CONCERT HALL</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        9:00PM \ud83c\udfad <strong>BANDALOS CHINOS</strong> brings heartfelt vocals and emotional depth at <a href=\"https://www.fondatheatre.com/\"><strong>FONDA THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        9:30PM \ud83c\udfb8 <strong>JOON</strong> delivers hypnotic artistry and fearless stage presence at <a href=\"https://www.moroccanlounge.com/\"><strong>MOROCCAN LOUNGE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        9:30PM \ud83c\udfb7 <strong>KAMASI WASHINGTON</strong> brings indie charm and devoted fanbase at <a href=\"https://bluenotejazz.com/losangeles/\"><strong>BLUE NOTE LOS ANGELES</strong></a>\n      </td>\n    </tr>\n  </tbody>\n</table>\n\n<table>\n  <thead>\n    <tr>\n      <th><strong>SATURDAY'S EVENTS</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>\n        3:00PM \ud83c\udfa7 <strong>S2O LOS ANGELES</strong> brings indie charm and devoted fanbase at <a href=\"https://www.bmostadium.com/\"><strong>BMO STADIUM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        6:30PM \ud83c\udfb8 <strong>SORRY GHOST</strong> brings heartfelt vocals and emotional depth at <a href=\"https://www.moroccanlounge.com/\"><strong>MOROCCAN LOUNGE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb5 <strong>TATE MCRAE</strong> Pop sensation delivers chart-topping hits and dynamic performance at <a href=\"https://www.kiaforum.com/\"><strong>KIA FORUM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>THE HOLD STEADY</strong> Alt-rock anthems and punchy live energy kick off at <a href=\"https://www.spacelandpresents.com/teragram-ballroom/\"><strong>TERAGRAM BALLROOM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>THE LONE BELLOW</strong> creates a communal evening with infectious energy at <a href=\"https://www.troubadour.com/\"><strong>TROUBADOUR</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:30PM \ud83c\udfb7 <strong>LAUFEY</strong> Jazz-pop sensation brings sophisticated vocals and modern elegance at <a href=\"https://www.cryptoarena.com/\"><strong>CRYPTO.COM ARENA</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>BIG THIEF</strong> Indie folk masters create intimate soundscapes at <a href=\"https://www.hollywoodbowl.com/\"><strong>HOLLYWOOD BOWL</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>ALEX G</strong> Indie rock innovator brings experimental sounds and devoted fanbase at <a href=\"https://www.lagreektheatre.com/\"><strong>GREEK THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>MAGDALENA BAY</strong> delivers chart-topping hits and dynamic performance at <a href=\"https://hollywoodforever.com/\"><strong>FAIRBANKS LAWN AT HOLLYWOOD FOREVER CEMETERY</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb5 <strong>JESSIE MURPH</strong> kicks off with punchy live energy and anthems at <a href=\"https://shrineauditorium.com/\"><strong>SHRINE EXPO HALL</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>JAMES (PERFORMING 'LAID' IN FULL)</strong> brings indie charm and devoted fanbase at <a href=\"https://www.bellwetherla.com/\"><strong>BELLWETHER</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>KIESZA</strong> delivers hypnotic artistry and fearless stage presence at <a href=\"https://www.elreylosangeles.com/\"><strong>EL REY THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>SE SO NEON</strong> kicks off with punchy live energy and anthems at <a href=\"https://www.wiltern.com/\"><strong>WILTERN</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb8 <strong>HUNX</strong> kicks off with punchy live energy and anthems at <a href=\"https://belascotheater.com/\"><strong>BELASCO</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>REN\u00c9E ELISE GOLDSBERRY</strong> brings heartfelt vocals and emotional depth at <a href=\"#ford\"><strong>FORD</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>ELADIO CARRI\u00d3N</strong> delivers chart-topping hits and dynamic performance at <a href=\"https://www.youtube.com/intl/ALL_us/creators/theater/\"><strong>YOUTUBE THEATER</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        9:00PM \ud83c\udfb8 <strong>THE HELLP</strong> delivers chart-topping hits and dynamic performance at <a href=\"#novo\"><strong>NOVO</strong></a>\n      </td>\n    </tr>\n  </tbody>\n</table>\n\n<table>\n  <thead>\n    <tr>\n      <th><strong>SUNDAY'S EVENTS</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>\n        6:00PM \ud83c\udfb8 <strong>THE HOLD STEADY</strong> Alt-rock anthems and punchy live energy kick off at <a href=\"https://www.moroccanlounge.com/\"><strong>MOROCCAN LOUNGE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfad <strong>THE HEAD AND THE HEART</strong> Folk-pop harmonies and roots warmth create a communal evening at <a href=\"https://www.lagreektheatre.com/\"><strong>GREEK THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>MUDVAYNE</strong> Metal titans bring crushing riffs and explosive energy at <a href=\"https://www.palladiumhollywood.com/\"><strong>HOLLYWOOD PALLADIUM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>THE MARVELOUS 3</strong> creates a communal evening with infectious energy at <a href=\"https://www.spacelandpresents.com/teragram-ballroom/\"><strong>TERAGRAM BALLROOM</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfb8 <strong>LUCINDA WILLIAMS</strong> kicks off with punchy live energy and anthems at <a href=\"https://www.troubadour.com/\"><strong>TROUBADOUR</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:00PM \ud83c\udfad <strong>ATIF ASLAM</strong> brings heartfelt vocals and emotional depth at <a href=\"https://dolbytheatre.com/\"><strong>DOLBY THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:30PM \ud83c\udfb9 <strong>JOHN LEGEND</strong> Award-winning soul singer brings heartfelt vocals at <a href=\"https://www.hollywoodbowl.com/\"><strong>HOLLYWOOD BOWL</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        7:30PM \ud83c\udfb8 <strong>VOLA</strong> delivers hypnotic artistry and fearless stage presence at <a href=\"#roxy\"><strong>ROXY</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfb5 <strong>KALI UCHIS</strong> R&B star delivers hypnotic artistry and fearless stage presence at <a href=\"https://www.intuitdome.com/\"><strong>INTUIT DOME</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfa4 <strong>ICE CUBE</strong> Hip-hop legend brings West Coast energy and classic hits at <a href=\"https://www.cryptoarena.com/\"><strong>CRYPTO.COM ARENA</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfad <strong>SPIRITUALIZED (PERFORMING 'PURE PHASE' IN IT'S ENTIRETY)</strong> Psychedelic rock pioneers create transcendent sonic journeys at <a href=\"https://laorpheum.com/\"><strong>ORPHEUM THEATRE</strong></a>\n      </td>\n    </tr>\n    <tr>\n      <td>\n        8:00PM \ud83c\udfac <strong>DAVID DUCHOVNY</strong> The X-Files star explores his musical side with indie rock charm at <a href=\"https://www.regenttheater.com/\"><strong>REGENT THEATER</strong></a>\n      </td>\n    </tr>\n  </tbody>\n</table>\n\n    <footer style=\"text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;\">\n        <p><strong>Made with \ud83d\udc9c in Los Angeles</strong></p>\n        <p><em>CurationsLA - Bringing Good Vibes when our city needs it most</em></p>\n    </footer>\n</body>\n</html>",
+    "ghost_metadata": {
+      "ready_for_import": true,
+      "table_type": "events_schedule",
+      "styling": "curationsla_branded"
+    }
+  }
+}
