@@ -252,6 +252,34 @@ cat agents/specialized/specialized_coordination_system.json
 - **Content Shortage**: Search parameters expanded dynamically
 - **Quality Issues**: Enhanced Good Vibes filtering activated
 - **Timeline Delays**: Priority content fast-tracked
+- **Git Push Errors**: Improved error handling prevents workflow failures
+
+## 🚀 GitHub Actions Workflow
+
+### Fixed Issues in Daily Content Generation
+The workflow has been enhanced to prevent common failures:
+
+- **Exit Code 128 Fix**: Proper Git authentication and branch handling
+- **Error Resilience**: All steps include fallback error handling
+- **Missing Dependencies**: Updated to latest GitHub Actions versions
+- **Agent Deployment**: Automatic specialized agent setup
+- **Content Archiving**: Improved directory handling
+
+### Workflow Steps
+1. **Setup**: Python 3.10, dependency installation, agent deployment
+2. **Content Generation**: RSS feeds + web scraping fallbacks
+3. **Schema Generation**: SEO-optimized structured data
+4. **AI Discovery**: Platform-ready discovery files
+5. **Content Archiving**: Organized by date structure
+6. **Git Operations**: Safe commit and push with conflict prevention
+
+### Manual Workflow Trigger
+```bash
+# Trigger workflow manually for specific day
+gh workflow run "CurationsLA Daily Content Generation" \
+  --ref main \
+  -f day_override=friday
+```
 
 ## 📊 Content Generation Workflow
 
