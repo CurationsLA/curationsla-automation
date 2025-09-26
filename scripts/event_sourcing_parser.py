@@ -173,7 +173,15 @@ class EventParser:
                 venue = venue.replace(' - ', ' ').strip()
                 
                 # Get URL if we have it
-                url = self.venue_urls.get(venue, f"#{venue.lower().replace(' ', '-').replace('.', '').replace('&', 'and')}")
+                url = self.venue_urls.get(venue)
+                if not url:
+                    # Try with "THE" prefix for common venues
+                    venue_with_the = f"THE {venue}"
+                    url = self.venue_urls.get(venue_with_the)
+                    if url:
+                        venue = venue_with_the
+                    else:
+                        url = f"#{venue.lower().replace(' ', '-').replace('.', '').replace('&', 'and')}"
                 return venue, url
         
         return "VENUE TBD", "#venue-tbd"
