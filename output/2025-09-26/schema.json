@@ -193,8 +193,8 @@
       "@id": "https://la.curations.cc/newsletter/friday#2025-09-26",
       "headline": "CurationsLA: Friday Good Vibes - September 26, 2025",
       "description": "Today's Los Angeles culture, events, and community highlights. Eats, Events, Development, Entertainment, and more Good Vibes.",
-      "datePublished": "2025-09-26T22:23:01.469886",
-      "dateModified": "2025-09-26T22:23:01.469886",
+      "datePublished": "2025-09-26T22:23:39.711056",
+      "dateModified": "2025-09-26T22:23:39.711056",
       "author": {
         "@type": "Organization",
         "name": "CurationsLA",
@@ -307,8 +307,8 @@
       "@id": "https://la.curations.cc/#event-sample-event-1",
       "name": "Sample LA Event",
       "description": "Community celebration in DTLA",
-      "startDate": "2025-09-26T22:23:01.469886",
-      "endDate": "2025-09-27T01:23:01.469886",
+      "startDate": "2025-09-26T22:23:39.711056",
+      "endDate": "2025-09-27T01:23:39.711056",
       "location": {
         "@type": "Place",
         "name": "Community Center",
