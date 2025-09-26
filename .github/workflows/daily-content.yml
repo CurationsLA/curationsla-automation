@@ -18,17 +18,18 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
     
     - name: Cache dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -37,8 +38,14 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install feedparser requests beautifulsoup4 python-dateutil
-        pip install openai  # Optional for AI enhancement
+        pip install -r requirements.txt
+    
+    - name: Deploy specialized agents
+      run: |
+        python scripts/deploy_specialized_agents.py || {
+          echo "⚠️ Agent deployment had issues, continuing with default configuration"
+          exit 0
+        }
     
     - name: Set timezone to LA
       run: |
@@ -63,15 +70,24 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "🌴 Starting CurationsLA content generation..."
-        python scripts/content_generator.py
+        python scripts/content_generator.py || {
+          echo "❌ Content generation failed, but continuing with available content"
+          exit 0
+        }
     
     - name: Generate Schema markup
       run: |
-        python scripts/schema_builder.py --day ${{ steps.get-day.outputs.day }}
+        python scripts/schema_builder.py --day ${{ steps.get-day.outputs.day }} || {
+          echo "⚠️ Schema generation skipped due to error"
+          exit 0
+        }
     
     - name: Create AI discovery files
       run: |
-        python scripts/ai_discovery.py
+        python scripts/ai_discovery.py || {
+          echo "⚠️ AI discovery file generation skipped due to error"
+          exit 0
+        }
     
     - name: Archive content
       run: |
@@ -80,23 +96,37 @@ jobs:
         MONTH=$(date +%m-%B | tr '[:upper:]' '[:lower:]')
         WEEK=$(date +%U)
         DAY=${{ steps.get-day.outputs.day }}
+        DATE=${{ steps.get-day.outputs.date }}
         
         ARCHIVE_PATH="content/$YEAR/$MONTH/week-$WEEK/$DAY"
         mkdir -p $ARCHIVE_PATH
         
-        # Copy generated content to archive
-        cp -r output/$(date +%Y-%m-%d)/* $ARCHIVE_PATH/
-        
-        echo "📁 Content archived to: $ARCHIVE_PATH"
+        # Copy generated content to archive if it exists
+        if [ -d "output/$DATE" ]; then
+          cp -r output/$DATE/* $ARCHIVE_PATH/ 2>/dev/null || {
+            echo "⚠️ Some output files could not be copied"
+          }
+          echo "📁 Content archived to: $ARCHIVE_PATH"
+        else
+          echo "⚠️ No output directory found for $DATE"
+          # Create basic content structure
+          echo "# CurationsLA Newsletter - $DAY $DATE" > $ARCHIVE_PATH/README.md
+          echo "Content generation incomplete for this date" >> $ARCHIVE_PATH/README.md
+        fi
     
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        git add .
-        git commit -m "🌴 CurationsLA: ${{ steps.get-day.outputs.day }} content - ${{ steps.get-day.outputs.date }}" || exit 0
-        git push
+        # Only commit and push if there are changes
+        if ! git diff --quiet || ! git diff --cached --quiet; then
+          git add .
+          git commit -m "🌴 CurationsLA: ${{ steps.get-day.outputs.day }} content - ${{ steps.get-day.outputs.date }}"
+          git push origin ${{ github.ref_name }}
+        else
+          echo "No changes to commit"
+        fi
     
     - name: Generate preview links
       id: preview
@@ -134,7 +164,7 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: Clean up old outputs
       run: |
