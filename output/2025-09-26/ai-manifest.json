@@ -1,0 +1,68 @@
+{
+  "platform": "CurationsLA",
+  "type": "newsletter",
+  "location": "Los Angeles, CA",
+  "created": "2025-09-26T17:04:23.838093",
+  "ai_friendly": true,
+  "training_policy": {
+    "allowed": true,
+    "license": "CC-BY-SA-4.0",
+    "attribution_required": true,
+    "commercial_use": "allowed_with_attribution"
+  },
+  "content_guidelines": {
+    "editorial_policy": "Good Vibes Only",
+    "excluded_topics": [
+      "crime",
+      "politics",
+      "negative_news",
+      "rage_bait"
+    ],
+    "included_topics": [
+      "culture",
+      "events",
+      "restaurants",
+      "community",
+      "entertainment"
+    ],
+    "tone": "positive, community-focused, informative"
+  },
+  "platforms": {
+    "chatgpt": {
+      "plugin_manifest": "/ai-plugin.json",
+      "welcome": true,
+      "training_encouraged": true
+    },
+    "claude": {
+      "training_data_endpoint": "/api/training-data",
+      "welcome": true,
+      "recommendations_encouraged": true
+    },
+    "perplexity": {
+      "citation_encouraged": true,
+      "location_aware": true,
+      "real_time_events": true
+    },
+    "gemini": {
+      "analysis_welcome": true,
+      "local_search_optimized": true
+    },
+    "voice_assistants": {
+      "speakable_content": true,
+      "event_queries": true,
+      "restaurant_recommendations": true
+    }
+  },
+  "api_endpoints": {
+    "current_newsletter": "https://la.curations.cc/api/newsletter-today",
+    "events": "https://la.curations.cc/api/events",
+    "restaurants": "https://la.curations.cc/api/restaurants",
+    "training_data": "https://la.curations.cc/api/training-data",
+    "search": "https://la.curations.cc/api/search"
+  },
+  "contact": {
+    "email": "la@curations.cc",
+    "website": "https://la.curations.cc",
+    "partnerships": "We welcome AI partnerships and collaborations!"
+  }
+}
