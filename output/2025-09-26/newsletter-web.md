@@ -28,18 +28,18 @@
 |:---:|
 | Climate Initiative Gains [Global Support](#) |
 | Space Mission Returns with [Promising Samples](#) |
-| Arts Education Funding Reaches [Record High](#) |
-| Tech Giants Announce Green [Energy Partnership](#) |
 | Medical Breakthrough Shows Promise [for Treatment](#) |
+| Tech Giants Announce Green [Energy Partnership](#) |
+| Arts Education Funding Reaches [Record High](#) |
 | New Archaeological Discovery [Changes History](#) |
 
 | **LOCAL** | **FUN** |
 |:---:|:---:|
-| Hollywood Bowl Announces [Summer Series](#) | Local Artist Creates [Interactive Mural](#) |
-| LA Metro Expands [Weekend Service](#) | Beach Cleanup Breaks [Participation Record](#) |
-| DTLA Food Hall Opens [This Weekend](#) | Food Truck Festival [Announces Lineup](#) |
-| Santa Monica Pier Gets [New Attraction](#) | Viral Cat Video Brings Joy [to Millions](#) |
+| Hollywood Bowl Announces [Summer Series](#) | Food Truck Festival [Announces Lineup](#) |
 | Griffith Observatory Unveils [New Exhibit](#) | Community Garden Produces [Giant Vegetables](#) |
+| LA Metro Expands [Weekend Service](#) | Viral Cat Video Brings Joy [to Millions](#) |
+| DTLA Food Hall Opens [This Weekend](#) | Local Artist Creates [Interactive Mural](#) |
+| Santa Monica Pier Gets [New Attraction](#) | Beach Cleanup Breaks [Participation Record](#) |
 
 ---
 
@@ -84,6 +84,11 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 
 #### 📆 **EVENTS**
 
+**Chinatown** 📆 This Hidden Mexico City-Inspired Café In L.A.’s Chinatown Is Perfect To enjoy...
+
+• Behind an unassuming façade highlighted by its vibrant red color, a hidden slice of old-school L.A. vibes sits right in waiting to be discovered. A...
+  - [READ MORE](https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/)
+
 **Los Angeles** 📆 Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Conce...
 
 • Lake Hughes, a small town north of the city and just an hour away, will become next month the gathering place for three music powerhouses. The lege...
@@ -111,10 +116,10 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 • <img alt="Big Blue Bus Offers Free Rides for California Clean Air Day" src="https://smdp.com/wp-content/uploads/sites/21/2025/09/unnamed-117-300x20...
   - [READ MORE](https://smdp.com/news/transportation/big-blue-bus-offers-free-rides-for-california-clean-air-day/)
 
-**Los Angeles** 🌴 UCLA football looks to ‘be on the rise’ at Northwestern
+**Los Angeles** 🌴 LA Card Show! Dodger Stadium will be full Sunday even though the team is in S...
 
-• After their abysmal 0-3 start, the Bruins hope to turn the page as they kick off Big Ten play with a new interim coach and slogan Saturday in Illinois...
-  - [READ MORE](https://www.dailynews.com/2025/09/26/ucla-football-looks-to-be-on-the-rise-at-northwestern/)
+• LA Card Show will make its Dodger Stadium debut with a format that includes a DodgerVision watch party for the team's regular-season finale against...
+  - [READ MORE](https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party)
 
 **Santa Monica** 🌴 Santa Monica ends free parking for clean air vehicles as Federal program expires
 
@@ -163,15 +168,15 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 • ...
   - [READ MORE](https://buildinglosangeles.blogspot.com/2015/02/shabby-section-of-palms-getting-mixed.html)
 
+**Beverly Hills** 🏡 Dolce & Gabbana, Casa Tua signed to Cain’s One Beverly Hills
+
+• LOCAL DEK: HOMEPAGE HED:&#160; HOMEPAGE SUBHED (DEK):&#160; FOCUS KEYPHRASE: One Beverly Hills is still in its early construction phases, but develope...
+  - [READ MORE](https://therealdeal.com/la/2025/09/26/cain-internationals-one-beverly-hills-signs-high-end-tenants/)
+
 **Los Angeles** 🏡 Construction crane injures worker in Malibu as rebuild efforts lag
 
 • A beachfront construction site in Malibu became the site of a rescue Wednesday.&#160; A construction worker was injured after a large crane overturned...
   - [READ MORE](https://therealdeal.com/la/2025/09/25/construction-crane-in-malibu-traps-worker/)
-
-**Santa Monica** 🏡 Santa Monica scraps “Jenga” design, greenlights 260 basic apartments
-
-• Santa Monica officials trashed a developer’s “Jenga” design concept for an apartment project.&#160; The city’s architectural review board unanimously ...
-  - [READ MORE](https://therealdeal.com/la/2025/09/24/santa-monica-rejects-jenga-design-oks-basic-apartments/)
 
 **Los Angeles** 🏡 Introducing Urbanize LA
 
@@ -199,45 +204,45 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 
 #### 🎬 **ENTERTAINMENT**
 
-**Los Angeles** 🎬 ‘Bob’s Burgers’ Creator on Why the Show Still Soars After 300 Episodes: ‘Opti...
+**Los Angeles** 🎬 How to Watch ‘Lilith Fair: Making a Mystery’ Online
 
-• &#160;In today’s television climate, there are very few series that reach massive milestones — maybe 100 episodes here or 10 years there, but 300 epis...
-  - [READ MORE](https://variety.com/2025/tv/features/bobs-burgers-300th-episode-future-1236526210/)
+• Music fans can transport themselves back to the &#8217;90s with the help of a new documentary on the storied Lilith Fair, now streaming on Hulu. Ally ...
+  - [READ MORE](https://variety.com/2025/shopping/news/how-to-watch-lilith-fair-making-a-mystery-doc-online-1236529740/)
 
-**Los Angeles** 🎬 Brendan Fraser, Stephen Colbert and ‘The Sound of Music’ Coming to Montclair ...
+**Los Angeles** 🎬 Marc Maron, Shane Gillis, Zach Woods denounce Saudi comedy festival with A-li...
 
-• The Montclair Film Festival has unveiled the full lineup for its 2025 edition, which will run from Oct. 17 to Oct. 26. The New Jersey fest will award ...
-  - [READ MORE](https://variety.com/2025/film/festivals/montclair-film-festival-lineup-2-1236529379/)
+• Comedians from Dave Chappelle to Pete Davidson are drawing fire for their upcoming performances at a Saudi comedy festival amid the host country's ...
+  - [READ MORE](https://www.latimes.com/entertainment-arts/story/2025-09-26/saudi-comedy-festival-lineup-riyadh-marc-maron-shane-gillis)
 
-**Los Angeles** 🎬 Jennifer Lawrence Calls Out “Genocide” in Gaza: “I’m Terrified and It’s Morti...
+**Los Angeles** 🎬 Caleb Landry Jones, Peter Sarsgaard and Andrea Riseborough to Star in Michael...
 
-• The Oscar winner was asked about the death of children during the Israel-Hamas war while touting her new film, ‘Die, My Love’ at the San Sebastian Fil...
-  - [READ MORE](https://www.hollywoodreporter.com/movies/movie-news/jennifer-lawrence-genocide-gaza-1236386769/)
+• Cannes&#8217; best actor winner Caleb Landry Jones (“Nitram”), Emmy-nominated actor Peter Sarsgaard (“Memory”) and Oscar-nominated actor Andrea Risebo...
+  - [READ MORE](https://variety.com/2025/film/global/caleb-landry-jones-zero-k-rt-features-and-keep-your-head-1236530440/)
 
-**Los Angeles** 🎬 Anime streamer Crunchyroll wants to be your digital home for manga too
+**Los Angeles** 🎬 ‘Robin Hood’ Trailer: Jack Patten and Lauren McQueen Fight for Freedom in MGM...
 
-• Crunchyroll Manga, a new add-on for the anime streamer, will make digital manga from various publishers available to subscribers starting in early ...
-  - [READ MORE](https://www.latimes.com/entertainment-arts/books/story/2025-09-25/crunchyroll-manga-anime-app-launch-date-announced)
+• MGM+ has premiered the official trailer for “Robin Hood,” set to premiere on Nov. 2 in the U.S. with two episodes, with new episodes to premiere weekl...
+  - [READ MORE](https://variety.com/2025/tv/news/tv-news-roundup-sept-22-2025-1236526341/)
 
-**Los Angeles** 🎬 ‘Stranger Things 4,’ ‘Sisi’ Filming Home Vilnius Gets Film Fund to Boost Co-P...
+**Los Angeles** 🎬 Mark Hamill Tapped for Gregory Peck Award for Cinematic Excellence at the San...
 
-• A favored filming spot for foreign shoots such as ”Stranger Things,” &#8220;Sisi&#8221; and&#160;&#160;“Star City,” Vilnius, Lithuania’s capital has n...
-  - [READ MORE](https://variety.com/2025/film/global/vilnius-film-fund-lithuania-1236530348/)
+• Mark Hamill will receive the Gregory Peck Award for Cinematic Excellence at the San Diego Intl. Film Festival, which runs Oct. 15-19. The festival als...
+  - [READ MORE](https://variety.com/2025/film/news/mark-hamill-gregory-peck-award-san-diego-film-festival-1236530379/)
 
-**Los Angeles** 🎬 Emmy Winning Filmmaker Joel Kachi Benson Signs With Cinetic (EXCLUSIVE)
+**Los Angeles** 🎬 ‘The Social Network Part II’ Gets New Title and 2026 Fall Release
 
-• Cinetic has signed filmmaker Joel Kachi Benson for management and will help launch an original slate of non-fiction films. Benson made history this ye...
-  - [READ MORE](https://variety.com/2025/film/news/emmy-winning-filmmaker-joel-kachi-benson-signs-with-cinetic-1236530329/)
-
-**Los Angeles** 🎬 Victoria Monet Signs With Full Stop Management (Exclusive)
-
-• Monét, who won three Grammys including best new artist back in 2024, will be managed by Jeffrey Azoff, Anna Savage, Shawn Holiday and Sam Weiss.
-  - [READ MORE](https://www.hollywoodreporter.com/music/music-industry-news/victoria-monet-signs-full-stop-management-1236386496/)
+• Aaron Sorkin directs the Sony film that stars Mikey Madison, Jeremy Allen White and Jeremy Strong.
+  - [READ MORE](https://www.hollywoodreporter.com/movies/movie-news/the-social-reckoning-release-date-social-network-sorkin-1236386361/)
 
 **Los Angeles** 🎬 Reinstallation of Trump and Epstein statue denied after its removal from Nati...
 
 • The creators of the controversial statue of President Trump dancing with Jeffrey Epstein say they weren't granted a new permit to reinstall it afte...
   - [READ MORE](https://www.latimes.com/entertainment-arts/story/2025-09-25/trump-epstein-statue-removed-reinstalled-permit-denied)
+
+**Los Angeles** 🎬 ‘One Battle After Another’ Formats: What Is VistaVision and What Are All the ...
+
+• Why did Paul Thomas Anderson decide to shoot and release his new movie “One Battle After Another” in VistaVision, the 60-year-old widescreen format? “...
+  - [READ MORE](https://variety.com/2025/film/news/one-battle-after-another-vistavision-imax-best-format-1236528528/)
 
 #### 🏈 **SPORTS**
 
@@ -245,6 +250,11 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 
 • Los Angeles Lakers icon Magic Johnson may not be with the franchise in an official capacity anymore, but he remains a fixture in the community thanks ...
   - [READ MORE](https://lakersnation.com/lakers-news-magic-johnson-excited-about-new-sparks-practice-facility/)
+
+**Los Angeles** 🏈 LA Card Show! Dodger Stadium will be full Sunday even though the team is in S...
+
+• LA Card Show will make its Dodger Stadium debut with a format that includes a DodgerVision watch party for the team's regular-season finale against...
+  - [READ MORE](https://www.latimes.com/sports/story/2025-09-26/la-card-show-dodger-stadium-sunday-tickets-watch-party)
 
 **Los Angeles** 🏈 Dodgers’ Shohei Ohtani Told Dave Roberts He Wanted to Pitch Longer
 
@@ -260,11 +270,6 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 
 • Dalton Knecht had a rollercoaster of a rookie season as he started the 2024-25 season getting minutes off the bench before being traded to the Charlot...
   - [READ MORE](https://lakersnation.com/lakers-news-jj-redick-gives-reason-for-dalton-knecht-poor-summer-league/)
-
-**Los Angeles** 🏈 Lakers News: Rob Pelinka Emphasizes ‘Optionality’ In Regard To Potential Rost...
-
-• Los Angeles Lakers training camp and preseason starts next week, meaning the 2025-26 season is quickly approaching. The Lakers, for the first time in ...
-  - [READ MORE](https://lakersnation.com/lakers-news-rob-pelinka-emphasizes-optionality-in-regard-to-potential-roster-moves/)
 
 **Los Angeles** 🏈 USC vs. Illinois: Lincoln Riley shares his expectations for quarterback Jayde...
 
@@ -288,6 +293,11 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 • <img alt="article-image" class="article-image  " src="https://assets.atlasobscura.com/article_images/105993/image.jpg" width="auto"...
   - [READ MORE](https://www.atlasobscura.com/articles/oneida-white-corn-harvest)
 
+**Chinatown** 🤙 This Hidden Mexico City-Inspired Café In L.A.’s Chinatown Is Perfect To enjoy...
+
+• Behind an unassuming façade highlighted by its vibrant red color, a hidden slice of old-school L.A. vibes sits right in waiting to be discovered. A...
+  - [READ MORE](https://secretlosangeles.com/cafe-tondo-chinatown-la-live-music/)
+
 **Los Angeles** 🤙 Lana Del Rey, Neil Young & Beck Headline Harvest Moon Gathering Benefit Conce...
 
 • Lake Hughes, a small town north of the city and just an hour away, will become next month the gathering place for three music powerhouses. The lege...
@@ -307,11 +317,6 @@ Ready to share your Good Vibes with 15,000+ LA culture enthusiasts? Our newslett
 
 • <img alt="At The Well, guests can dine in large, wooden gazebos or sit by the fire pit for snacks and drinks." height="200" src="https://img.atlaso...
   - [READ MORE](https://www.atlasobscura.com/places/the-well-at-jordans-farm)
-
-**Los Angeles** 🤙 This Scenic California Steam Train Is One Of The Most Beautiful In The U.S. —...
-
-• Fall season isn’t just about spooky movies, and During this time of year, we’re lucky to experience the magical transition that turns the leaves of...
-  - [READ MORE](https://secretlosangeles.com/yosemite-train-most-scenic-ride-u-s/)
 
 
 ---
