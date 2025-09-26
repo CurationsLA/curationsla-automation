@@ -6,10 +6,17 @@ Display previous publications and help agents reference past content
 
 import os
 import json
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Any
 import re
+
+# Add scripts directory to path for imports
+script_dir = Path(__file__).parent
+if str(script_dir) not in sys.path:
+    sys.path.insert(0, str(script_dir))
+
 from archive_manager import ArchiveManager
 
 # Configuration
